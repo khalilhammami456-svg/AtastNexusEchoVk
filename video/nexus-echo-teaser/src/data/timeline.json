@@ -1,0 +1,617 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "durationSeconds": 56,
+  "centralQuestion": "At 03:17:11 the recorder saw an empty corridor. Which record is lying?",
+  "shots": [
+    {
+      "id": "S01-hook-cam07-stamp",
+      "kind": "image",
+      "start": 0.0,
+      "dur": 3.4,
+      "src": "img/surv_cam07_031711.jpg",
+      "fit": "object",
+      "from": {
+        "scale": 2.7,
+        "x": 26,
+        "y": 88
+      },
+      "to": {
+        "scale": 2.0,
+        "x": 38,
+        "y": 90
+      },
+      "grade": "cctv",
+      "crt": 1,
+      "grain": 0.5,
+      "tears": [
+        {
+          "t": 2.5,
+          "dur": 0.22,
+          "amount": 60
+        }
+      ],
+      "fadeIn": 0.35,
+      "purpose": "Hook: a machine timestamp inside a dropout. Something is wrong with the time.",
+      "objectHeight": 1080
+    },
+    {
+      "id": "S02-world-b01-print",
+      "kind": "image",
+      "start": 3.4,
+      "dur": 6.4,
+      "src": "img/photo_nx037_b_01.jpg",
+      "fit": "object",
+      "objectHeight": 960,
+      "from": {
+        "scale": 1.0,
+        "x": 50,
+        "y": 50
+      },
+      "to": {
+        "scale": 1.28,
+        "x": 59,
+        "y": 47
+      },
+      "grade": "photo",
+      "crt": 0.25,
+      "grain": 0.35,
+      "text": [
+        {
+          "t": 0.9,
+          "str": "CASE 037",
+          "pos": "tl",
+          "typed": true
+        }
+      ],
+      "stamp": {
+        "t": 3.9,
+        "x": 71,
+        "y": 80,
+        "rot": -4
+      },
+      "purpose": "World: an empty east corridor. Establish place, medium, the record."
+    },
+    {
+      "id": "S03-phone-archive",
+      "kind": "phone",
+      "start": 9.8,
+      "dur": 6.0,
+      "src": "ui/mobile-02-surveillance-inspection.png",
+      "vibrate": [
+        0.0,
+        0.45
+      ],
+      "wake": 0.55,
+      "from": {
+        "scale": 1.0,
+        "x": 50,
+        "y": 50
+      },
+      "to": {
+        "scale": 1.75,
+        "x": 50,
+        "y": 89
+      },
+      "purpose": "Investigation: the handset opens a camera record. Same game, fragment of UI."
+    },
+    {
+      "id": "S04-doc-d08",
+      "kind": "image",
+      "start": 15.8,
+      "dur": 4.0,
+      "src": "img/doc_nx037_surveillance_log.jpg",
+      "fit": "object",
+      "objectHeight": 1100,
+      "from": {
+        "scale": 1.5,
+        "x": 30,
+        "y": 19
+      },
+      "to": {
+        "scale": 3.1,
+        "x": 30,
+        "y": 19.5
+      },
+      "grade": "paper",
+      "crt": 0.15,
+      "grain": 0.3,
+      "highlight": {
+        "t": 1.6,
+        "dur": 1.6,
+        "x": 13,
+        "y": 17.6,
+        "w": 36,
+        "h": 3.0
+      },
+      "purpose": "First anomaly: a recorder log line, canonical text, no reason given."
+    },
+    {
+      "id": "S05-cam06-voice",
+      "kind": "image",
+      "start": 19.8,
+      "dur": 3.6,
+      "src": "img/surv_cam06_0316_offline.jpg",
+      "fit": "object",
+      "from": {
+        "scale": 1.0,
+        "x": 50,
+        "y": 50
+      },
+      "to": {
+        "scale": 1.12,
+        "x": 50,
+        "y": 50
+      },
+      "grade": "cctvLift",
+      "crt": 1,
+      "grain": 0.7,
+      "caption": {
+        "t": 0.5,
+        "str": "THE EAST LABORATORY CAMERAS WERE POWERED DOWN\u2014",
+        "dur": 2.9
+      },
+      "purpose": "Canonical voice line over a camera that says NO SIGNAL; sentence cut off.",
+      "objectHeight": 1080
+    },
+    {
+      "id": "S06-silence-black",
+      "kind": "black",
+      "start": 23.4,
+      "dur": 1.2,
+      "purpose": "Hard audio cut. Silence is the beat."
+    },
+    {
+      "id": "S07-note-n02",
+      "kind": "image",
+      "start": 24.6,
+      "dur": 8.0,
+      "src": "img/note_observer02_02.jpg",
+      "fit": "object",
+      "objectHeight": 1500,
+      "from": {
+        "scale": 1.7,
+        "x": 32,
+        "y": 22
+      },
+      "to": {
+        "scale": 2.45,
+        "x": 27,
+        "y": 37
+      },
+      "grade": "paper",
+      "crt": 0.1,
+      "grain": 0.3,
+      "purpose": "Foreshadowing seed: an observer's note that stops mid-line at 03:17."
+    },
+    {
+      "id": "S08-montage",
+      "kind": "montage",
+      "start": 32.6,
+      "dur": 7.6,
+      "cuts": [
+        {
+          "src": "img/frag_nx037_c_02.jpg",
+          "dur": 1.8,
+          "fit": "object",
+          "objectHeight": 760,
+          "from": {
+            "scale": 1.0,
+            "x": 50,
+            "y": 50
+          },
+          "to": {
+            "scale": 1.25,
+            "x": 50,
+            "y": 50
+          },
+          "grade": "paper"
+        },
+        {
+          "src": "img/surv_cam07_031711.jpg",
+          "dur": 1.4,
+          "fit": "object",
+          "from": {
+            "scale": 1.6,
+            "x": 30,
+            "y": 92
+          },
+          "to": {
+            "scale": 1.9,
+            "x": 32,
+            "y": 92
+          },
+          "grade": "cctv",
+          "tear": true,
+          "objectHeight": 1080
+        },
+        {
+          "src": "img/personnel_lv_0029_duplicate.jpg",
+          "dur": 1.1,
+          "fit": "object",
+          "objectHeight": 1100,
+          "from": {
+            "scale": 1.7,
+            "x": 50,
+            "y": 14
+          },
+          "to": {
+            "scale": 1.9,
+            "x": 50,
+            "y": 14
+          },
+          "grade": "paperBlur"
+        },
+        {
+          "src": "img/map_east_wing_issue02.jpg",
+          "dur": 0.9,
+          "fit": "object",
+          "objectHeight": 820,
+          "from": {
+            "scale": 1.6,
+            "x": 45,
+            "y": 40
+          },
+          "to": {
+            "scale": 1.9,
+            "x": 45,
+            "y": 40
+          },
+          "grade": "paper"
+        },
+        {
+          "src": "img/doc_nx037_surveillance_log.jpg",
+          "dur": 0.7,
+          "fit": "object",
+          "objectHeight": 1100,
+          "from": {
+            "scale": 3.1,
+            "x": 30,
+            "y": 19.5
+          },
+          "to": {
+            "scale": 3.3,
+            "x": 30,
+            "y": 19.5
+          },
+          "grade": "paper"
+        },
+        {
+          "src": "img/photo_nx037_b_01.jpg",
+          "dur": 0.55,
+          "fit": "object",
+          "objectHeight": 960,
+          "from": {
+            "scale": 1.28,
+            "x": 59,
+            "y": 47
+          },
+          "to": {
+            "scale": 1.4,
+            "x": 59,
+            "y": 47
+          },
+          "grade": "photo"
+        },
+        {
+          "src": "img/surv_cam07_031711.jpg",
+          "dur": 0.45,
+          "fit": "object",
+          "from": {
+            "scale": 2.2,
+            "x": 50,
+            "y": 70
+          },
+          "to": {
+            "scale": 2.4,
+            "x": 50,
+            "y": 70
+          },
+          "grade": "cctv",
+          "tear": true,
+          "objectHeight": 1080
+        },
+        {
+          "src": "img/frag_nx037_c_02.jpg",
+          "dur": 0.4,
+          "fit": "object",
+          "objectHeight": 760,
+          "from": {
+            "scale": 2.4,
+            "x": 40,
+            "y": 40
+          },
+          "to": {
+            "scale": 2.6,
+            "x": 40,
+            "y": 40
+          },
+          "grade": "paper"
+        },
+        {
+          "src": "img/surv_cam07_031711.jpg",
+          "dur": 0.3,
+          "fit": "object",
+          "from": {
+            "scale": 2.9,
+            "x": 14,
+            "y": 95
+          },
+          "to": {
+            "scale": 2.9,
+            "x": 14,
+            "y": 95
+          },
+          "grade": "cctv",
+          "tear": true,
+          "objectHeight": 1080
+        }
+      ],
+      "purpose": "Escalation: records the viewer cannot yet connect, cutting faster."
+    },
+    {
+      "id": "S09-reveal-same-corridor",
+      "kind": "reveal",
+      "start": 40.2,
+      "dur": 7.4,
+      "a": "img/photo_nx037_b_01.jpg",
+      "b": "img/photo_nx037_b_02.jpg",
+      "swapAt": 2.7,
+      "fit": "object",
+      "objectHeight": 960,
+      "fromA": {
+        "scale": 1.0,
+        "x": 50,
+        "y": 50
+      },
+      "toA": {
+        "scale": 1.1,
+        "x": 54,
+        "y": 49
+      },
+      "fromB": {
+        "scale": 1.6,
+        "x": 57,
+        "y": 52
+      },
+      "toB": {
+        "scale": 2.6,
+        "x": 57.3,
+        "y": 52.4
+      },
+      "purpose": "The same corridor again. Something has changed. Degraded, cropped, unresolved."
+    },
+    {
+      "id": "S10-black-hard-cut",
+      "kind": "black",
+      "start": 47.6,
+      "dur": 0.9,
+      "purpose": "Everything drops out."
+    },
+    {
+      "id": "S11-cam07-empty",
+      "kind": "image",
+      "start": 48.5,
+      "dur": 3.0,
+      "src": "img/surv_cam07_031711.jpg",
+      "fit": "object",
+      "from": {
+        "scale": 1.0,
+        "x": 50,
+        "y": 50
+      },
+      "to": {
+        "scale": 1.07,
+        "x": 50,
+        "y": 50
+      },
+      "grade": "cctv",
+      "crt": 1,
+      "grain": 0.5,
+      "purpose": "The recorder's version. Empty. Which record is lying?",
+      "objectHeight": 1080
+    },
+    {
+      "id": "S12-black",
+      "kind": "black",
+      "start": 51.5,
+      "dur": 0.7,
+      "purpose": "Breath before the title."
+    },
+    {
+      "id": "S13-title",
+      "kind": "title",
+      "start": 52.2,
+      "dur": 3.8,
+      "purpose": "Title earned, last. Brand lock-on."
+    }
+  ],
+  "audio": {
+    "voice": {
+      "file": "../../public/audio/p24b-rahal.mp3",
+      "srcStart": 2.35,
+      "srcDur": 3.0,
+      "t": 20.3
+    },
+    "hum": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.2,
+        0.5
+      ],
+      [
+        3.4,
+        0.55
+      ],
+      [
+        19.8,
+        0.5
+      ],
+      [
+        23.3,
+        0.5
+      ],
+      [
+        23.4,
+        0.0
+      ],
+      [
+        24.7,
+        0.0
+      ],
+      [
+        25.6,
+        0.4
+      ],
+      [
+        32.6,
+        0.55
+      ],
+      [
+        40.0,
+        0.8
+      ],
+      [
+        47.5,
+        1.0
+      ],
+      [
+        47.6,
+        0.0
+      ]
+    ],
+    "pressure": [
+      [
+        28.0,
+        0.0
+      ],
+      [
+        40.0,
+        0.5
+      ],
+      [
+        47.4,
+        1.0
+      ],
+      [
+        47.6,
+        0.0
+      ]
+    ],
+    "pulse": {
+      "start": 29.0,
+      "end": 47.5,
+      "bpmFrom": 56,
+      "bpmTo": 150
+    },
+    "hiss": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.4,
+        0.35
+      ],
+      [
+        3.4,
+        0.3
+      ],
+      [
+        3.7,
+        0.04
+      ],
+      [
+        19.8,
+        0.04
+      ],
+      [
+        20.0,
+        0.4
+      ],
+      [
+        23.3,
+        0.4
+      ],
+      [
+        23.4,
+        0.0
+      ],
+      [
+        48.5,
+        0.0
+      ],
+      [
+        48.7,
+        0.12
+      ],
+      [
+        51.4,
+        0.12
+      ],
+      [
+        51.5,
+        0.0
+      ]
+    ],
+    "roomtone": [
+      [
+        51.5,
+        0.0
+      ],
+      [
+        51.6,
+        0.05
+      ],
+      [
+        52.2,
+        0.05
+      ],
+      [
+        52.25,
+        0.0
+      ]
+    ],
+    "stamp": [
+      7.3
+    ],
+    "vibrate": [
+      9.8,
+      10.12
+    ],
+    "shutter": [
+      34.4,
+      35.8,
+      36.9,
+      37.8,
+      38.5,
+      39.05,
+      39.5,
+      39.9
+    ],
+    "tears": [
+      2.5,
+      34.4,
+      39.05,
+      39.9,
+      42.8
+    ],
+    "stingT": 52.2,
+    "end": 56.0,
+    "relay": [
+      0.3,
+      3.4,
+      9.8,
+      15.8,
+      19.8,
+      24.6,
+      32.6,
+      40.2,
+      48.5
+    ]
+  }
+}
