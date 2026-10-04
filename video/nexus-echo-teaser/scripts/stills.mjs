@@ -5,7 +5,7 @@ import { prepare } from './common.mjs'
 
 const times = process.argv.slice(2).map(Number)
 fs.mkdirSync('out/stills', { recursive: true })
-const { serveUrl, composition, opts } = await prepare({ audio: false, durationSeconds: 56 })
+const { serveUrl, composition, opts } = await prepare({ audio: false, version: 'A', hook: 'A', ending: 'A' })
 for (const t of times) {
   const frame = Math.round(t * composition.fps)
   const output = `out/stills/t${String(Math.round(t * 100)).padStart(5, '0')}.png`

@@ -1,3 +1,5 @@
 node_modules/
 out/
 public/audio/*.wav
+public/audio/v2/
+public/shots/

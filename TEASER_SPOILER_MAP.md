@@ -164,3 +164,22 @@ Checked against sections 0-2 above after the final render (`video/nexus-echo-tea
 | REC-16 to REC-28 recordings | PLOT-TWIST CRITICAL | Not used (their transcripts state the twist). |
 
 Result: no twist, ending, solution or character identity is exposed. Residual risk: a viewer who already knows P24b would recognise Rahal's line as the true statement in that puzzle.
+
+## 6. Spoiler audit of the rebuilt teaser (v2, 56 s)
+
+Checked against sections 0-2 after the final render.
+
+| Element in v2 | Label | Verdict |
+|---|---|---|
+| Control room, CCTV frames, CAM-07 stamped 03:17:11 and empty, CAM-06 NO SIGNAL | SAFE TO SHOW | Shown. The final shot freezes on 03:17:11. |
+| Case folder "CASE 037", RECOVERED stamp, cassette "TAPE 7", dictaphone, handset UI | SAFE TO SHOW | Shown. |
+| Recorder log with "03:17 MANUAL STOP. NO REASON GIVEN." (red underline) | SAFE TO HINT | Shown; the stop window is not. |
+| Rahal line cut after "powered down" | SAFE TO HINT | Used; Vale's contradicting statement and the 04:15 time are not. |
+| Observer's note, last line "03:17 -", written by a pen that stops | SAFE TO HINT (seed) | Shown; the sketch labelled "me" is out of frame. |
+| Evidence board: B-01, CAM-07, log, note, torn label F-02 linked by red strings, one photograph face down, tag UNRESOLVED | SAFE TO HINT | Shown. The face-down photo is B-02 and is never turned over. |
+| The 3D corridor, empty, with room-number plates | SAFE TO SHOW | Shown. |
+| A faceless dark silhouette at the end door, visible for roughly 1 s inside a flicker (frames lit 46.8-47.3 s) | SAFE TO HINT; EVIDENCE REVEAL | Shown. It is a render, not the photograph; no face, no caption, never beside the empty frame with the contradiction stated. The final shot (the recorder's frame) then shows the corridor empty. This is the closest the teaser comes to a reveal. |
+| NEXUS as AI, three players, mirror, candidate, Vey inside the system, GM, entity, final boss, true ending, D. Wright, Carter, Vale, P-05 date | PLOT-TWIST / ENDING CRITICAL, CHARACTER REVEAL | Not shown, not spoken, not written. P-05 and the map no longer appear. |
+| REC-16 to REC-28 recordings | PLOT-TWIST CRITICAL | Not used. |
+
+Result: no twist, ending, solution or identity is exposed. Residual risks: the silhouette (above), and a viewer who knows puzzle P24b recognising Rahal's line as the true statement.

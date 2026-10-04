@@ -1,0 +1,678 @@
+{
+ "version": "C",
+ "format": {
+  "ambience": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "music": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "tension": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "sfx_story": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "sfx_device": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "impacts": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "voice": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "sting": "48000 Hz / 2 ch / 16-bit / 56.000 s",
+  "mix": "48000 Hz / 2 ch / 16-bit / 56.000 s"
+ },
+ "stems": {
+  "ambience": {
+   "peakDb": -12.91,
+   "rmsDb": -30.07
+  },
+  "music": {
+   "peakDb": -5.24,
+   "rmsDb": -23.92
+  },
+  "tension": {
+   "peakDb": -3.17,
+   "rmsDb": -26.99
+  },
+  "sfx_story": {
+   "peakDb": -5.89,
+   "rmsDb": -35.81
+  },
+  "sfx_device": {
+   "peakDb": -11.52,
+   "rmsDb": -37.72
+  },
+  "impacts": {
+   "peakDb": -7.12,
+   "rmsDb": -37.39
+  },
+  "voice": {
+   "peakDb": -2.7,
+   "rmsDb": -32.66
+  },
+  "sting": {
+   "peakDb": -6.46,
+   "rmsDb": -32.09
+  },
+  "mix": {
+   "peakDb": -2,
+   "rmsDb": -20.67
+  }
+ },
+ "silence": {
+  "ambience": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "music": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "tension": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "sfx_story": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "sfx_device": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "impacts": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "voice": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "sting": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ],
+  "mix": [
+   {
+    "window": "25-26",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "48-49.2",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   },
+   {
+    "window": "52.6-53.3",
+    "nonZeroSamples": 0,
+    "maxAbs": 0
+   }
+  ]
+ },
+ "onsets": [
+  {
+   "cue": "relay_click",
+   "t": 0.9,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 100,
+   "levelDb": -22.8
+  },
+  {
+   "cue": "crt_power",
+   "t": 1,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -22.8
+  },
+  {
+   "cue": "relay_click",
+   "t": 1.9,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 100,
+   "levelDb": -23.2
+  },
+  {
+   "cue": "crt_power",
+   "t": 2,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -23.2
+  },
+  {
+   "cue": "relay_click",
+   "t": 2.8,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -23.4
+  },
+  {
+   "cue": "crt_power",
+   "t": 2.9,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 30,
+   "levelDb": -26.4
+  },
+  {
+   "cue": "static_burst",
+   "t": 4.6,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 28,
+   "levelDb": -25
+  },
+  {
+   "cue": "soft_thud",
+   "t": 8.2,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -21.3
+  },
+  {
+   "cue": "paper_open",
+   "t": 9.3,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 10,
+   "peakMs": 174,
+   "levelDb": -21.8
+  },
+  {
+   "cue": "phone_buzz",
+   "t": 10,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 3,
+   "peakMs": 157,
+   "levelDb": -20.9
+  },
+  {
+   "cue": "phone_buzz",
+   "t": 10.32,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 3,
+   "peakMs": 81,
+   "levelDb": -22.5
+  },
+  {
+   "cue": "relay_click",
+   "t": 10.6,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 1,
+   "levelDb": -24.4
+  },
+  {
+   "cue": "shutter",
+   "t": 12.5,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 50,
+   "levelDb": -19.7
+  },
+  {
+   "cue": "paper_drop",
+   "t": 12.7,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 4,
+   "levelDb": -22
+  },
+  {
+   "cue": "rec_beep",
+   "t": 18.6,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 81,
+   "levelDb": -24.8
+  },
+  {
+   "cue": "rec_beep",
+   "t": 19.6,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 80,
+   "levelDb": -25.1
+  },
+  {
+   "cue": "relay_click",
+   "t": 20.4,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -28.3
+  },
+  {
+   "cue": "relay_click",
+   "t": 21.1,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -30.7
+  },
+  {
+   "cue": "relay_click",
+   "t": 21.7,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 1,
+   "levelDb": -33
+  },
+  {
+   "cue": "relay_click",
+   "t": 22.2,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -31.5
+  },
+  {
+   "cue": "relay_click",
+   "t": 22.7,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 5,
+   "levelDb": -32.5
+  },
+  {
+   "cue": "rec_beep",
+   "t": 23.4,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 75,
+   "levelDb": -24.7
+  },
+  {
+   "cue": "rec_beep",
+   "t": 24,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 75,
+   "levelDb": -24.7
+  },
+  {
+   "cue": "static_burst",
+   "t": 24.7,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 98,
+   "levelDb": -19.9
+  },
+  {
+   "cue": "footstep",
+   "t": 26.5,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 1,
+   "levelDb": -27.2
+  },
+  {
+   "cue": "light_flicker",
+   "t": 29.2,
+   "stem": "impacts",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 169,
+   "levelDb": -26.9
+  },
+  {
+   "cue": "pin_strike",
+   "t": 30.8,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -19.7
+  },
+  {
+   "cue": "pin_strike",
+   "t": 31.9,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -19.7
+  },
+  {
+   "cue": "pin_strike",
+   "t": 33,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -21.1
+  },
+  {
+   "cue": "tape_insert",
+   "t": 34.3,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 5,
+   "levelDb": -18.6
+  },
+  {
+   "cue": "rec_beep",
+   "t": 35.8,
+   "stem": "sfx_device",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 56,
+   "levelDb": -24
+  },
+  {
+   "cue": "flicker_cut",
+   "t": 40,
+   "stem": "impacts",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -26.3
+  },
+  {
+   "cue": "footstep",
+   "t": 40.4,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -22.4
+  },
+  {
+   "cue": "footstep",
+   "t": 40.9,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -21.6
+  },
+  {
+   "cue": "footstep",
+   "t": 41.3,
+   "stem": "sfx_story",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 0,
+   "levelDb": -22.3
+  },
+  {
+   "cue": "impact_low",
+   "t": 44,
+   "stem": "impacts",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 7,
+   "levelDb": -33.5
+  },
+  {
+   "cue": "impact_low",
+   "t": 46,
+   "stem": "impacts",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 5,
+   "levelDb": -25.3
+  },
+  {
+   "cue": "impact_low",
+   "t": 47.6,
+   "stem": "impacts",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 4,
+   "levelDb": -18.1
+  },
+  {
+   "cue": "sting",
+   "t": 53.3,
+   "stem": "sting",
+   "found": true,
+   "onsetMs": 0,
+   "peakMs": 20,
+   "levelDb": -19.1
+  }
+ ],
+ "heartbeat": {
+  "bpm_28_32": 57.8,
+  "bpm_34_38": 64.6,
+  "bpm_39_42": 71,
+  "bpm_42_44": 74.2,
+  "bpm_44_46": 92.7,
+  "bpm_46_48": 127.4,
+  "note": "autocorrelation of the 70-220 Hz envelope; a beat period of 0.4-1.07 s; windows blur the accel"
+ },
+ "ebur128": {
+  "integratedLUFS": -19.4,
+  "loudnessRange": 12.1,
+  "truePeakDBTP": -1.9,
+  "lraLow": -26.3,
+  "lraHigh": -14.1
+ },
+ "ok": true,
+ "problems": [],
+ "softCues": [
+  {
+   "cue": "motif_note",
+   "t": 3.3,
+   "stem": "music",
+   "rmsBefore_dB": -20.5,
+   "rmsFirst300ms_dB": -28.7,
+   "rms300to900ms_dB": -26.4
+  },
+  {
+   "cue": "paper_slide",
+   "t": 6.3,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -180,
+   "rmsFirst300ms_dB": -32.6,
+   "rms300to900ms_dB": -32.1
+  },
+  {
+   "cue": "paper_slide",
+   "t": 15,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -180,
+   "rmsFirst300ms_dB": -31.1,
+   "rms300to900ms_dB": -33.4
+  },
+  {
+   "cue": "pen_scratch",
+   "t": 16.4,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -180,
+   "rmsFirst300ms_dB": -31.1,
+   "rms300to900ms_dB": -28.2
+  },
+  {
+   "cue": "motif_note",
+   "t": 17.6,
+   "stem": "music",
+   "rmsBefore_dB": -20.7,
+   "rmsFirst300ms_dB": -24.4,
+   "rms300to900ms_dB": -25.4
+  },
+  {
+   "cue": "voice",
+   "t": 20.1,
+   "stem": "voice",
+   "rmsBefore_dB": -180,
+   "rmsFirst300ms_dB": -20,
+   "rms300to900ms_dB": -18.8
+  },
+  {
+   "cue": "string_pull",
+   "t": 31.2,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -51.5,
+   "rmsFirst300ms_dB": -37.6,
+   "rms300to900ms_dB": -32.6
+  },
+  {
+   "cue": "string_pull",
+   "t": 32.3,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -63,
+   "rmsFirst300ms_dB": -43,
+   "rms300to900ms_dB": -33
+  },
+  {
+   "cue": "string_pull",
+   "t": 33.4,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -65.3,
+   "rmsFirst300ms_dB": -39.5,
+   "rms300to900ms_dB": -33.5
+  },
+  {
+   "cue": "motif_note",
+   "t": 31,
+   "stem": "music",
+   "rmsBefore_dB": -18.1,
+   "rmsFirst300ms_dB": -21.4,
+   "rms300to900ms_dB": -22
+  },
+  {
+   "cue": "pen_scratch",
+   "t": 37.6,
+   "stem": "sfx_story",
+   "rmsBefore_dB": -29.9,
+   "rmsFirst300ms_dB": -32.4,
+   "rms300to900ms_dB": -32
+  },
+  {
+   "cue": "motif_final",
+   "t": 51.4,
+   "stem": "sting",
+   "rmsBefore_dB": -180,
+   "rmsFirst300ms_dB": -21.8,
+   "rms300to900ms_dB": -19.8
+  }
+ ],
+ "penDeadAfterStop_dB": -36.5,
+ "spectrogram": "scripts/audio2/qa/spec_C.png"
+}

@@ -17,7 +17,7 @@ ok(frames === 1680, `frame count ${frames} (expected 1680)`)
 const log = (args) => spawnSync('ffmpeg', ['-nostats', '-i', file, ...args, '-f', 'null', '-'], { encoding: 'utf8' }).stderr
 const black = [...log(['-vf', 'blackdetect=d=0.2:pix_th=0.04']).matchAll(/black_start:([\d.]+) black_end:([\d.]+)/g)].map((m) => [Number(m[1]), Number(m[2])])
 console.log('black intervals (s):', black.map(([s, e]) => `${s.toFixed(2)}-${e.toFixed(2)}`).join(', ') || 'none')
-const intended = [[23.4, 24.6], [47.6, 48.5], [51.5, 52.2]]
+const intended = [[0.0, 0.8], [25.0, 26.0], [41.6, 42.0], [47.6, 49.2], [52.6, 53.4]] // opening black, two silent beats, the corridor lights failing before the montage, the cut to black, the breath before the title
 const unintended = black.filter(([s, e]) => !intended.some(([is, ie]) => s >= is - 0.15 && e <= ie + 0.15))
 ok(unintended.length === 0, `no unintended black frames (${unintended.map(([s, e]) => `${s.toFixed(2)}-${e.toFixed(2)}`).join(', ') || 'none'})`)
 const sil = [...log(['-af', 'silencedetect=n=-60dB:d=0.4']).matchAll(/silence_start: ([\d.]+)/g)].map((m) => Number(m[1]))

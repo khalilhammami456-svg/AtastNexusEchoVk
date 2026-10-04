@@ -1,0 +1,541 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "durationSeconds": 56,
+  "centralQuestion": "At 03:17:11 the recorder saw an empty corridor. Which record is lying?",
+  "shots": [
+    {
+      "id": "B01-black",
+      "start": 0.0,
+      "dur": 0.8,
+      "visual": "black",
+      "camera": "BLACK",
+      "transition": "static",
+      "intensity": "low",
+      "level": 0,
+      "spoiler": "n/a",
+      "purpose": "Room tone only. The viewer leans in."
+    },
+    {
+      "id": "B02-hook-monitor-wall",
+      "start": 0.8,
+      "dur": 4.2,
+      "visual": "set:monitorWall",
+      "camera": "WIDE, low angle, slow lateral dolly with foreground parallax",
+      "transition": "relay-click per monitor",
+      "intensity": "low",
+      "level": 1,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "HOOK A. A dark control room; six CRTs wake one by one on the real camera frames; timecode crawls toward 03:17."
+    },
+    {
+      "id": "B03-world-desk",
+      "start": 5.0,
+      "dur": 5.0,
+      "visual": "set:desk",
+      "camera": "TOP-DOWN, lateral track across the desk, rack focus to the folder tab",
+      "transition": "hard cut",
+      "intensity": "low",
+      "level": 1,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "Case folder CASE 037, a cassette TAPE 7, a dictaphone, loose records under a lamp."
+    },
+    {
+      "id": "B04-phone-insert",
+      "start": 10.0,
+      "dur": 2.5,
+      "visual": "set:phone",
+      "camera": "CLOSE, shallow focus, handset lit on the desk, buzzing",
+      "transition": "cut on the buzz",
+      "intensity": "low-med",
+      "level": 1,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "The real handset screen wakes on a camera record."
+    },
+    {
+      "id": "B05-evidence-drop",
+      "start": 12.5,
+      "dur": 6.0,
+      "visual": "set:desk2",
+      "camera": "MEDIUM, desk at 35 degrees; records slide in; macro pull on one handwritten line",
+      "transition": "shutter flash",
+      "intensity": "med",
+      "level": 2,
+      "spoiler": "SAFE TO HINT",
+      "purpose": "Corridor photo, then the recorder log; a pen underlines the 03:17 line."
+    },
+    {
+      "id": "B06-anomaly",
+      "start": 18.5,
+      "dur": 6.5,
+      "visual": "set:monitorWall",
+      "camera": "CLOSE on CAM-07 timecode, then WIDE as the wall dies, then CLOSE",
+      "transition": "timecode logic",
+      "intensity": "med",
+      "level": 2,
+      "spoiler": "SAFE TO HINT",
+      "purpose": "03:17:05 counts up; monitors drop to NO SIGNAL under one recorded voice line; dropout at 03:17:11."
+    },
+    {
+      "id": "B07-silence",
+      "start": 25.0,
+      "dur": 1.0,
+      "visual": "black",
+      "camera": "BLACK",
+      "transition": "hard cut",
+      "intensity": "zero",
+      "level": 0,
+      "spoiler": "n/a",
+      "purpose": "Absolute silence. The beat before it gets worse."
+    },
+    {
+      "id": "B08-corridor-dolly-a",
+      "start": 26.0,
+      "dur": 4.5,
+      "visual": "render:corridor_a",
+      "camera": "POV dolly down the corridor, handheld bob, REC overlay",
+      "transition": "cut on a light flicker",
+      "intensity": "med-high",
+      "level": 3,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "The empty east corridor, moving."
+    },
+    {
+      "id": "B09-evidence-board",
+      "start": 30.5,
+      "dur": 3.5,
+      "visual": "set:board",
+      "camera": "TOP-DOWN, slow drift; strings are pulled between pins one by one",
+      "transition": "pin strike",
+      "intensity": "med-high",
+      "level": 3,
+      "spoiler": "SAFE TO HINT",
+      "purpose": "Records connect. One photograph is turned face down: UNRESOLVED."
+    },
+    {
+      "id": "B10-tape-insert",
+      "start": 34.0,
+      "dur": 3.6,
+      "visual": "set:tapeDeck",
+      "camera": "CLOSE, side angle; cassette slides into a deck; reels start; REC light",
+      "transition": "tape thunk",
+      "intensity": "high",
+      "level": 3,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "Tape 7."
+    },
+    {
+      "id": "B11-note-stops",
+      "start": 37.6,
+      "dur": 2.4,
+      "visual": "set:notePen",
+      "camera": "MACRO, pen on ruled paper writing; it stops mid-line at 03:17 -",
+      "transition": "pen stop",
+      "intensity": "high",
+      "level": 4,
+      "spoiler": "SAFE TO HINT",
+      "purpose": "The foreshadowing seed. The line is cut off."
+    },
+    {
+      "id": "B12-corridor-dolly-b",
+      "start": 40.0,
+      "dur": 2.0,
+      "visual": "render:corridor_b",
+      "camera": "POV dolly, closer to the far door, lights failing",
+      "transition": "flicker cut",
+      "intensity": "high",
+      "level": 4,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "Closer."
+    },
+    {
+      "id": "B13-fragments",
+      "start": 42.0,
+      "dur": 6.0,
+      "visual": "montage",
+      "camera": "MIXED, 18 cuts from 0.7 s down to 0.15 s; macro/medium/screen/render",
+      "transition": "shutter per cut",
+      "intensity": "max",
+      "level": 5,
+      "spoiler": "SAFE TO HINT",
+      "purpose": "Timecode digits, tape reels, string, a dark crop, the corridor; the last 1.2 s hold the figure emerging."
+    },
+    {
+      "id": "B14-black-silence",
+      "start": 48.0,
+      "dur": 1.2,
+      "visual": "black",
+      "camera": "BLACK",
+      "transition": "hard cut",
+      "intensity": "zero",
+      "level": 0,
+      "spoiler": "n/a",
+      "purpose": "Everything drops out."
+    },
+    {
+      "id": "B15-final-image",
+      "start": 49.2,
+      "dur": 3.4,
+      "visual": "set:monitorFinal",
+      "camera": "WIDE, static, the control room, one monitor alight on CAM-07, empty, REC dot",
+      "transition": "single sound at 51.4",
+      "intensity": "zero-low",
+      "level": 1,
+      "spoiler": "SAFE TO SHOW",
+      "purpose": "The recorder's version. Empty. Which record is lying?"
+    },
+    {
+      "id": "B16-black",
+      "start": 52.6,
+      "dur": 0.7,
+      "visual": "black",
+      "camera": "BLACK",
+      "transition": "cut",
+      "intensity": "zero",
+      "level": 0,
+      "spoiler": "n/a",
+      "purpose": "Breath."
+    },
+    {
+      "id": "B17-title",
+      "start": 53.3,
+      "dur": 2.7,
+      "visual": "title",
+      "camera": "CRT lock-on, brand lockup, CASE 037",
+      "transition": "sting",
+      "intensity": "low",
+      "level": 0,
+      "spoiler": "n/a",
+      "purpose": "Title earned last."
+    }
+  ],
+  "audioCues": [
+    {
+      "cue": "room_tone",
+      "t": 0.2,
+      "note": "fade in under everything, thin"
+    },
+    {
+      "cue": "relay_click",
+      "t": 0.9,
+      "note": "monitor 1"
+    },
+    {
+      "cue": "crt_power",
+      "t": 1.0,
+      "note": "monitor 1 wakes: thump + rising whine"
+    },
+    {
+      "cue": "relay_click",
+      "t": 1.9,
+      "note": "monitor 2"
+    },
+    {
+      "cue": "crt_power",
+      "t": 2.0,
+      "note": "monitor 2"
+    },
+    {
+      "cue": "relay_click",
+      "t": 2.8,
+      "note": "monitor 3"
+    },
+    {
+      "cue": "crt_power",
+      "t": 2.9,
+      "note": "monitors 3-4-5-6 together, softer"
+    },
+    {
+      "cue": "motif_note",
+      "t": 3.3,
+      "note": "note 1 of the NEXUS motif, very soft, delayed (echo)"
+    },
+    {
+      "cue": "static_burst",
+      "t": 4.6,
+      "note": "short, cut"
+    },
+    {
+      "cue": "lamp_buzz",
+      "t": 5.0,
+      "note": "fluorescent/desk lamp buzz under B03"
+    },
+    {
+      "cue": "paper_slide",
+      "t": 6.3,
+      "note": "a sheet slides"
+    },
+    {
+      "cue": "tape_hiss",
+      "t": 5.0,
+      "note": "low"
+    },
+    {
+      "cue": "soft_thud",
+      "t": 8.2,
+      "note": "focus lands on folder tab"
+    },
+    {
+      "cue": "paper_open",
+      "t": 9.3,
+      "note": "folder flap"
+    },
+    {
+      "cue": "phone_buzz",
+      "t": 10.0,
+      "note": "two buzzes: 10.0 and 10.32"
+    },
+    {
+      "cue": "phone_buzz",
+      "t": 10.32,
+      "note": ""
+    },
+    {
+      "cue": "relay_click",
+      "t": 10.6,
+      "note": "screen wakes"
+    },
+    {
+      "cue": "shutter",
+      "t": 12.5,
+      "note": "photograph arrives"
+    },
+    {
+      "cue": "paper_drop",
+      "t": 12.7,
+      "note": "sheet lands on the desk"
+    },
+    {
+      "cue": "paper_slide",
+      "t": 15.0,
+      "note": "recorder log slides in"
+    },
+    {
+      "cue": "pen_scratch",
+      "t": 16.4,
+      "note": "pen underlines, 1.6 s"
+    },
+    {
+      "cue": "motif_note",
+      "t": 17.6,
+      "note": "note 2"
+    },
+    {
+      "cue": "rec_beep",
+      "t": 18.6,
+      "note": "one per second while the timecode counts: 18.6, 19.6"
+    },
+    {
+      "cue": "rec_beep",
+      "t": 19.6,
+      "note": ""
+    },
+    {
+      "cue": "relay_click",
+      "t": 20.4,
+      "note": "monitor dies"
+    },
+    {
+      "cue": "relay_click",
+      "t": 21.1,
+      "note": "monitor dies"
+    },
+    {
+      "cue": "relay_click",
+      "t": 21.7,
+      "note": "monitor dies"
+    },
+    {
+      "cue": "relay_click",
+      "t": 22.2,
+      "note": "monitor dies"
+    },
+    {
+      "cue": "relay_click",
+      "t": 22.7,
+      "note": "monitor dies"
+    },
+    {
+      "cue": "voice",
+      "t": 20.1,
+      "note": "canonical Rahal clip, 3.0 s, cut after 'powered down' (public/audio/p24b-rahal.mp3 from 2.35 s)"
+    },
+    {
+      "cue": "rec_beep",
+      "t": 23.4,
+      "note": ""
+    },
+    {
+      "cue": "rec_beep",
+      "t": 24.0,
+      "note": "03:17:10"
+    },
+    {
+      "cue": "static_burst",
+      "t": 24.7,
+      "note": "dropout at 03:17:11, then everything hard-cuts at 25.0"
+    },
+    {
+      "cue": "silence",
+      "t": 25.0,
+      "note": "absolute silence 25.0-26.0"
+    },
+    {
+      "cue": "hum_on",
+      "t": 26.0,
+      "note": "low sub-hum returns under the corridor"
+    },
+    {
+      "cue": "footstep",
+      "t": 26.5,
+      "note": "slow, one every 1.0 s, soft, until 30.5"
+    },
+    {
+      "cue": "heartbeat_start",
+      "t": 28.0,
+      "note": "56 bpm, very soft, rising"
+    },
+    {
+      "cue": "light_flicker",
+      "t": 29.2,
+      "note": "electrical buzz stutter"
+    },
+    {
+      "cue": "pin_strike",
+      "t": 30.8,
+      "note": "board: pin 1"
+    },
+    {
+      "cue": "string_pull",
+      "t": 31.2,
+      "note": "string 1"
+    },
+    {
+      "cue": "pin_strike",
+      "t": 31.9,
+      "note": ""
+    },
+    {
+      "cue": "string_pull",
+      "t": 32.3,
+      "note": "string 2"
+    },
+    {
+      "cue": "pin_strike",
+      "t": 33.0,
+      "note": ""
+    },
+    {
+      "cue": "string_pull",
+      "t": 33.4,
+      "note": "string 3 (to the face-down photo)"
+    },
+    {
+      "cue": "motif_note",
+      "t": 31.0,
+      "note": "note 3"
+    },
+    {
+      "cue": "tape_insert",
+      "t": 34.3,
+      "note": "cassette thunk into a deck"
+    },
+    {
+      "cue": "motor_whir",
+      "t": 34.8,
+      "note": "reels start"
+    },
+    {
+      "cue": "rec_beep",
+      "t": 35.8,
+      "note": "deck REC light"
+    },
+    {
+      "cue": "pen_scratch",
+      "t": 37.6,
+      "note": "writing, 1.6 s, stops dead at 39.2"
+    },
+    {
+      "cue": "pen_stop",
+      "t": 39.2,
+      "note": "silence for the pen"
+    },
+    {
+      "cue": "flicker_cut",
+      "t": 40.0,
+      "note": "lights failing"
+    },
+    {
+      "cue": "footstep",
+      "t": 40.4,
+      "note": "fast"
+    },
+    {
+      "cue": "footstep",
+      "t": 40.9,
+      "note": ""
+    },
+    {
+      "cue": "footstep",
+      "t": 41.3,
+      "note": ""
+    },
+    {
+      "cue": "shutter_rapid",
+      "t": 42.0,
+      "note": "18 shutters on the cut times of B13; intervals shrink from 0.7 s to 0.15 s"
+    },
+    {
+      "cue": "riser",
+      "t": 42.0,
+      "note": "filtered noise + sub rising to 47.9"
+    },
+    {
+      "cue": "heartbeat_accel",
+      "t": 42.0,
+      "note": "to 150 bpm at 47.9"
+    },
+    {
+      "cue": "impact_low",
+      "t": 44.0,
+      "note": "soft"
+    },
+    {
+      "cue": "impact_low",
+      "t": 46.0,
+      "note": "harder"
+    },
+    {
+      "cue": "impact_low",
+      "t": 47.6,
+      "note": "hard, then the cut"
+    },
+    {
+      "cue": "silence",
+      "t": 48.0,
+      "note": "absolute silence 48.0-49.2"
+    },
+    {
+      "cue": "room_tone",
+      "t": 49.2,
+      "note": "almost nothing; CRT hum only, very low"
+    },
+    {
+      "cue": "motif_final",
+      "t": 51.4,
+      "note": "the three motif notes together, detuned, one long decay, cut by the black at 52.6"
+    },
+    {
+      "cue": "sting",
+      "t": 53.3,
+      "note": "title: relay thunk + low metallic hit + CRT lock-on zip, long tail"
+    }
+  ],
+  "voice": {
+    "file": "../../public/audio/p24b-rahal.mp3",
+    "srcStart": 2.35,
+    "srcDur": 3.0,
+    "t": 20.1
+  }
+}
