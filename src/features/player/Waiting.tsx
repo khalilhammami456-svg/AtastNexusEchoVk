@@ -92,7 +92,7 @@ export function PlayerWaiting() {
               <div>
                 <span className="nexus-ops-label">Status</span>
                 <p className="mt-2 text-sm text-nexus-textMuted">
-                  {isStarted ? 'Game in progress' : 'Awaiting launch'}
+                  {isStarted ? 'Case open' : 'Awaiting the Bureau'}
                 </p>
               </div>
               <div className={cn(
@@ -100,7 +100,7 @@ export function PlayerWaiting() {
                 isStarted ? 'border-nexus-accent/40 bg-nexus-accentBg/20 text-nexus-accent' : 'border-nexus-warning/40 bg-nexus-warningBg/20 text-nexus-warning'
               )}>
                 {isStarted ? <BureauIcons.Check className="bureau-icon w-3.5 h-3.5" /> : <BureauIcons.Clock className="bureau-icon w-3.5 h-3.5" />}
-                {isStarted ? 'Live' : 'Standby'}
+                {isStarted ? 'OPEN' : 'STANDBY'}
               </div>
             </div>
 
@@ -108,7 +108,7 @@ export function PlayerWaiting() {
               <>
                 <div className="mt-5 mb-4">
                   <BureauIcons.Spinner className="bureau-icon mr-3 inline-block w-5 h-5 text-nexus-accent animate-spin" />
-                  <span className="text-nexus-textMuted">Session initialising</span>
+                  <span className="text-nexus-textMuted">Awaiting the Bureau</span>
                 </div>
 
                 {countdown > 0 && (
@@ -127,7 +127,7 @@ export function PlayerWaiting() {
                   className="nexus-btn nexus-btn-primary w-full touch-target-comfortable"
                 >
                   <BureauIcons.Check className="bureau-icon w-5 h-5" />
-                  <span>Enter Game</span>
+                  <span>OPEN CASE FILE</span>
                 </button>
               </div>
             )}

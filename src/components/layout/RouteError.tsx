@@ -14,13 +14,13 @@ export function RouteError() {
       role="alert"
       className="flex flex-col items-center justify-center gap-4 min-h-screen bg-nexus-bg text-nexus-text p-4 text-center"
     >
-      <p>Something went wrong loading this screen.</p>
+      <p className="font-mono uppercase tracking-[0.12em]">This screen did not load. Check your signal, then reload.</p>
       <button
         type="button"
         onClick={() => window.location.reload()}
         className="px-4 py-2 border border-current min-h-[44px]"
       >
-        Reload
+        <span className="font-mono uppercase tracking-[0.14em]">RELOAD</span>
       </button>
     </div>
   )

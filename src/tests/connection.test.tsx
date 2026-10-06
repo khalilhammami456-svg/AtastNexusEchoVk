@@ -161,7 +161,7 @@ describe('OfflineBanner copy', () => {
         lastFlush={[{ id: 'a', nodeId: 'P01', answer: 'CDFDEFF', queuedAt: '', attempts: 0 }]}
       />,
     )
-    expect(container.textContent).toContain('SUBMITTED')
-    expect(container.textContent).toContain('1 queued answer delivered.')
+    expect(container.textContent).toContain('TRANSMITTED')
+    expect(container.textContent).toContain('1 held entry sent.')
   })
 })

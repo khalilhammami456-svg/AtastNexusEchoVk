@@ -33,6 +33,7 @@ import {
 } from '@/lib/offlineQueue'
 import type {
   NodeDetailPlayerView,
+  NodeReveal,
   HintResult as ApiHintResult,
   SubmissionResult as ApiSubmissionResult,
   InventoryItem as ApiInventoryItem,
@@ -69,6 +70,11 @@ export interface PlayerNodeView {
   locationClue: NonNullable<NodeDetailPlayerView['locationClue']>
   evidenceUnlocked: NodeDetailPlayerView['evidenceUnlocked']
   storyReveal: string
+  /**
+   * What closing this lead gave the team. Present only once the lead is
+   * solved (and on every later visit); an open lead has none.
+   */
+  reveal: NodeReveal | null
   whyTeamworkMatters: string
 }
 
@@ -231,6 +237,40 @@ export function useGameEngine() {
       const localPuzzle: NodeIndexEntry | undefined = PUZZLES_BY_CODE[nodeId]
       const progressEntry = findProgressEntry(nodeId)
 
+      // A lead the team has closed is not locked and is not missing: it can be
+      // read again. Return it with what it revealed and nothing to solve.
+      if (apiNode?.solved) {
+        setLoading('node', false)
+        return {
+          code: apiNode.code,
+          title: apiNode.title,
+          type: (localPuzzle?.type ?? 'META') as PuzzleType,
+          difficulty: localPuzzle?.difficulty ?? 1,
+          estimatedMinutes: localPuzzle ? parseTimeToMinutes(localPuzzle.time) : 0,
+          location: apiNode.location,
+          stage: apiNode.stage,
+          unlocked: false,
+          isSolved: true,
+          isCurrent: false,
+          isNextUp: false,
+          attempts: progressEntry?.attempts ?? 0,
+          hintsUsed: progressEntry?.hintsUsed ?? 0,
+          points: 0,
+          status: 'SOLVED',
+          narrativeObjective: '',
+          roleDependencyLevel: '',
+          roleContent: null,
+          operatorInvestigation: null,
+          coordinationChain: null,
+          failurePropagation: null,
+          locationClue: EMPTY_LOCATION_CLUE,
+          evidenceUnlocked: null,
+          storyReveal: apiNode.reveal?.storyReveal ?? '',
+          reveal: apiNode.reveal ?? null,
+          whyTeamworkMatters: '',
+        }
+      }
+
       if (!apiNode?.unlocked) {
         setLoading('node', false)
         return null
@@ -277,7 +317,8 @@ export function useGameEngine() {
         failurePropagation: apiNode.failurePropagation ?? null,
         locationClue: apiNode.locationClue ?? EMPTY_LOCATION_CLUE,
         evidenceUnlocked: apiNode.evidenceUnlocked ?? null,
-        storyReveal: apiNode.storyReveal,
+        storyReveal: apiNode.storyReveal ?? '',
+        reveal: null,
         whyTeamworkMatters: apiNode.whyTeamworkMatters,
       }
     },

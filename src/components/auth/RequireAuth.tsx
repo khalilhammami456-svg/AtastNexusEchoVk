@@ -14,7 +14,7 @@ export function RequireAuth({ children }: { children: ReactNode }) {
   const location = useLocation()
 
   if (isInitializing) {
-    return <div className="flex items-center justify-center min-h-screen bg-nexus-bg">Loading session…</div>
+    return <div className="flex items-center justify-center min-h-screen bg-nexus-bg">RESUMING FIELD SESSION…</div>
   }
 
   if (!isAuthenticated) {

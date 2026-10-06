@@ -67,7 +67,7 @@ Deno.serve(async (req: Request) => {
       return errorResponse(500, 'Internal server error')
     }
     if (!verdict.allowed) {
-      return jsonResponse(429, { success: false, error: 'Too many login attempts. Please try again later.' }, {
+      return jsonResponse(429, { success: false, error: 'Too many entries on this handset. Wait a few minutes.' }, {
         'Retry-After': String(verdict.retry_after_seconds ?? 60),
       })
     }

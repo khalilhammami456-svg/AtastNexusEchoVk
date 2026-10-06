@@ -123,6 +123,12 @@ export interface RoleContentMap {
  */
 export interface NodeDetailPlayerView {
   unlocked: boolean
+  /**
+   * True when the lead is closed rather than open: the team has solved it.
+   * Such a response carries only code, title, stage, location and `reveal`.
+   */
+  solved?: boolean
+  reveal?: NodeReveal | null
   code: string
   title: string
   type: string
@@ -136,9 +142,10 @@ export interface NodeDetailPlayerView {
   operatorInvestigation: OperatorInvestigation | null
   coordinationChain: CoordinationChain | null
   failurePropagation: FailurePropagation | null
-  locationClue: LocationClue | null
-  evidenceUnlocked: EvidenceUnlocked | null
-  storyReveal: string
+  /** Not sent while a lead is open; see `reveal`. */
+  locationClue?: LocationClue | null
+  evidenceUnlocked?: EvidenceUnlocked | null
+  storyReveal?: string
   whyTeamworkMatters: string
   branchConditions: BranchCondition[]
   points: number
@@ -153,6 +160,7 @@ export interface TeamGameState {
     score: number
     startedAt: string | null
     deadline: string | null
+    completedAt?: string | null
   }
   progress: {
     solvedCount: number
@@ -169,11 +177,36 @@ export interface TeamGameState {
   unreadNotifications: number
 }
 
+/**
+ * What a solved lead gives back. Delivered with a correct answer and again for
+ * a lead the team has already closed, and never before: an open lead carries
+ * no hint of its own reward or of where the next one is.
+ */
+export interface NodeReveal {
+  /** The terminal's line, or the record the solve produced. */
+  storyReveal?: string
+  /** Lina's note: the next lead, in her voice. */
+  clueText?: string
+  nextPhysicalLocation?: string
+  evidenceId?: string
+  evidenceTitle?: string
+  evidenceSource?: string
+  evidenceCategory?: string
+  /** The recovered document's text. */
+  evidenceContent?: string
+}
+
 export interface SubmissionResult {
   isCorrect: boolean
   pointsAwarded: number
   attemptNumber: number
   nextNodeId?: string | null
+  /** The code of the lead this solve opened, when there is one. */
+  nextNodeCode?: string | null
+  /** True when this solve closed the case. */
+  isFinal?: boolean
+  /** Present only on a correct answer. */
+  reveal?: NodeReveal | null
   error?: string
   /**
    * Set when the answer could not reach the server and was stored in the local

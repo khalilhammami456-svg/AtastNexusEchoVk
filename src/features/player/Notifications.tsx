@@ -16,10 +16,35 @@ import { BureauIcons } from '@/components/bureau'
 import { DocumentShell, StateMarker, Stamp, type StampVariant } from '@/components/bureau'
 
 const PRIORITY_STAMP: Record<string, { variant: StampVariant; label: string }> = {
-  LOW: { variant: 'archived', label: 'Low' },
-  NORMAL: { variant: 'verified', label: 'Normal' },
-  HIGH: { variant: 'anomalous', label: 'High' },
-  CRITICAL: { variant: 'anomalous', label: 'Critical' },
+  LOW: { variant: 'archived', label: 'Routine' },
+  NORMAL: { variant: 'verified', label: 'Filed' },
+  HIGH: { variant: 'anomalous', label: 'Priority' },
+  CRITICAL: { variant: 'anomalous', label: 'Urgent' },
+}
+
+/**
+ * The server's housekeeping notices were written in the voice of an app
+ * ("Puzzle Solved", "Hint Used"). They are stored that way, so the device
+ * says them in the game's voice when it shows them. Anything the Bureau
+ * writes by hand passes through untouched.
+ */
+const SYSTEM_VOICE: Record<string, { title: string; message?: string }> = {
+  'Puzzle Solved': { title: 'LEAD CLOSED', message: 'Your unit closed a lead.' },
+  'QR Code Scanned': { title: 'MARKER READ', message: 'A field marker was read by your unit.' },
+  'Hint Used': { title: 'DESK CONSULTED' },
+  'Node Unlocked': { title: 'LEAD ISSUED', message: 'The Bureau issued a new lead.' },
+  'Node Reset': { title: 'LEAD REOPENED' },
+  'Emergency Hint': { title: 'DESK NOTE (BUREAU-ISSUED)' },
+}
+
+function inGameVoice(title: string, message: string): { title: string; message: string } {
+  const voice = SYSTEM_VOICE[title]
+  if (!voice) return { title, message }
+  const hintCost = /Time penalty:\s*(\d+)\s*minutes?/i.exec(message)
+  return {
+    title: voice.title,
+    message: hintCost ? `${hintCost[1]} minutes added to the clock.` : (voice.message ?? message),
+  }
 }
 
 export function PlayerNotifications() {
@@ -110,8 +135,8 @@ export function PlayerNotifications() {
                       {formatDateTime(n.createdAt)}
                     </time>
                   </div>
-                  <p className="mt-1.5 font-medium text-nexus-text break-words">{n.title}</p>
-                  <p className="mt-0.5 text-sm text-nexus-textMuted break-words">{n.message}</p>
+                  <p className="mt-1.5 font-medium text-nexus-text break-words">{inGameVoice(n.title, n.message).title}</p>
+                  <p className="mt-0.5 text-sm text-nexus-textMuted break-words">{inGameVoice(n.title, n.message).message}</p>
                   {(n.actionUrl || !n.isRead) && (
                     <button
                       onClick={() => handleOpen(n.id, n.isRead, n.actionUrl)}

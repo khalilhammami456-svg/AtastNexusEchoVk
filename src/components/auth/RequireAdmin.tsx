@@ -15,7 +15,7 @@ export function RequireAdmin({ children }: { children: ReactNode }) {
 
   // Only the first check blocks: later re-checks must not unmount the workstation.
   if (!isInitialized) {
-    return <div className="flex items-center justify-center min-h-screen bg-nexus-bg">Checking permissions…</div>
+    return <div className="flex items-center justify-center min-h-screen bg-nexus-bg">VERIFYING CLEARANCE…</div>
   }
 
   if (!isAdmin) {

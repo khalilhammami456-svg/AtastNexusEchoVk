@@ -75,13 +75,13 @@ describe('PlayerNode', () => {
   it('keeps the puzzle on screen and shows an inline alert when a submit fails (e.g. expired session)', async () => {
     h.submitAnswer.mockRejectedValue(new Error('JWT expired'))
     renderNode()
-    const input = await screen.findByLabelText('SOLUTION')
+    const input = await screen.findByLabelText('ENTRY')
     fireEvent.change(input, { target: { value: 'abc' } })
     fireEvent.submit(input.closest('form')!)
     const alert = await screen.findByRole('alert')
     expect(alert.textContent).toBe('JWT expired')
-    expect(screen.getByLabelText('SOLUTION').getAttribute('aria-invalid')).toBe('true')
-    expect(screen.getByLabelText('SOLUTION').getAttribute('aria-describedby')).toContain('answer-error')
+    expect(screen.getByLabelText('ENTRY').getAttribute('aria-invalid')).toBe('true')
+    expect(screen.getByLabelText('ENTRY').getAttribute('aria-describedby')).toContain('answer-error')
     expect(screen.queryByText('INVESTIGATION BLOCKED')).toBeNull()
   })
 
@@ -109,15 +109,70 @@ describe('PlayerNode', () => {
     expect(screen.getByText('Title N2')).toBeTruthy()
   })
 
-  it('redirects to the field hub after a correct answer when still mounted', async () => {
+  it('holds the closed lead on screen until the player leaves, and never redirects on a timer', async () => {
     vi.useFakeTimers({ shouldAdvanceTime: true })
-    h.submitAnswer.mockResolvedValue({ isCorrect: true, nextNodeId: null })
+    h.submitAnswer.mockResolvedValue({
+      isCorrect: true,
+      pointsAwarded: 50,
+      attemptNumber: 1,
+      nextNodeId: 'uuid-2',
+      nextNodeCode: 'N2',
+      isFinal: false,
+      reveal: {
+        storyReveal: 'Facade terminal: "ACCESS GRANTED."',
+        clueText: 'LINA\'S NOTE: "Walk through the main doors."',
+        nextPhysicalLocation: '[ADMIN BUILDING] — Lobby',
+        evidenceTitle: 'Floor Plan (1974)',
+        evidenceSource: 'Archive alcove',
+      },
+    })
     renderNode()
-    const input = await screen.findByLabelText('SOLUTION')
+    const input = await screen.findByLabelText('ENTRY')
     fireEvent.change(input, { target: { value: 'abc' } })
     await act(async () => { fireEvent.submit(input.closest('form')!) })
-    await act(async () => { vi.advanceTimersByTime(2100) })
-    expect(screen.getByText('FIELD HUB')).toBeTruthy()
+
+    // What the solve gave back is on screen, in order, and stays there.
+    expect(await screen.findByText('VERIFICATION COMPLETE')).toBeTruthy()
+    expect(screen.getByText(/ACCESS GRANTED/)).toBeTruthy()
+    expect(screen.getByText('Floor Plan (1974)')).toBeTruthy()
+    expect(screen.getByText(/Walk through the main doors/)).toBeTruthy()
+    expect(screen.getByText(/Lobby/)).toBeTruthy()
+
+    await act(async () => { vi.advanceTimersByTime(10_000) })
+    expect(screen.queryByText('FIELD HUB')).toBeNull()
+    expect(screen.getByText('VERIFICATION COMPLETE')).toBeTruthy()
+    // No internal identifier is ever shown to the player.
+    expect(screen.queryByText(/uuid-2/)).toBeNull()
+  })
+
+  it('shows a rejected entry as a line the player can read, with the attempt number', async () => {
+    h.submitAnswer.mockResolvedValue({ isCorrect: false, pointsAwarded: 0, attemptNumber: 2 })
+    renderNode()
+    const input = await screen.findByLabelText('ENTRY')
+    fireEvent.change(input, { target: { value: 'nope' } })
+    await act(async () => { fireEvent.submit(input.closest('form')!) })
+    expect((await screen.findByRole('status')).textContent).toMatch(/rejects the entry\. Attempt 2/)
+  })
+
+  it('offers the way out of the case, not another place, when the final lead closes', async () => {
+    h.submitAnswer.mockResolvedValue({ isCorrect: true, pointsAwarded: 10, attemptNumber: 1, isFinal: true, reveal: { storyReveal: 'It was the mirror.' } })
+    renderNode()
+    const input = await screen.findByLabelText('ENTRY')
+    fireEvent.change(input, { target: { value: 'nexus' } })
+    await act(async () => { fireEvent.submit(input.closest('form')!) })
+    expect(await screen.findByText('CASE CLOSED')).toBeTruthy()
+    expect(screen.getByRole('link', { name: /closing entry/i })).toBeTruthy()
+  })
+
+  it('reopens a closed lead as a record, not as a missing one', async () => {
+    h.fetchNode.mockImplementation(async (id: string) => ({
+      ...nodeView(id), unlocked: false, isSolved: true, status: 'SOLVED',
+      reveal: { storyReveal: 'Clock terminal: "TIME IS VERIFIED."' },
+    }))
+    renderNode()
+    expect(await screen.findByText('LEAD CLOSED')).toBeTruthy()
+    expect(screen.getByText(/TIME IS VERIFIED/)).toBeTruthy()
+    expect(screen.queryByText('Nothing filed here')).toBeNull()
   })
 })
 

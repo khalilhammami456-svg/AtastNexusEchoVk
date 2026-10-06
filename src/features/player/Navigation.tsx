@@ -10,7 +10,7 @@ import type { ReactNode } from 'react'
  * current, available, and locked sites, rendered as ruled rows rather than cards.
  */
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useMemo } from 'react'
 import { useGameEngine } from '@/hooks/useGameEngine'
 import { useNarrative } from '@/hooks/useNarrative'
@@ -28,6 +28,7 @@ import { cn } from '@/lib/utils'
 import { CampusMap, DynamicMinimap } from '@/components/player/map'
 
 export function PlayerNavigation() {
+  const navigate = useNavigate()
   const { allNodesForMap, solvedCount, totalNodes, teamProgress, gameState } = useGameEngine()
 
   const solvedSet = useMemo(() => {
@@ -70,11 +71,7 @@ export function PlayerNavigation() {
   const availableNodes = allNodesForMap.filter(n => n.available && !n.solved && !n.isCurrent)
 
   const handleNodeSelect = (code: string) => {
-    window.location.href = ROUTES.PLAYER_NODE.replace(':nodeId', code)
-  }
-
-  const handleNodeHover = (_code: string | null) => {
-    // Could be used for tooltip previews
+    navigate(ROUTES.PLAYER_NODE.replace(':nodeId', code))
   }
 
   return (
@@ -129,7 +126,6 @@ export function PlayerNavigation() {
                   zoom={1}
                   showFog={true}
                   onNodeSelect={handleNodeSelect}
-                  onNodeHover={handleNodeHover}
                 />
               </div>
             </DocumentShell>

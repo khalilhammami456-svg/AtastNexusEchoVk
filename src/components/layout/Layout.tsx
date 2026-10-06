@@ -13,7 +13,7 @@ function RouteLoading() {
       aria-live="polite"
       className="flex items-center justify-center min-h-screen bg-nexus-bg text-nexus-text"
     >
-      Loading…
+      <span className="font-mono uppercase tracking-[0.2em]">OPENING FILE…</span>
     </div>
   )
 }

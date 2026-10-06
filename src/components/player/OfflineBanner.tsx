@@ -123,7 +123,7 @@ export function OfflineBanner({
               showFlushAck ? 'text-nexus-accent' : copy.accent,
             )}
           >
-            {showFlushAck ? 'SUBMITTED' : copy.text}
+            {showFlushAck ? 'TRANSMITTED' : copy.text}
           </p>
           {/* The full explanation stays one tap away for assistive tech; sighted
               players get it inline only when it carries news (held answers, or
@@ -136,7 +136,7 @@ export function OfflineBanner({
             )}
           >
             {showFlushAck
-              ? `${lastFlush?.length} queued answer${lastFlush?.length === 1 ? '' : 's'} delivered.`
+              ? `${lastFlush?.length} held entr${lastFlush?.length === 1 ? 'y' : 'ies'} sent. Open the lead for the verdict.`
               : copy.detail(queuedCount)}
           </p>
         </div>
@@ -162,10 +162,10 @@ export function OfflineBanner({
             type="button"
             onClick={onAcknowledge}
             className="btn-ghost shrink-0 px-2 py-1 min-h-0 min-w-0 text-xs"
-            aria-label="Dismiss delivered submissions notice"
+            aria-label="Dismiss the transmission notice"
           >
             <BureauIcons.Check className="bureau-icon w-3.5 h-3.5" aria-hidden="true" />
-            OK
+            NOTED
           </button>
         )}
       </div>

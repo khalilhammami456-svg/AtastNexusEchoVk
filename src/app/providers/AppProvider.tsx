@@ -286,7 +286,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         const serverMessage = readFunctionErrorMessage(funcError)
         return {
           success: false,
-          error: result?.error ?? serverMessage ?? 'Login failed',
+          error: result?.error ?? serverMessage ?? 'NO LINK TO THE BUREAU. Check your signal and enter the code again.',
         }
       }
 
@@ -362,7 +362,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       return { success: true }
     } catch (error) {
       console.error('Login error:', error)
-      return { success: false, error: 'An unexpected error occurred' }
+      return { success: false, error: 'NO LINK TO THE BUREAU. Check your signal and enter the code again.' }
     }
   }, [])
 
@@ -397,6 +397,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         status: gameStatusFromTeamStatus(state.team.status),
         startedAt: state.team.startedAt ?? null,
         endsAt: state.team.deadline ?? null,
+        completedAt: state.team.completedAt ?? null,
         currentPhase: 'GAMEPLAY' as GamePhase,
         config: {
           maxTeams: 25,

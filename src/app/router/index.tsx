@@ -30,7 +30,6 @@ const PlayerNavigation = lazy(() => import('@/features/player/Navigation').then(
 const PlayerQR = lazy(() => import('@/features/player/QR').then(m => ({ default: m.PlayerQR })))
 const PlayerLeaderboard = lazy(() => import('@/features/player/Leaderboard').then(m => ({ default: m.PlayerLeaderboard })))
 const PlayerNotifications = lazy(() => import('@/features/player/Notifications').then(m => ({ default: m.PlayerNotifications })))
-const PlayerFinal = lazy(() => import('@/features/player/Final').then(m => ({ default: m.PlayerFinal })))
 const PlayerComplete = lazy(() => import('@/features/player/Complete').then(m => ({ default: m.PlayerComplete })))
 
 // Admin route components
@@ -147,14 +146,6 @@ export const router = createBrowserRouter([
             element: (
               <ProtectedPlayerRoute>
                 <PlayerNotifications />
-              </ProtectedPlayerRoute>
-            ),
-          },
-          {
-            path: 'final',
-            element: (
-              <ProtectedPlayerRoute>
-                <PlayerFinal />
               </ProtectedPlayerRoute>
             ),
           },

@@ -24,6 +24,7 @@ import { ROUTES } from '@/app/config'
 import { cn } from '@/lib/utils'
 import { AnomalyArtifact } from '@/components/bureau'
 import { FieldLead, FieldLedger, FieldLink, IntelRow } from '@/components/player/field'
+import { noteAuthor, plainNote, readLeadNote } from '@/lib/leadNote'
 
 export function PlayerGame() {
   const {
@@ -76,6 +77,9 @@ export function PlayerGame() {
   const latestUnread = notifications?.find(n => !n.isRead)
   const timeLow = timer.isArmed && !timer.isExpired && timer.urgency !== 'normal'
   const closed = status === 'ENDED'
+  // Lina's note for the lead the team is on, from the moment the last one
+  // closed, until they open it.
+  const leadNote = readLeadNote(team.id, currentNode?.code)
 
   return (
     <div className="page nx-wake">
@@ -90,12 +94,35 @@ export function PlayerGame() {
 
         {/* 1 — the lead */}
         <AnomalyArtifact seed={`case:${team.code}`} level={narrative.level}>
-          {currentNode ? (
+          {closed && gameState?.completedAt ? (
             <FieldLead
-              eyebrow={`LEAD · STAGE ${currentNode.stage}`}
-              title={currentNode.title}
-              place={currentNode.location}
+              eyebrow="CASE CLOSED"
+              title="The last entry was accepted."
               note={narrative.observation}
+              action={
+                <Link
+                  to={ROUTES.PLAYER_COMPLETE}
+                  className="nexus-btn nexus-btn-primary flex min-h-14 w-full items-center justify-center text-sm"
+                >
+                  READ THE CLOSING ENTRY
+                </Link>
+              }
+            />
+          ) : currentNode ? (
+            <FieldLead
+              eyebrow={leadNote ? `NEW LEAD · STAGE ${currentNode.stage}` : `LEAD · STAGE ${currentNode.stage}`}
+              title={currentNode.title}
+              place={leadNote?.nextPhysicalLocation ?? currentNode.location}
+              note={
+                leadNote ? (
+                  <span className="block">
+                    <span className="text-hand block text-lg leading-snug text-nexus-text">{plainNote(leadNote.clueText)}</span>
+                    <span className="text-hand mt-1 block text-right text-nexus-textMuted">— {noteAuthor(leadNote.clueText)}</span>
+                  </span>
+                ) : (
+                  narrative.observation
+                )
+              }
               action={
                 <Link
                   to={ROUTES.PLAYER_NODE.replace(':nodeId', currentNode.code)}
@@ -128,6 +155,12 @@ export function PlayerGame() {
             />
           )}
         </AnomalyArtifact>
+
+        {timer.isArmed && timer.isExpired && !closed && (
+          <p className="font-mono text-sm uppercase tracking-[0.14em] text-nexus-danger" role="status">
+            ▲ THE WINDOW ON THIS CASE HAS CLOSED.
+          </p>
+        )}
 
         {timeLow && (
           <p

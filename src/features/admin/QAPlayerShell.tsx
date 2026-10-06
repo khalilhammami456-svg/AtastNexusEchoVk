@@ -41,7 +41,6 @@ import { PlayerNavigation } from '@/features/player/Navigation'
 import { PlayerQR } from '@/features/player/QR'
 import { PlayerLeaderboard } from '@/features/player/Leaderboard'
 import { PlayerNotifications } from '@/features/player/Notifications'
-import { PlayerFinal } from '@/features/player/Final'
 import { PlayerComplete } from '@/features/player/Complete'
 
 const qaContextStore: {
@@ -79,7 +78,6 @@ function QAPlayerShellInner() {
               <Route path="qr" element={<PlayerQR />} />
               <Route path="leaderboard" element={<PlayerLeaderboard />} />
               <Route path="notifications" element={<PlayerNotifications />} />
-              <Route path="final" element={<PlayerFinal />} />
               <Route path="complete" element={<PlayerComplete />} />
             </Route>
             <Route path="*" element={<Navigate to="/player/game" replace />} />

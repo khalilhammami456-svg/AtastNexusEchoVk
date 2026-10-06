@@ -193,6 +193,8 @@ export interface GameState {
   status: GameStatus
   startedAt: string | null
   endsAt: string | null
+  /** When the team closed the case; null while it is open. */
+  completedAt?: string | null
   currentPhase: GamePhase
   config: GameConfig
 }

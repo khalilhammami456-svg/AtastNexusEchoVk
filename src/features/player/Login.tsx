@@ -84,7 +84,7 @@ export function PlayerLogin() {
     if (result.success) {
       navigate(ROUTES.PLAYER_WAITING, { replace: true })
     } else {
-      setError(result.error ?? 'Login failed. Please try again.')
+      setError(result.error ?? 'NO LINK TO THE BUREAU. Check your signal and enter the code again.')
       setIsLoading(false)
     }
   }
