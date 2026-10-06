@@ -116,7 +116,7 @@ export function PlayerGame() {
               note={
                 leadNote ? (
                   <span className="block">
-                    <span className="text-hand block text-lg leading-snug text-nexus-text">{plainNote(leadNote.clueText)}</span>
+                    <span className="text-hand block text-2xl leading-snug text-nexus-text">{plainNote(leadNote.clueText)}</span>
                     <span className="text-hand mt-1 block text-right text-nexus-textMuted">— {noteAuthor(leadNote.clueText)}</span>
                   </span>
                 ) : (

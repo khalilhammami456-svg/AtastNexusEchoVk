@@ -25,7 +25,7 @@
  *   anomaly       two detuned partials beating against each other.
  *   transmission  a carrier that opens, and a squelch that closes it.
  *
- * Levels are peak dBFS for the loudest voice in the cue, summed with the
+ * Levels are peak dBFS for the loudest voice in the cue, before the
  * player's volume. The loudest cue in the game sits near -12 dBFS and the
  * everyday feedback cues near -26 dBFS, so a phone speaker at a normal setting
  * never startles.
@@ -128,7 +128,7 @@ export const CUES: Record<CueId, CueDefinition> = {
   confirm: {
     id: 'confirm',
     category: 'system',
-    peakDb: -28,
+    peakDb: -20,
     cooldownMs: 120,
     visual: 'Control shows its processing state, then its result.',
     voices: [
@@ -201,7 +201,7 @@ export const CUES: Record<CueId, CueDefinition> = {
   hint: {
     id: 'hint',
     category: 'gameplay',
-    peakDb: -28,
+    peakDb: -17,
     cooldownMs: 800,
     visual: 'Hint panel opens with its time cost.',
     voices: [
@@ -252,7 +252,7 @@ export const CUES: Record<CueId, CueDefinition> = {
   'signal-open': {
     id: 'signal-open',
     category: 'narrative',
-    peakDb: -20,
+    peakDb: -14,
     cooldownMs: 1500,
     visual: 'Transmission header: SIGNAL RECEIVED.',
     voices: [

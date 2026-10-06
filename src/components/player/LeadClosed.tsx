@@ -81,7 +81,7 @@ export function LeadClosed({ code, title, reveal, justClosed, isFinal, pointsAwa
             {!isFinal && note && (
               <section aria-label="New lead">
                 <p className="section-label">New lead</p>
-                <p className="text-hand mt-2 text-lg leading-snug text-nexus-text">{note}</p>
+                <p className="text-hand mt-2 text-2xl leading-snug text-nexus-text">{note}</p>
                 <p className="mt-1 text-hand text-right text-nexus-textMuted">— {author}</p>
                 {reveal?.nextPhysicalLocation && (
                   <p className="mt-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">

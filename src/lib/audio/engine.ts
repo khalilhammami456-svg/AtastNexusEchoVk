@@ -48,6 +48,7 @@ const DUCK_DEPTH = 0.3
 const DUCK_ATTACK_S = 0.04
 const DUCK_RELEASE_S = 0.6
 const MAX_VOICES = 14
+const SCHEDULE_LEAD_S = 0.1
 /** The room-tone bed sits this far below the master level. */
 const AMBIENCE_LEVEL = 0.05
 
@@ -204,7 +205,11 @@ export class SoundEngine {
     const bus = this.buses.get(def.category)
     if (!bus) return false
 
-    const t0 = ctx.currentTime + 0.01
+    // Schedule a little ahead of the clock. Events scheduled in the past make
+    // an attack ramp jump straight to full level, which is an audible click;
+    // a busy main thread (React rendering the very screen that triggered this
+    // cue) is enough to be 10 ms late.
+    const t0 = ctx.currentTime + SCHEDULE_LEAD_S
     const peak = dbToGain(def.peakDb)
     const length = Math.max(...def.voices.map(v => v.at + v.length))
 
@@ -374,15 +379,11 @@ export class SoundEngine {
 
   private build(ctx: AudioContext): void {
     const master = ctx.createGain()
-    // A gentle limiter so the strongest cues, stacked on a loud phone speaker,
-    // cannot clip.
-    const limiter = ctx.createDynamicsCompressor()
-    limiter.threshold.value = -10
-    limiter.knee.value = 8
-    limiter.ratio.value = 12
-    limiter.attack.value = 0.003
-    limiter.release.value = 0.2
-    master.connect(limiter).connect(ctx.destination)
+    // No dynamics processing: a compressor adds make-up gain and overshoots
+    // on sudden noise onsets (measured: a 17 dB spike on the squelch). The
+    // palette is designed to stay well under full scale instead: the cues sum
+    // to at most about 0.85 at full volume, and the master gain never exceeds 1.
+    master.connect(ctx.destination)
     this.master = master
 
     for (const category of CATEGORIES) {
@@ -399,6 +400,30 @@ export class SoundEngine {
     this.noise = buffer
 
     this.applyMasterLevel()
+    this.warmUp(ctx)
+  }
+
+  /**
+   * Run every kind of node once, silently, so the first real cue does not pay
+   * for creating them: browsers compile the filter and oscillator paths on
+   * first use, and that stall lands on the very first cue the player hears.
+   */
+  private warmUp(ctx: AudioContext): void {
+    const mute = ctx.createGain()
+    mute.gain.value = 0
+    if (this.master) mute.connect(this.master)
+    const osc = ctx.createOscillator()
+    osc.connect(mute)
+    osc.start()
+    osc.stop(ctx.currentTime + 0.05)
+    if (this.noise) {
+      const src = ctx.createBufferSource()
+      const filter = ctx.createBiquadFilter()
+      src.buffer = this.noise
+      src.connect(filter).connect(mute)
+      src.start()
+      src.stop(ctx.currentTime + 0.05)
+    }
   }
 
   private applyMasterLevel(): void {

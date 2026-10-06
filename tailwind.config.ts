@@ -93,7 +93,7 @@ const config: Config = {
         // Typewritten. 1970s-90s bureau documents and carbon copies.
         type: ['Courier Prime', 'Courier New', 'Courier', 'monospace'],
         // Human hand. Field annotations only — never machine material.
-        hand: ['Segoe Script', 'Bradley Hand', 'Snell Roundhand', 'cursive'],
+        hand: ['Caveat', 'Segoe Script', 'Bradley Hand', 'Snell Roundhand', 'cursive'],
         // Evidence reading face.
         evidence: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
       },

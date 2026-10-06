@@ -10,3 +10,14 @@
 @import '@fontsource/ibm-plex-mono/latin-500.css';
 @import '@fontsource/courier-prime/latin-400.css';
 @import '@fontsource/courier-prime/latin-700.css';
+
+/* Human hand: Lina's notes and field annotation only. Caveat (SIL OFL, see
+   public/fonts/Caveat-OFL.txt), Latin subset. The system cursive stack in the
+   Tailwind config is the fallback while it loads. */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/caveat-latin-400.woff') format('woff');
+}
