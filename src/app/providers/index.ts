@@ -20,5 +20,7 @@ export type {
   MotionMode,
   TransparencyMode,
 } from './AccessibilityProvider'
+export { SoundProvider, SoundContext, useSound } from './SoundProvider'
+export type { SoundContextValue } from './SoundProvider'
 export { AdminProvider, useAdmin } from './AdminProvider'
 export { QASimulatorProvider, useQA, useQASimulator, QASimulatorContext } from '@/contexts/QASimulatorContext'

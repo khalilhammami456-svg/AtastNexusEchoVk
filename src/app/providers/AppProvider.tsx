@@ -6,9 +6,10 @@
  */
 
 import { createContext, useContext, useState, useCallback, useEffect, useRef, ReactNode } from 'react'
-import type { Player, Team, Role, TeamStatus, PlayerStatus, TeamProgress, Notification, GameState, NodeProgress, ProgressMetadata, GameStatus, GamePhase } from '@/types'
+import type { Player, Team, Role, TeamStatus, PlayerStatus, TeamProgress, Notification, GameState, NodeProgress, ProgressMetadata, GamePhase } from '@/types'
 import { supabase } from '@/lib/supabase'
 import { gameAPI } from '@/lib/game'
+import { gameStatusFromTeamStatus } from '@/lib/game/status'
 import { collectDeviceFingerprint, hashDeviceFingerprint } from '@/lib/auth'
 import { QASimulatorContext } from '@/contexts/QASimulatorContext'
 
@@ -393,7 +394,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     try {
       const state = await gameAPI.getGameState()
       const gameState: GameState = {
-        status: state.team.status as GameStatus,
+        status: gameStatusFromTeamStatus(state.team.status),
         startedAt: state.team.startedAt ?? null,
         endsAt: state.team.deadline ?? null,
         currentPhase: 'GAMEPLAY' as GamePhase,

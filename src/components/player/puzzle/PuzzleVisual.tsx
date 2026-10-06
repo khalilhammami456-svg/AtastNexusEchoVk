@@ -19,6 +19,7 @@
  */
 
 import { useMemo, useState } from 'react'
+import { Transmission } from '@/components/player/Transmission'
 import { BureauIcons } from '@/components/bureau'
 import { cn } from '@/lib/utils'
 import {
@@ -207,12 +208,7 @@ const AudioVisual: Renderer = ({ dataPayload, interactiveData }) => {
     <VisualShell label="Spectrum" tone="accent">
       <div className="space-y-4">
         {audioUrl && (
-          <div className="flex items-center gap-3 p-3 bg-nexus-bg rounded-xl">
-            <audio src={audioUrl} controls className="flex-1" />
-            {audioSpeaker && (
-              <span className="text-sm font-medium text-nexus-text">{audioSpeaker}</span>
-            )}
-          </div>
+          <Transmission src={audioUrl} source={audioSpeaker ?? undefined} />
         )}
         {audioTranscript && (
           <p className="text-sm text-nexus-textMuted italic">{audioTranscript}</p>
@@ -449,12 +445,7 @@ const EntryLedgerVisual: Renderer = ({ dataPayload, interactiveData }) => {
     <VisualShell label="Entry Ledger">
       <div className="space-y-4">
         {audioUrl && (
-          <div className="flex items-center gap-3 p-3 bg-nexus-bg rounded-xl">
-            <audio src={audioUrl} controls className="flex-1" />
-            {audioSpeaker && (
-              <span className="text-sm font-medium text-nexus-text">{audioSpeaker}</span>
-            )}
-          </div>
+          <Transmission src={audioUrl} source={audioSpeaker ?? undefined} />
         )}
         {audioTranscript && (
           <p className="text-sm text-nexus-textMuted italic">{audioTranscript}</p>
@@ -462,13 +453,8 @@ const EntryLedgerVisual: Renderer = ({ dataPayload, interactiveData }) => {
         {audioClips.length > 0 && (
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-wider text-nexus-textSubtle">Interrogation Recordings</p>
-            {audioClips.map(clip => (
-              <div key={clip.file} className="flex items-center gap-3 p-3 bg-nexus-bg rounded-xl">
-                <audio src={clip.file} controls className="flex-1" />
-                <span className="text-sm font-medium text-nexus-text min-w-[100px]" title={clip.speaker}>
-                  {clip.speaker}
-                </span>
-              </div>
+            {audioClips.filter(clip => clip.file !== audioUrl).map(clip => (
+              <Transmission key={clip.file} src={clip.file} source={clip.speaker} />
             ))}
           </div>
         )}

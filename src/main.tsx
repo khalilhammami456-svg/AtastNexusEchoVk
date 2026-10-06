@@ -6,7 +6,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import { AppProvider, AdminProvider, AccessibilityProvider } from '@/app/providers'
+import { AppProvider, AdminProvider, AccessibilityProvider, SoundProvider } from '@/app/providers'
 import { router } from '@/app/router'
 import '@/styles/fonts.css'
 import '@/styles/tokens.css'
@@ -23,11 +23,13 @@ root.render(
   <StrictMode>
     {/* Outermost: legibility settings must apply to the login screen too. */}
     <AccessibilityProvider>
-      <AppProvider>
-        <AdminProvider>
-          <RouterProvider router={router} />
-        </AdminProvider>
-      </AppProvider>
+      <SoundProvider>
+        <AppProvider>
+          <AdminProvider>
+            <RouterProvider router={router} />
+          </AdminProvider>
+        </AppProvider>
+      </SoundProvider>
     </AccessibilityProvider>
   </StrictMode>,
 )

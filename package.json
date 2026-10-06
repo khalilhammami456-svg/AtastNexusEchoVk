@@ -16,6 +16,7 @@
     "evidence:verify": "node scripts/evidence-gen/verify-determinism.mjs",
     "evidence:refs": "node scripts/evidence-gen/verify-references.mjs",
     "evidence:preview": "node scripts/evidence-gen/preview.mjs",
+    "audio:check": "node scripts/audio/normalize.mjs --check",
     "evidence:ink": "node scripts/evidence-gen/ink-check.mjs",
     "evidence:registry": "vite-node scripts/evidence-gen/registry.ts",
     "evidence:lock": "vite-node scripts/evidence-gen/registry.ts --check"

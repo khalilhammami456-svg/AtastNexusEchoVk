@@ -15,6 +15,7 @@
 
 import { useNavigate } from 'react-router-dom'
 import { useApp } from '@/app/providers'
+import { useSound } from '@/app/providers/SoundProvider'
 import {
   useAccessibility,
   SCALE_LABELS,
@@ -136,11 +137,22 @@ const TRANSPARENCY_CHOICES: Choice<TransparencyMode>[] = [
   { value: 'reduced', label: 'Solid', hint: 'Opaque panels, no blur' },
 ]
 
+const SOUND_CHOICES: Choice<'on' | 'off'>[] = [
+  { value: 'on', label: 'Cues on', hint: 'Brief sounds when something in the case changes' },
+  { value: 'off', label: 'Silent', hint: 'Nothing the interface does makes a sound' },
+]
+
+const ROOM_TONE_CHOICES: Choice<'on' | 'off'>[] = [
+  { value: 'off', label: 'Off', hint: 'Silence between events (default)' },
+  { value: 'on', label: 'Room tone', hint: 'A faint low hum under the case' },
+]
+
 export function PlayerAccessibility() {
   const navigate = useNavigate()
   const { player } = useApp()
   const { scale, contrast, motion, transparency, setScale, setContrast, setMotion, setTransparency, resetPreferences } =
     useAccessibility()
+  const sound = useSound()
 
   return (
     <div className="page py-8">
@@ -196,6 +208,54 @@ export function PlayerAccessibility() {
               onSelect={setTransparency}
             />
 
+            <ChoiceRow
+              name="sound"
+              legend="Sound"
+              description="Everything the interface says with sound is also shown on screen, so nothing is lost when this is off. Recordings in the archive are always played by you, and ignore this setting. A phone's silent switch can mute these cues but not the recordings."
+              choices={SOUND_CHOICES}
+              selected={sound.enabled ? 'on' : 'off'}
+              onSelect={value => sound.setEnabled(value === 'on')}
+            />
+
+            {sound.enabled && (
+              <fieldset className="nx-panel">
+                <legend className="nx-eyebrow px-1">Volume</legend>
+                <div className="mt-2 flex items-center gap-4">
+                  <input
+                    id="sound-volume"
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={Math.round(sound.volume * 100)}
+                    onChange={event => sound.setVolume(Number(event.target.value) / 100)}
+                    aria-label="Sound volume"
+                    aria-valuetext={`${Math.round(sound.volume * 100)} percent`}
+                    className="h-11 w-full accent-[var(--nexus-accent,#6fb3c4)]"
+                  />
+                  <output htmlFor="sound-volume" className="nx-meta w-12 shrink-0 text-right tabular-nums text-nexus-textMuted">
+                    {Math.round(sound.volume * 100)}%
+                  </output>
+                </div>
+                <div className="mt-3">
+                  <button type="button" onClick={() => sound.play('verify')} className="nx-action-ghost">
+                    <span>Play a test cue</span>
+                  </button>
+                </div>
+              </fieldset>
+            )}
+
+            {sound.enabled && (
+              <ChoiceRow
+                name="room-tone"
+                legend="Room tone"
+                description="Optional. The case is quiet by design; this adds a faint hum under it for players who want the room to feel occupied."
+                choices={ROOM_TONE_CHOICES}
+                selected={sound.ambience ? 'on' : 'off'}
+                onSelect={value => sound.setAmbience(value === 'on')}
+              />
+            )}
+
             {/* A live specimen. Preferences are easy to change and impossible to
                 judge in the abstract, so the result is shown on the spot. */}
             <div className="nx-stage">
@@ -213,7 +273,14 @@ export function PlayerAccessibility() {
             </div>
 
             <div className="nx-row flex-wrap gap-3">
-              <button type="button" onClick={resetPreferences} className="nx-action-ghost">
+              <button
+                type="button"
+                onClick={() => {
+                  resetPreferences()
+                  sound.resetSound()
+                }}
+                className="nx-action-ghost"
+              >
                 <BureauIcons.Refresh className="bureau-icon w-4 h-4" />
                 <span>Restore defaults</span>
               </button>

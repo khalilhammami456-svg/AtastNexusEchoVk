@@ -14,6 +14,7 @@ import { useGameEngine, type QRScanResult } from '@/hooks/useGameEngine'
 import { useConnection } from '@/hooks/useConnection'
 import { QASimulatorContext } from '@/contexts/QASimulatorContext'
 import { ROUTES } from '@/app/config'
+import { useSound } from '@/app/providers/SoundProvider'
 import { cn } from '@/lib/utils'
 
 type JsQrFn = (
@@ -102,6 +103,7 @@ import type { ReactNode } from 'react'
 
 export function PlayerQR() {
   const { scanQR } = useGameEngine()
+  const { play } = useSound()
   const connection = useConnection()
   const isOffline = connection.isOffline
   const qaContext = useContext(QASimulatorContext)
@@ -147,6 +149,14 @@ export function PlayerQR() {
     },
     [isOffline, scanQR],
   )
+
+  // The reader's verdict is heard as well as shown: the lock when a marker
+  // resolves, the low knock when it does not. The result panel below is the
+  // visual twin of both.
+  useEffect(() => {
+    if (!lastResult) return
+    play(lastResult.discovered ? 'scan-lock' : 'refuse')
+  }, [lastResult, play])
 
   const decodeFrame = useCallback(async () => {
     const video = videoRef.current
