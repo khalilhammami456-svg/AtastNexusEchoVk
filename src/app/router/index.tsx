@@ -20,6 +20,7 @@ const Workstation = lazy(() => import('@/features/admin/workstation/Workstation'
 
 // Player route components
 const PlayerLogin = lazy(() => import('@/features/player/Login').then(m => ({ default: m.PlayerLogin })))
+const PlayerAccessibility = lazy(() => import('@/features/player/Accessibility').then(m => ({ default: m.PlayerAccessibility })))
 const PlayerWaiting = lazy(() => import('@/features/player/Waiting').then(m => ({ default: m.PlayerWaiting })))
 const PlayerGame = lazy(() => import('@/features/player/Game').then(m => ({ default: m.PlayerGame })))
 const PlayerNode = lazy(() => import('@/features/player/Node').then(m => ({ default: m.PlayerNode })))
@@ -73,6 +74,13 @@ export const router = createBrowserRouter([
             ),
           },
         ],
+      },
+      {
+        // Deliberately unguarded. Legibility settings have to be reachable
+        // before sign-in, by anyone who needs them to read the sign-in page.
+        path: 'player/accessibility',
+        Component: PlayerLayout,
+        children: [{ index: true, Component: PlayerAccessibility }],
       },
       {
         path: 'player/game',

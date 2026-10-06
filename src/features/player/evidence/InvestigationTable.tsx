@@ -550,7 +550,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
       <header className="flex flex-wrap items-end justify-between gap-3 border-b border-nexus-border pb-2">
         <div>
           <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-nexus-text">INVESTIGATION TABLE</h2>
-          <p className="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
+          <p className="mt-1 font-mono text-[0.75rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
             {placed.length.toString().padStart(2, '0')} PLACED / {artifacts.length.toString().padStart(2, '0')} CASE OBJECTS / {liveLinks.length.toString().padStart(2, '0')} LINKS / SAVED ON THIS DEVICE
           </p>
         </div>
@@ -561,7 +561,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
           type="button"
           onClick={() => setToolsOpen(open => !open)}
           aria-expanded={toolsOpen}
-          className="min-h-10 w-full border border-nexus-border px-3 text-left font-mono text-[0.58rem] uppercase tracking-[0.12em] text-nexus-textMuted"
+          className="min-h-10 w-full border border-nexus-border px-3 text-left font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted"
         >
           {toolsOpen ? '[ − ] HIDE TABLE TOOLS' : `[ + ] TABLE TOOLS / SEARCH / ADD OBJECTS / ${unplaced.length} IN ARCHIVE`}
         </button>
@@ -581,18 +581,18 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
         <select id="table-type" value={typeFilter} onChange={event => setTypeFilter(event.target.value as typeof typeFilter)} className="min-h-10 border border-nexus-border bg-nexus-bg px-2 font-mono text-xs text-nexus-text">
           {TYPE_FILTERS.map(option => <option key={option} value={option}>{option === 'ALL' ? 'ALL OBJECTS' : option}</option>)}
         </select>
-        {filtering && <span className="font-mono text-[0.55rem] uppercase text-nexus-textMuted">{matchCount} / {placed.length} MATCH</span>}
+        {filtering && <span className="font-mono text-[0.8125rem] uppercase text-nexus-textMuted">{matchCount} / {placed.length} MATCH</span>}
       </div>
 
       {unplaced.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 border-b border-nexus-borderSubtle pb-3">
-          <label htmlFor="table-artifact" className="font-mono text-[0.52rem] uppercase tracking-[0.12em] text-nexus-textSubtle">ADD RECOVERED OBJECT</label>
+          <label htmlFor="table-artifact" className="font-mono text-[0.75rem] uppercase tracking-[0.12em] text-nexus-textSubtle">ADD RECOVERED OBJECT</label>
           <select id="table-artifact" value={placeCode} onChange={event => setPlaceCode(event.target.value)} className="min-h-10 min-w-0 flex-1 border border-nexus-border bg-nexus-bg px-2 font-mono text-xs text-nexus-text">
             <option value="">SELECT FROM CASE ARCHIVE</option>
             {unplaced.map(artifact => <option key={artifact.id} value={artifact.id}>{artifact.code} / {artifact.title}</option>)}
           </select>
-          <button type="button" disabled={!placeCode} onClick={() => placeArtifacts([placeCode])} className="min-h-10 border border-nexus-accent px-3 font-mono text-[0.55rem] uppercase text-nexus-accent disabled:opacity-40">[ PLACE ]</button>
-          <button type="button" onClick={() => placeArtifacts(unplaced.map(artifact => artifact.id))} className="min-h-10 border border-nexus-border px-3 font-mono text-[0.55rem] uppercase text-nexus-textMuted">[ PLACE ALL / {unplaced.length} ]</button>
+          <button type="button" disabled={!placeCode} onClick={() => placeArtifacts([placeCode])} className="min-h-10 border border-nexus-accent px-3 font-mono text-[0.8125rem] uppercase text-nexus-accent disabled:opacity-40">[ PLACE ]</button>
+          <button type="button" onClick={() => placeArtifacts(unplaced.map(artifact => artifact.id))} className="min-h-10 border border-nexus-border px-3 font-mono text-[0.8125rem] uppercase text-nexus-textMuted">[ PLACE ALL / {unplaced.length} ]</button>
         </div>
       )}
       </div>
@@ -601,10 +601,10 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
         <div className="relative border border-nexus-border bg-[#22221f] p-1.5">
           <div className="absolute right-3 top-3 z-10 flex items-center gap-1 border border-nexus-border bg-[#17160f]/90 p-1" role="group" aria-label="Table view controls">
             <button type="button" onClick={() => zoomBy(1 / 1.25)} aria-label="Zoom out" className="min-h-10 min-w-10 border border-nexus-border font-mono text-sm text-nexus-text">−</button>
-            <output aria-label="Zoom level" className="w-11 text-center font-mono text-[0.6rem] tabular-nums text-nexus-textMuted">{zoomLabel}%</output>
+            <output aria-label="Zoom level" className="w-11 text-center font-mono text-[0.8125rem] tabular-nums text-nexus-textMuted">{zoomLabel}%</output>
             <button type="button" onClick={() => zoomBy(1.25)} aria-label="Zoom in" className="min-h-10 min-w-10 border border-nexus-border font-mono text-sm text-nexus-text">+</button>
-            <button type="button" onClick={fit} className="min-h-10 border border-nexus-border px-2.5 font-mono text-[0.55rem] uppercase text-nexus-text">FIT</button>
-            <button type="button" onClick={() => applyCamera(DEFAULT_CAMERA)} className="min-h-10 border border-nexus-border px-2.5 font-mono text-[0.55rem] uppercase text-nexus-textMuted">RESET VIEW</button>
+            <button type="button" onClick={fit} className="min-h-10 border border-nexus-border px-2.5 font-mono text-[0.8125rem] uppercase text-nexus-text">FIT</button>
+            <button type="button" onClick={() => applyCamera(DEFAULT_CAMERA)} className="min-h-10 border border-nexus-border px-2.5 font-mono text-[0.8125rem] uppercase text-nexus-textMuted">RESET VIEW</button>
           </div>
 
           <div
@@ -626,7 +626,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
               className="absolute left-0 top-0 will-change-transform"
               style={{ width: BOARD_WIDTH, height: BOARD_HEIGHT, transformOrigin: '0 0' }}
             >
-              <div className="pointer-events-none absolute left-6 top-4 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[#b5ae96]">CASE 037 / WORK SURFACE / PRIVATE HYPOTHESES</div>
+              <div className="pointer-events-none absolute left-6 top-4 font-mono text-[0.8125rem] uppercase tracking-[0.18em] text-[#b5ae96]">CASE 037 / WORK SURFACE / PRIVATE HYPOTHESES</div>
 
               <BoardLinks
                 links={liveLinks}
@@ -667,7 +667,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
 
             {placed.length === 0 && (
               <div className="pointer-events-none absolute left-1/2 top-1/2 w-72 -translate-x-1/2 -translate-y-1/2 border-l border-[#b5ae96] pl-4 font-mono">
-                <p className="text-[0.56rem] uppercase tracking-[0.16em] text-[#d3b87b]">TABLE / UNSET</p>
+                <p className="text-[0.8125rem] uppercase tracking-[0.16em] text-[#d3b87b]">TABLE / UNSET</p>
                 <p className="mt-2 text-xs text-[#c0bcaf]">No objects placed. The archive remains intact.</p>
                 <p className="mt-1 text-xs text-[#9a9684]">Open a record and tap ADD TO BOARD, or use the board tools, then arrange and connect records here.</p>
               </div>
@@ -675,7 +675,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
           </div>
 
           {(selected.length > 0 || selectedLink) && (
-            <div className={`absolute inset-x-3 bottom-3 flex items-center justify-between gap-2 border border-[#d3b87b]/60 bg-[#17160f]/95 px-3 py-2 font-mono text-[0.58rem] uppercase text-[#e0d6b8] ${wide ? 'hidden' : ''}`}>
+            <div className={`absolute inset-x-3 bottom-3 flex items-center justify-between gap-2 border border-[#d3b87b]/60 bg-[#17160f]/95 px-3 py-2 font-mono text-[0.8125rem] uppercase text-[#e0d6b8] ${wide ? 'hidden' : ''}`}>
               <span>{selectedLink ? 'LINK SELECTED' : `${selected.length} SELECTED`}</span>
               <span className="flex gap-1">
                 <button type="button" className="min-h-10 border border-[#d3b87b]/50 px-3" onClick={() => inspectorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
@@ -687,7 +687,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
             </div>
           )}
 
-          <div className="mt-1.5 flex justify-between gap-2 font-mono text-[0.48rem] uppercase tracking-[0.12em] text-[#b5ae96]">
+          <div className="mt-1.5 flex justify-between gap-2 font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#b5ae96]">
             <span>DRAG TO ARRANGE / DRAG TABLE TO PAN / PINCH OR SCROLL TO ZOOM / REMOVE NEVER DELETES CASE EVIDENCE</span>
             <span>{placed.length.toString().padStart(2, '0')} OBJECTS ON SURFACE</span>
           </div>
@@ -713,7 +713,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
             onClear={clearSelection}
           />
           {staleCount > 0 && (
-            <div className="mt-2 flex items-center justify-between gap-2 border border-nexus-border p-2 font-mono text-[0.52rem] uppercase text-nexus-textSubtle">
+            <div className="mt-2 flex items-center justify-between gap-2 border border-nexus-border p-2 font-mono text-[0.75rem] uppercase text-nexus-textSubtle">
               <span>{staleCount} LINK{staleCount > 1 ? 'S' : ''} POINT AT OBJECTS NOT IN THIS CASE FILE</span>
               <button
                 type="button"
@@ -728,7 +728,7 @@ export function InvestigationTable({ artifacts, workspace, onUpdate, onInspect }
       </div>
 
       {undoEntry && (
-        <div role="status" className="flex items-center justify-between gap-3 border border-nexus-borderStrong bg-nexus-surfaceElevated px-3 py-2 font-mono text-[0.58rem] uppercase text-nexus-textMuted">
+        <div role="status" className="flex items-center justify-between gap-3 border border-nexus-borderStrong bg-nexus-surfaceElevated px-3 py-2 font-mono text-[0.8125rem] uppercase text-nexus-textMuted">
           <span>{undoEntry.label}</span>
           <button type="button" className="min-h-8 border border-nexus-accent px-3 text-nexus-accent" onClick={() => { undoEntry.undo(); setUndoEntry(null) }}>UNDO</button>
         </div>

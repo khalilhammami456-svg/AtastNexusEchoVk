@@ -54,8 +54,8 @@ export function PlayerHeader() {
         <Link to={ROUTES.PLAYER_GAME} className="flex min-w-0 items-center gap-2" aria-label="Case file">
           <NexusMark size={28} className="text-nexus-text" />
           <div className="min-w-0 leading-none">
-            <div className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-nexus-textMuted">CASE 037</div>
-            <div className={cn('mt-1 font-mono text-[0.58rem] uppercase tracking-[0.2em]', roleTheme?.text)}>{player.role}</div>
+            <div className="font-mono text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-textMuted">CASE 037</div>
+            <div className={cn('mt-1 font-mono text-[0.8125rem] uppercase tracking-[0.2em]', roleTheme?.text)}>{player.role}</div>
           </div>
         </Link>
 
@@ -72,14 +72,21 @@ export function PlayerHeader() {
           </span>
           {queuedCount > 0 && (
             <span
-              className="min-w-[18px] h-[18px] px-1 border border-nexus-warning text-nexus-warning text-[10px] font-bold flex items-center justify-center bg-nexus-bg"
+              className="min-w-[18px] h-[18px] px-1 border border-nexus-warning text-nexus-warning text-[0.75rem] font-bold flex items-center justify-center bg-nexus-bg"
               aria-label={`${queuedCount} submissions queued`}
             >
               {queuedCount}
             </span>
           )}
+          <Link
+            to={ROUTES.PLAYER_ACCESSIBILITY}
+            className="flex h-8 w-8 items-center justify-center text-nexus-textMuted hover:text-nexus-text"
+            aria-label="Display and access settings"
+          >
+            <BureauIcons.Monitor className="bureau-icon w-4 h-4" aria-hidden="true" />
+          </Link>
           <span
-            className={cn('flex items-center gap-1.5 whitespace-nowrap font-mono text-[0.72rem] tabular-nums tracking-[0.1em]', TIMER_TONE[timer.urgency])}
+            className={cn('flex items-center gap-1.5 whitespace-nowrap font-mono text-[0.8125rem] tabular-nums tracking-[0.1em]', TIMER_TONE[timer.urgency])}
             role="timer"
             aria-label={`Timer: ${timer.isArmed ? timeRemaining : 'not started'}`}
           >

@@ -29,6 +29,13 @@ import {
   type StatusTone,
 } from '@/components/bureau'
 
+/**
+ * How long a node request may stay pending before the player is told the
+ * Bureau did not answer. Long enough for a weak signal, short enough that a
+ * stalled request is not mistaken for a loading screen that never ends.
+ */
+const NODE_LOAD_TIMEOUT_MS = 12_000
+
 export function PlayerNode() {
   const { nodeId } = useParams<{ nodeId: string }>()
   const navigate = useNavigate()
@@ -48,6 +55,8 @@ export function PlayerNode() {
   const [error, setError] = useState<string | null>(null)
   // A failed submit or hint keeps the puzzle on screen; only a failed load blocks it.
   const [actionError, setActionError] = useState<string | null>(null)
+  // Bumped by the retry control: a hung request is a realistic field failure.
+  const [loadAttempt, setLoadAttempt] = useState(0)
   const [justSolved, setJustSolved] = useState(false)
   const hintIndexRef = useRef(0)
   const hintBusyRef = useRef(false)
@@ -63,16 +72,33 @@ export function PlayerNode() {
   }, [])
 
   useEffect(() => {
-    if (!nodeId || !role) return
+    // Every early exit leaves the screen in a real state. Bailing out without
+    // clearing `loading` once left a player on a permanent spinner.
+    if (!nodeId) return
+
+    if (!role) {
+      setLoading(false)
+      setError('Your field assignment has not been received from the Bureau yet. Reconnect and try again.')
+      return
+    }
 
     // A slow response for a node the player already left must not overwrite the current one.
     let cancelled = false
+    let timer: ReturnType<typeof setTimeout> | undefined
     const loadNode = async () => {
       setLoading(true)
       setError(null)
       setActionError(null)
       try {
-        const nodeData = await fetchNode(nodeId)
+        const nodeData = await Promise.race([
+          fetchNode(nodeId),
+          new Promise<never>((_, reject) => {
+            timer = setTimeout(
+              () => reject(new Error('The Bureau did not respond. Check the signal and try again.')),
+              NODE_LOAD_TIMEOUT_MS,
+            )
+          }),
+        ])
         if (cancelled) return
         setNode(nodeData)
         setShowHintPanel(false)
@@ -86,13 +112,17 @@ export function PlayerNode() {
         const msg = err instanceof Error ? err.message : 'Failed to load node'
         setError(msg)
       } finally {
+        if (timer) clearTimeout(timer)
         if (!cancelled) setLoading(false)
       }
     }
 
     void loadNode()
-    return () => { cancelled = true }
-  }, [nodeId, role, fetchNode])
+    return () => {
+      cancelled = true
+      if (timer) clearTimeout(timer)
+    }
+  }, [nodeId, role, fetchNode, loadAttempt])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -196,17 +226,47 @@ export function PlayerNode() {
       <div className="page">
         <div className="page-content max-w-md mx-auto text-center py-12">
           <BureauIcons.Flag className="bureau-icon w-8 h-8 text-nexus-warning mx-auto mb-4" aria-hidden="true" />
-          <h3 className="heading-4 mb-2">INVESTIGATION BLOCKED</h3>
-          <p className="text-nexus-textMuted mb-4">{error}</p>
-          <Link to={ROUTES.PLAYER_GAME} className="nexus-btn nexus-btn-secondary w-full touch-target-comfortable">
-RETURN TO FIELD
+          <h1 className="heading-3 mb-2">INVESTIGATION BLOCKED</h1>
+          <p className="nx-body text-nexus-textMuted mb-6" role="alert">{error}</p>
+          {/* Retry first: a stalled request is usually transient, and making
+              the player navigate away to try again loses their place. */}
+          <button
+            type="button"
+            onClick={() => setLoadAttempt(attempt => attempt + 1)}
+            className="nx-action w-full"
+          >
+            <BureauIcons.Refresh className="bureau-icon w-4 h-4" />
+            <span>Try again</span>
+          </button>
+          <Link to={ROUTES.PLAYER_GAME} className="nx-action-ghost w-full mt-3">
+            <BureauIcons.Back className="bureau-icon w-4 h-4" />
+            <span>Return to the case</span>
           </Link>
         </div>
       </div>
     )
   }
 
-  if (!node) return null
+  if (!node) {
+    // Reachable when the load resolved without a record. An empty screen with
+    // no explanation and no exit is the worst place for a player to land.
+    return (
+      <div className="page">
+        <div className="page-content max-w-md mx-auto text-center py-12">
+          <BureauIcons.File className="bureau-icon w-10 h-10 text-nexus-textMuted mx-auto mb-4" aria-hidden="true" />
+          <h1 className="heading-3 mb-2">Nothing filed here</h1>
+          <p className="nx-body text-nexus-textMuted mb-6">
+            The Bureau returned no record for this item. It may have been withdrawn, or it may not have been
+            issued to your team.
+          </p>
+          <Link to={ROUTES.PLAYER_GAME} className="nx-action w-full">
+            <span>Return to the case</span>
+            <BureauIcons.Back className="bureau-icon w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const isLocked = !node.unlocked && !node.isSolved
   const hintLevel = hintIndexRef.current

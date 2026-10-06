@@ -119,7 +119,7 @@ function WorkWindowImpl({
     >
       <header
         className={cn(
-          'flex h-8 shrink-0 select-none items-center gap-2 border-b px-2 font-mono text-[0.6rem] uppercase tracking-[0.16em]',
+          'flex h-8 shrink-0 select-none items-center gap-2 border-b px-2 font-mono text-[0.8125rem] uppercase tracking-[0.16em]',
           focused ? 'border-nexus-accent/40 bg-nexus-surfaceElevated text-nexus-text' : 'border-nexus-border bg-nexus-surface text-nexus-textSubtle',
           interactive && 'cursor-grab active:cursor-grabbing',
         )}
@@ -131,10 +131,10 @@ function WorkWindowImpl({
         style={{ touchAction: 'none' }}
       >
         <span className={cn('h-1.5 w-1.5 shrink-0', focused ? 'bg-nexus-accent' : 'bg-nexus-inactive')} aria-hidden="true" />
-        <span className="shrink-0 border border-current/40 px-1 text-[0.5rem] tracking-[0.12em] opacity-80">{definition.module}</span>
+        <span className="shrink-0 border border-current/40 px-1 text-[0.75rem] tracking-[0.12em] opacity-80">{definition.module}</span>
         <Glyph name={definition.glyph} size={14} className="shrink-0 opacity-80" />
         <h2 className="min-w-0 flex-1 truncate font-bold tracking-[0.18em]">{definition.title}</h2>
-        <span className="hidden shrink-0 text-[0.5rem] tracking-[0.14em] text-nexus-textSubtle sm:inline">CASE 037</span>
+        <span className="hidden shrink-0 text-[0.75rem] tracking-[0.14em] text-nexus-textSubtle sm:inline">CASE 037</span>
         <div className="flex shrink-0 items-center gap-0.5">
           <HeaderButton label={win.pinned ? 'Unpin window' : 'Pin window above others'} pressed={win.pinned} onClick={() => onPin(win.id)}>◆</HeaderButton>
           <HeaderButton label="Minimise window" onClick={() => onMinimize(win.id)}>_</HeaderButton>
@@ -173,7 +173,7 @@ function HeaderButton({ label, onClick, children, pressed, danger }: { label: st
       title={label}
       onClick={onClick}
       className={cn(
-        'flex h-6 w-6 items-center justify-center border border-transparent text-[0.7rem] leading-none text-nexus-textMuted hover:border-nexus-border hover:text-nexus-text focus-visible:border-nexus-accent',
+        'flex h-6 w-6 items-center justify-center border border-transparent text-[0.8125rem] leading-none text-nexus-textMuted hover:border-nexus-border hover:text-nexus-text focus-visible:border-nexus-accent',
         pressed && 'text-nexus-warning',
         danger && 'hover:text-nexus-danger',
       )}

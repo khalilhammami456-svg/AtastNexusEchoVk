@@ -75,7 +75,7 @@ export function CompareStation({ artifacts, pair, workspace, onUpdate, renderRec
             aria-selected={mode === entry.id}
             onClick={() => setMode(entry.id)}
             className={cn(
-              'min-h-10 border px-3 font-mono text-[0.55rem] uppercase tracking-[0.12em]',
+              'min-h-10 border px-3 font-mono text-[0.8125rem] uppercase tracking-[0.12em]',
               mode === entry.id ? 'border-nexus-accent text-nexus-accent' : 'border-nexus-border text-nexus-textSubtle',
             )}
           >
@@ -87,7 +87,7 @@ export function CompareStation({ artifacts, pair, workspace, onUpdate, renderRec
       {announced.length > 0 && (
         <div role="status" className="space-y-1">
           {announced.map(clue => (
-            <p key={clue.id} className="border-l-2 border-nexus-warning bg-nexus-warningBg/20 px-3 py-2 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-nexus-warning">
+            <p key={clue.id} className="border-l-2 border-nexus-warning bg-nexus-warningBg/20 px-3 py-2 font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-warning">
               {DISCOVERY_NOTICE[clue.category]} / {clue.evidence.join(' ↔ ')}
             </p>
           ))}
@@ -105,16 +105,16 @@ export function CompareStation({ artifacts, pair, workspace, onUpdate, renderRec
       {mode === 'TIMELINE' && <TimelineView a={a} b={b} />}
 
       <section aria-label="Recorded findings" className="border-t border-nexus-borderSubtle pt-2">
-        <h3 className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
+        <h3 className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
           RECORDED FINDINGS FOR THIS PAIR / {recorded.length.toString().padStart(2, '0')}
         </h3>
         {recorded.length === 0 ? (
-          <p className="mt-1 font-mono text-[0.6rem] text-nexus-textSubtle">Nothing recorded. Examine the records closely, or line their times up.</p>
+          <p className="mt-1 font-mono text-[0.8125rem] text-nexus-textSubtle">Nothing recorded. Examine the records closely, or line their times up.</p>
         ) : (
           <ul className="mt-1 space-y-2">
             {recorded.map(clue => (
               <li key={clue.id} className="grid grid-cols-[auto_1fr] gap-x-3 text-sm">
-                <span className="font-mono text-[0.52rem] uppercase text-nexus-warning">
+                <span className="font-mono text-[0.75rem] uppercase text-nexus-warning">
                   {clue.category} / {clueStatus(clue, workspace.discoveries, workspace.hypotheses, idByCode)}
                 </span>
                 <span className="text-nexus-textMuted">{clue.meaning}</span>
@@ -139,7 +139,7 @@ function OverlayView({ a, b, blend, onBlend }: { a: CaseArtifact; b: CaseArtifac
         <img src={first} alt={`${a.title} (base layer)`} decoding="async" draggable={false} className="absolute inset-0 h-full w-full object-contain" />
         <img src={second} alt={`${b.title} (overlay)`} decoding="async" draggable={false} className="absolute inset-0 h-full w-full object-contain" style={{ opacity: blend / 100 }} />
       </div>
-      <label className="flex items-center gap-3 font-mono text-[0.55rem] uppercase text-nexus-textSubtle">
+      <label className="flex items-center gap-3 font-mono text-[0.8125rem] uppercase text-nexus-textSubtle">
         {a.code}
         <input type="range" min={0} max={100} value={blend} onChange={event => onBlend(Number(event.target.value))} aria-label="Blend between the two records" className="flex-1 accent-nexus-accent" />
         {b.code}
@@ -165,7 +165,7 @@ function TimelineView({ a, b }: { a: CaseArtifact; b: CaseArtifact }) {
     <div className="space-y-3">
       <ol className="relative h-24 border-b border-nexus-border" aria-label="Records in time order">
         {sorted.map((row, index) => (
-          <li key={row.artifact.id} className="absolute top-2 w-1/2 font-mono text-[0.55rem] uppercase" style={index === 0 ? { left: 0 } : { right: 0, textAlign: 'right' }}>
+          <li key={row.artifact.id} className="absolute top-2 w-1/2 font-mono text-[0.8125rem] uppercase" style={index === 0 ? { left: 0 } : { right: 0, textAlign: 'right' }}>
             <span className="block text-nexus-text">{row.artifact.code}</span>
             <span className="block text-nexus-textMuted">{row.text}</span>
             <span className="mt-1 block text-nexus-textSubtle">{row.artifact.title}</span>

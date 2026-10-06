@@ -19,13 +19,13 @@ export function AudioSurface({ artifact, audioUrl, contentText, catalog }: Media
   ]
   return (
     <div className="absolute inset-0 flex flex-col justify-center overflow-auto border border-nexus-border bg-nexus-surfaceElevated p-5" onPointerDown={event => event.stopPropagation()}>
-      <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
+      <p className="font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
         ARCHIVAL RECORDING / {artifact.code}{series ? ` / ${series.unit ?? `RECORDING ${series.position} OF ${series.total}`}` : ''}
       </p>
       <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 font-mono">
         {rows.map(([label, value]) => (
           <div key={label} className="min-w-0">
-            <dt className="text-[0.64rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{label}</dt>
+            <dt className="text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{label}</dt>
             <dd className="mt-0.5 break-words text-[0.8rem] text-nexus-text">{value}</dd>
           </div>
         ))}
@@ -70,7 +70,7 @@ function AudioScrubber({ src }: { src: string }) {
         className="mt-2 h-11 w-full accent-nexus-accent"
         disabled={!duration}
       />
-      <div className="flex justify-between font-mono text-[0.62rem] tabular-nums text-nexus-textSubtle">
+      <div className="flex justify-between font-mono text-[0.8125rem] tabular-nums text-nexus-textSubtle">
         <span>{format(current)}</span><span>{duration ? format(duration) : 'DURATION UNKNOWN'}</span>
       </div>
     </div>

@@ -371,12 +371,12 @@ export function PlayerEvidenceArchive() {
       <div className="page-content mx-auto max-w-5xl space-y-4">
         <header className="flex items-center gap-3 border-b border-nexus-border pb-3">
           <div className="min-w-0 flex-1">
-            <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-nexus-textSubtle">CASE {team?.code ?? 'UNASSIGNED'} · RECOVERED</p>
+            <p className="font-mono text-[0.8125rem] uppercase tracking-[0.18em] text-nexus-textSubtle">CASE {team?.code ?? 'UNASSIGNED'} · RECOVERED</p>
             <h1 className="mt-1 font-mono text-lg font-bold text-nexus-text">{mode === 'TABLE' ? 'CASE BOARD' : mode === 'COMPARE' ? 'COMPARISON' : mode === 'INSPECT' ? 'EXAMINATION' : 'EVIDENCE'}</h1>
           </div>
           <Link
             to={ROUTES.PLAYER_INVENTORY}
-            className="flex min-h-12 items-center border border-nexus-accent px-3 font-mono text-[0.68rem] uppercase text-nexus-accent"
+            className="flex min-h-12 items-center border border-nexus-accent px-3 font-mono text-[0.8125rem] uppercase text-nexus-accent"
           >
             OBJECTS
           </Link>
@@ -398,7 +398,7 @@ export function PlayerEvidenceArchive() {
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_250px]">
             <section className="min-w-0">
               <div className="mb-3 flex flex-col gap-2 border-b border-nexus-borderSubtle pb-3">
-                <label className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-nexus-textSubtle" htmlFor="archive-query">SEARCH THE ARCHIVE</label>
+                <label className="font-mono text-[0.8125rem] uppercase tracking-[0.14em] text-nexus-textSubtle" htmlFor="archive-query">SEARCH THE ARCHIVE</label>
                 <div className="relative">
                   <input id="archive-query" type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder="A name, place or reference…" autoComplete="off" enterKeyHint="search" className="min-h-12 w-full border border-nexus-border bg-nexus-bg px-3 pr-12 [&::-webkit-search-cancel-button]:hidden font-mono text-base text-nexus-text placeholder:text-nexus-textSubtle" />
                   {searching && (
@@ -408,12 +408,12 @@ export function PlayerEvidenceArchive() {
                   )}
                 </div>
                 {searching && (
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-nexus-textMuted" role="status">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted" role="status">
                     {filteredArtifacts.length} {filteredArtifacts.length === 1 ? 'RECORD MENTIONS' : 'RECORDS MENTION'} “{search.trim()}”
                   </p>
                 )}
                 <FileTabs tabs={ARCHIVE_TABS} activeId={archiveClass} onSelect={id => setArchiveClass(id as ArchiveClass)} className="!flex-nowrap overflow-x-auto nx-chiprow" />
-                <div className="flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-nexus-textSubtle" role="group" aria-label="Order records">
+                <div className="flex items-center gap-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle" role="group" aria-label="Order records">
                   <span>ORDER</span>
                   {(['RECOVERED', 'CHRONOLOGY'] as const).map(option => (
                     <button
@@ -431,7 +431,7 @@ export function PlayerEvidenceArchive() {
 
               {filteredArtifacts.length === 0 ? (
                 <DocumentShell reference="ARCHIVE QUERY / CASE 037" title={artifacts.length ? 'NO MATCHING FILES' : 'ARCHIVE EMPTY'} stock="paper" footer={<Stamp variant="incomplete">INDEX CHECKED</Stamp>}>
-                  <div className="grid grid-cols-[100px_1fr] border-y border-nexus-borderSubtle font-mono text-[0.6rem] uppercase tracking-[0.1em]">
+                  <div className="grid grid-cols-[100px_1fr] border-y border-nexus-borderSubtle font-mono text-[0.8125rem] uppercase tracking-[0.1em]">
                     <span className="border-r border-nexus-borderSubtle px-3 py-3 text-nexus-textSubtle">RESULT</span>
                     <span className="px-3 py-3 text-nexus-warning">{artifacts.length ? 'QUERY RETURNED NO MATCHING MATERIAL' : 'NO VERIFIED MATERIAL IN TEAM INDEX'}</span>
                     <span className="border-r border-t border-nexus-borderSubtle px-3 py-3 text-nexus-textSubtle">SOURCE</span>
@@ -467,18 +467,18 @@ export function PlayerEvidenceArchive() {
                         </span>
                         <span className="min-w-0 flex-1">
                           <span className={cn('block text-[0.98rem] font-medium leading-snug text-nexus-text', TITLE_FACE[medium])}>{artifact.title}</span>
-                          <span className="mt-1 flex flex-wrap items-center gap-x-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
+                          <span className="mt-1 flex flex-wrap items-center gap-x-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
                             <span>{artifact.code}</span>
                             <span>{medium}</span>
                             {hasNewInfo && <span className="text-nexus-warning">UPDATED</span>}
                             {condition !== 'NORMAL' && <span className="text-nexus-warning">{condition}</span>}
                             {(state === 'CONTRADICTED' || state === 'ANOMALOUS') && <span className="text-nexus-danger">{state}</span>}
                           </span>
-                          <span className="mt-1 block truncate font-mono text-[0.68rem] uppercase tracking-[0.08em] text-nexus-textMuted">
+                          <span className="mt-1 block truncate font-mono text-[0.8125rem] uppercase tracking-[0.08em] text-nexus-textMuted">
                             {artifact.location ?? 'LOCATION UNKNOWN'}{mark !== 'UNMARKED' ? ` · ${MARK_LABEL[mark]}` : ''}{noteCount ? ` · ${noteCount} NOTE${noteCount > 1 ? 'S' : ''}` : ''}{position ? ' · ON BOARD' : ''}
                           </span>
                           {(facts.length > 0 || place) && (
-                            <span className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 break-words font-mono text-[0.62rem] uppercase tracking-[0.06em] text-nexus-textSubtle">
+                            <span className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 break-words font-mono text-[0.8125rem] uppercase tracking-[0.06em] text-nexus-textSubtle">
                               {facts.map(fact => (
                                 <span key={fact.label} className="min-w-0 max-w-full break-words"><span className="text-nexus-textMuted">{fact.label}</span> {fact.value}</span>
                               ))}
@@ -490,7 +490,7 @@ export function PlayerEvidenceArchive() {
                           )}
                           {hit && hit.matches.slice(0, 2).map(match => (
                             <span key={`${match.field}:${match.snippet}`} className="mt-1.5 block border-l-2 border-nexus-accent pl-2 text-xs leading-snug text-nexus-textMuted">
-                              <span className="font-mono text-[0.62rem] uppercase tracking-[0.1em] text-nexus-accent">{match.field}</span>{' '}
+                              <span className="font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-accent">{match.field}</span>{' '}
                               {match.snippet}
                             </span>
                           ))}
@@ -502,13 +502,13 @@ export function PlayerEvidenceArchive() {
                 </div>
               )}
               {compareIds.length === 2 && (
-                <button type="button" onClick={() => setMode('COMPARE')} className="mt-3 min-h-10 border border-nexus-warning px-3 font-mono text-[0.55rem] uppercase text-nexus-warning">[ OPEN SIDE-BY-SIDE COMPARISON ]</button>
+                <button type="button" onClick={() => setMode('COMPARE')} className="mt-3 min-h-10 border border-nexus-warning px-3 font-mono text-[0.8125rem] uppercase text-nexus-warning">[ OPEN SIDE-BY-SIDE COMPARISON ]</button>
               )}
             </section>
 
             <aside className="hidden border-l border-nexus-borderSubtle pl-3 lg:block">
-              <p className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-nexus-textSubtle">CASE STATE / LOCAL WORKSPACE</p>
-              <dl className="mt-2 space-y-2 font-mono text-[0.58rem]">
+              <p className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-nexus-textSubtle">CASE STATE / LOCAL WORKSPACE</p>
+              <dl className="mt-2 space-y-2 font-mono text-[0.8125rem]">
                 <SummaryField label="EVIDENCE" value={String(artifacts.filter(item => item.source === 'EVIDENCE').length).padStart(2, '0')} />
                 <SummaryField label="OBJECTS" value={String(artifacts.filter(item => item.source === 'INVENTORY').length).padStart(2, '0')} />
                 <SummaryField label="FRAGMENTS" value={String(artifacts.filter(item => item.source === 'FRAGMENT').length).padStart(2, '0')} />
@@ -524,7 +524,7 @@ export function PlayerEvidenceArchive() {
                   const revelation = workspace.revelations[artifact.id]
                   const hasNew = revelation?.hasNewInfo ?? false
                   return (
-                    <div key={artifact.id} className="mt-1 grid grid-cols-[minmax(0,1fr)_50px] gap-2 border-t border-nexus-borderSubtle pt-1 font-mono text-[0.55rem]">
+                    <div key={artifact.id} className="mt-1 grid grid-cols-[minmax(0,1fr)_50px] gap-2 border-t border-nexus-borderSubtle pt-1 font-mono text-[0.8125rem]">
                       <span className="truncate text-nexus-textMuted">{artifact.code}</span>
                       <span className={cn('tabular-nums text-nexus-textSubtle', hasNew && 'text-nexus-warning')} title={workspace.lastInspected[artifact.id]}>
                         {formatRelativeTime(workspace.lastInspected[artifact.id]!)}
@@ -532,7 +532,7 @@ export function PlayerEvidenceArchive() {
                     </div>
                   )
                 })}
-              <p className="mt-4 border-t border-nexus-borderSubtle pt-2 font-mono text-[0.5rem] uppercase leading-relaxed text-nexus-textSubtle">
+              <p className="mt-4 border-t border-nexus-borderSubtle pt-2 font-mono text-[0.75rem] uppercase leading-relaxed text-nexus-textSubtle">
                 PERSONAL NOTES AND TABLE LAYOUT ARE SAVED ON THIS DEVICE. SERVER EVIDENCE IS READ-ONLY.
               </p>
             </aside>
@@ -542,8 +542,8 @@ export function PlayerEvidenceArchive() {
         {mode === 'INSPECT' && activeArtifact && (
           <section className="space-y-3">
             <div className="flex items-center justify-between gap-2 border-b border-nexus-border pb-2">
-              <button type="button" onClick={closeArtifact} className="min-h-10 border-r border-nexus-border pr-3 font-mono text-[0.55rem] uppercase text-nexus-textSubtle hover:text-nexus-text">← CASE ARCHIVE</button>
-              <span className="truncate font-mono text-[0.55rem] uppercase tracking-[0.12em] text-nexus-textSubtle">OBJECT EXAMINATION / {activeArtifact.code}</span>
+              <button type="button" onClick={closeArtifact} className="min-h-10 border-r border-nexus-border pr-3 font-mono text-[0.8125rem] uppercase text-nexus-textSubtle hover:text-nexus-text">← CASE ARCHIVE</button>
+              <span className="truncate font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">OBJECT EXAMINATION / {activeArtifact.code}</span>
             </div>
             <ArtifactInspection
               catalog={artifacts}
@@ -575,9 +575,9 @@ export function PlayerEvidenceArchive() {
             <div className="flex items-center justify-between gap-2 border-b border-nexus-border pb-2">
               <div>
                 <h2 className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-nexus-text">SIDE-BY-SIDE EXAMINATION</h2>
-                <p className="mt-1 font-mono text-[0.5rem] uppercase text-nexus-textSubtle">NO RELATION IS ASSUMED / COMPARISON IS PLAYER-LED</p>
+                <p className="mt-1 font-mono text-[0.75rem] uppercase text-nexus-textSubtle">NO RELATION IS ASSUMED / COMPARISON IS PLAYER-LED</p>
               </div>
-              <button type="button" onClick={() => setMode('ARCHIVE')} className="min-h-10 border border-nexus-border px-2 font-mono text-[0.52rem] uppercase text-nexus-textSubtle">RETURN TO INDEX</button>
+              <button type="button" onClick={() => setMode('ARCHIVE')} className="min-h-10 border border-nexus-border px-2 font-mono text-[0.75rem] uppercase text-nexus-textSubtle">RETURN TO INDEX</button>
             </div>
             {comparedArtifacts.length === 2 ? (
               <CompareStation
@@ -587,7 +587,7 @@ export function PlayerEvidenceArchive() {
                 onUpdate={updateWorkspace}
                 renderRecord={artifact => (
                   <>
-                    <button type="button" onClick={() => openArtifact(artifact.id, artifact)} className="mb-2 text-left font-mono text-[0.58rem] uppercase text-nexus-accent">OPEN FULL RECORD / {artifact.code} →</button>
+                    <button type="button" onClick={() => openArtifact(artifact.id, artifact)} className="mb-2 text-left font-mono text-[0.8125rem] uppercase text-nexus-accent">OPEN FULL RECORD / {artifact.code} →</button>
                     <ArtifactInspection
                       compact
                       catalog={artifacts}
@@ -629,7 +629,7 @@ export function PlayerEvidenceArchive() {
 function SummaryField({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-2 border-b border-nexus-borderSubtle pb-1">
-      <dt className="text-[0.52rem] uppercase text-nexus-textSubtle">{label}</dt>
+      <dt className="text-[0.75rem] uppercase text-nexus-textSubtle">{label}</dt>
       <dd className="font-bold tabular-nums text-nexus-text">{value}</dd>
     </div>
   )

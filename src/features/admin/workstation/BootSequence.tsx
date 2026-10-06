@@ -93,7 +93,7 @@ export function BootSequence({ facts, onDone }: { facts: BootFacts; onDone: () =
         ))}
         <p className="h-4 w-2 animate-pulse bg-nexus-accent/70" aria-hidden="true" />
       </div>
-      <p className="mt-10 text-[0.6rem] uppercase tracking-[0.2em] text-nexus-textSubtle">PRESS ANY KEY TO CONTINUE</p>
+      <p className="mt-10 text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-textSubtle">PRESS ANY KEY TO CONTINUE</p>
     </div>
   )
 }

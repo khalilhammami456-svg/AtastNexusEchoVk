@@ -103,18 +103,18 @@ export function SurveillanceApp() {
   if (error) {
     return (
       <div className="m-4 space-y-3 border border-nexus-danger/50 bg-nexus-dangerBg/20 p-4 font-mono">
-        <p className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-nexus-danger">ARCHIVE ERROR</p>
+        <p className="text-[0.8125rem] font-bold uppercase tracking-[0.16em] text-nexus-danger">ARCHIVE ERROR</p>
         <p className="text-xs text-nexus-textMuted">Unable to retrieve camera records.</p>
-        <p className="text-[0.6rem] text-nexus-textSubtle">SOURCE: {error}</p>
-        <button type="button" onClick={() => void load()} className="min-h-9 border border-nexus-border px-3 text-[0.6rem] uppercase tracking-[0.12em] hover:text-nexus-accent">[ RETRY ]</button>
+        <p className="text-[0.8125rem] text-nexus-textSubtle">SOURCE: {error}</p>
+        <button type="button" onClick={() => void load()} className="min-h-9 border border-nexus-border px-3 text-[0.8125rem] uppercase tracking-[0.12em] hover:text-nexus-accent">[ RETRY ]</button>
       </div>
     )
   }
-  if (!feeds) return <p className="p-6 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-nexus-textSubtle">OPENING SURVEILLANCE CHANNEL…</p>
+  if (!feeds) return <p className="p-6 font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">OPENING SURVEILLANCE CHANNEL…</p>
   if (feeds.length === 0) {
     return (
       <div className="p-6 font-mono">
-        <p className="text-[0.7rem] uppercase tracking-[0.16em] text-nexus-textMuted">NO CAMERA RECORDS</p>
+        <p className="text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textMuted">NO CAMERA RECORDS</p>
         <p className="mt-2 max-w-md text-xs text-nexus-textSubtle">No surveillance footage has been recovered into this case yet. Records appear here when the evidence register holds them.</p>
       </div>
     )
@@ -123,7 +123,7 @@ export function SurveillanceApp() {
   return (
     <div className="grid h-full min-h-0 grid-cols-[minmax(220px,300px)_1fr]">
       <aside className="min-h-0 overflow-auto border-r border-nexus-border" aria-label="Camera records">
-        <p className="border-b border-nexus-borderSubtle px-3 py-2 font-mono text-[0.52rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
+        <p className="border-b border-nexus-borderSubtle px-3 py-2 font-mono text-[0.75rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
           {feeds.length} CAMERA RECORD{feeds.length > 1 ? 'S' : ''}{feeds.some(feed => feed.simulation) ? ` / ${SHOWCASE_LABEL}` : ''}
         </p>
         <ul>
@@ -142,9 +142,9 @@ export function SurveillanceApp() {
                     <span className="absolute left-1 top-1 h-1.5 w-1.5 rounded-full bg-[#c24b3f]" aria-hidden="true" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate text-[0.62rem] font-bold text-nexus-text">{feed.camera}</span>
-                    <span className="block truncate text-[0.55rem] text-nexus-textMuted">{feed.location}</span>
-                    <span className={cn('block text-[0.5rem] uppercase tracking-[0.1em]', signal.warn ? 'text-nexus-warning' : 'text-nexus-textSubtle')}>{signal.label}</span>
+                    <span className="block truncate text-[0.8125rem] font-bold text-nexus-text">{feed.camera}</span>
+                    <span className="block truncate text-[0.8125rem] text-nexus-textMuted">{feed.location}</span>
+                    <span className={cn('block text-[0.75rem] uppercase tracking-[0.1em]', signal.warn ? 'text-nexus-warning' : 'text-nexus-textSubtle')}>{signal.label}</span>
                   </span>
                 </button>
               </li>
@@ -154,7 +154,7 @@ export function SurveillanceApp() {
       </aside>
       <section className="min-h-0 overflow-auto" aria-label="Selected feed">
         {active ? <FeedViewer feed={active} /> : (
-          <p className="p-6 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-nexus-textSubtle">SELECT A CAMERA RECORD</p>
+          <p className="p-6 font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">SELECT A CAMERA RECORD</p>
         )}
       </section>
     </div>
@@ -172,10 +172,10 @@ function FeedViewer({ feed }: { feed: Feed }) {
     <div className="space-y-3 p-4 font-mono">
       <header className="flex flex-wrap items-baseline justify-between gap-2 border-b border-nexus-borderSubtle pb-2">
         <div>
-          <p className="text-[0.52rem] uppercase tracking-[0.16em] text-nexus-textSubtle">{feed.code}</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.16em] text-nexus-textSubtle">{feed.code}</p>
           <h3 className="text-sm font-bold text-nexus-text">{feed.title}</h3>
         </div>
-        <span className={cn('border px-2 py-0.5 text-[0.55rem] uppercase tracking-[0.12em]', signal.warn ? 'border-nexus-warning text-nexus-warning' : 'border-nexus-border text-nexus-textMuted')}>{signal.label}</span>
+        <span className={cn('border px-2 py-0.5 text-[0.8125rem] uppercase tracking-[0.12em]', signal.warn ? 'border-nexus-warning text-nexus-warning' : 'border-nexus-border text-nexus-textMuted')}>{signal.label}</span>
       </header>
 
       <div className="relative h-[min(46vh,420px)] overflow-auto border border-nexus-border bg-black" tabIndex={0} aria-label="Feed image. Scroll to pan.">
@@ -189,12 +189,12 @@ function FeedViewer({ feed }: { feed: Feed }) {
             style={{ width: `${zoom * 100}%`, filter: adjusted ? `brightness(${brightness}%) contrast(${contrast}%)` : undefined }}
           />
         ) : (
-          <p className="p-6 text-[0.65rem] uppercase tracking-[0.14em] text-nexus-textSubtle">NO FRAME ATTACHED TO THIS RECORD</p>
+          <p className="p-6 text-[0.8125rem] uppercase tracking-[0.14em] text-nexus-textSubtle">NO FRAME ATTACHED TO THIS RECORD</p>
         )}
       </div>
 
       {feed.image && (
-        <div className="flex flex-wrap items-center gap-3 text-[0.55rem] uppercase text-nexus-textSubtle">
+        <div className="flex flex-wrap items-center gap-3 text-[0.8125rem] uppercase text-nexus-textSubtle">
           <span className="flex items-center gap-1">
             <button type="button" aria-label="Zoom out" onClick={() => setZoom(value => Math.max(1, +(value - 0.25).toFixed(2)))} className="min-h-8 min-w-8 border border-nexus-border">−</button>
             <output aria-label="Zoom" className="w-12 text-center tabular-nums">{Math.round(zoom * 100)}%</output>
@@ -206,9 +206,9 @@ function FeedViewer({ feed }: { feed: Feed }) {
         </div>
       )}
 
-      <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-[0.6rem] md:grid-cols-4">
+      <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-[0.8125rem] md:grid-cols-4">
         {[['CAMERA', feed.camera], ['LOCATION', feed.location], ['CAPTURED', feed.capturedAt ?? 'UNRECORDED'], ['CONDITION', feed.condition], ['INTEGRITY', feed.integrity]].map(([label, value]) => (
-          <div key={label}><dt className="text-[0.48rem] uppercase tracking-[0.14em] text-nexus-textSubtle">{label}</dt><dd className="mt-0.5 break-words text-nexus-text">{value}</dd></div>
+          <div key={label}><dt className="text-[0.75rem] uppercase tracking-[0.14em] text-nexus-textSubtle">{label}</dt><dd className="mt-0.5 break-words text-nexus-text">{value}</dd></div>
         ))}
       </dl>
       {feed.description && <p className="max-w-3xl border-l border-nexus-border pl-3 text-xs leading-relaxed text-nexus-textMuted">{feed.description}</p>}

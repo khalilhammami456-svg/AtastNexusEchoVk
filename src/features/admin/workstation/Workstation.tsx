@@ -326,7 +326,7 @@ export function Workstation() {
     <VisualEnvironmentProvider profile="BUREAU_PC" horrorLevel={narrativeLevel} signalStrength={connectionInfo.signalStrength} isConnected={isConnected}>
       <div data-horror={narrativeLevel} data-workstation className="relative flex h-screen min-h-0 flex-col overflow-hidden bg-[#060607] font-mono text-nexus-text antialiased">
         {/* ── system bar ── */}
-        <header className="relative z-[60] flex h-9 shrink-0 items-center justify-between gap-4 border-b border-nexus-border bg-nexus-surfaceElevated px-3 text-[0.58rem] uppercase tracking-[0.14em]">
+        <header className="relative z-[60] flex h-9 shrink-0 items-center justify-between gap-4 border-b border-nexus-border bg-nexus-surfaceElevated px-3 text-[0.8125rem] uppercase tracking-[0.14em]">
           <div className="flex min-w-0 items-center gap-4">
             <span className="flex min-w-0 items-center gap-2 font-bold text-nexus-text"><NexusMark size={20} className="shrink-0 text-nexus-text" /><span className="truncate">NEXUS ECHO<span className="hidden md:inline"> // CONTINUITY RECORDS SYSTEM</span></span></span>
             <span className="hidden text-nexus-textSubtle xl:inline">{SHOWCASE_CASE.build}</span>
@@ -350,13 +350,13 @@ export function Workstation() {
               {APP_ORDER.map(id => (
                 <button key={id} type="button" onClick={() => open(id)} className="group flex flex-col items-center gap-1 border border-transparent px-1 py-1.5 text-nexus-textMuted hover:border-nexus-border hover:bg-black/30 hover:text-nexus-text focus-visible:border-nexus-accent">
                   <Glyph name={APPS[id].glyph} size={22} />
-                  <span className="w-full text-center text-[0.5rem] uppercase leading-tight tracking-[0.06em]">{APPS[id].title}</span>
+                  <span className="w-full text-center text-[0.75rem] uppercase leading-tight tracking-[0.06em]">{APPS[id].title}</span>
                 </button>
               ))}
             </nav>
           )}
 
-          {!layout && <p className="p-6 text-[0.7rem] uppercase tracking-[0.16em] text-nexus-textSubtle">MOUNTING WORKSTATION…</p>}
+          {!layout && <p className="p-6 text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">MOUNTING WORKSTATION…</p>}
 
           {layout && windows.map(win => (
             <WorkWindow
@@ -377,14 +377,14 @@ export function Workstation() {
           ))}
 
           {layout && windows.every(win => win.minimized) && (
-            <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-[0.65rem] uppercase tracking-[0.2em] text-nexus-textSubtle">
+            <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-textSubtle">
               {windows.length === 0 ? 'NO MODULE OPEN — USE THE MODULE LIST, OR CTRL K' : 'ALL MODULES MINIMISED'}
             </p>
           )}
 
           <div className="pointer-events-none absolute bottom-3 right-3 z-[70] flex w-80 flex-col items-stretch gap-1" role="status" aria-live="polite">
             {messages.map(message => (
-              <p key={message.id} className={cn('pointer-events-auto border-l-2 bg-black/80 px-3 py-1.5 text-[0.62rem] tracking-[0.06em]', message.tone === 'warn' ? 'border-nexus-warning text-nexus-warning' : message.tone === 'ok' ? 'border-nexus-accent text-nexus-text' : 'border-nexus-border text-nexus-textMuted')}>
+              <p key={message.id} className={cn('pointer-events-auto border-l-2 bg-black/80 px-3 py-1.5 text-[0.8125rem] tracking-[0.06em]', message.tone === 'warn' ? 'border-nexus-warning text-nexus-warning' : message.tone === 'ok' ? 'border-nexus-accent text-nexus-text' : 'border-nexus-border text-nexus-textMuted')}>
                 <span className="mr-2 text-nexus-textSubtle">[{message.tag}]</span>{message.text}
               </p>
             ))}
@@ -395,7 +395,7 @@ export function Workstation() {
         </div>
 
         {/* ── task strip ── */}
-        <footer className="relative z-[60] flex h-9 shrink-0 items-center gap-2 border-t border-nexus-border bg-nexus-surfaceElevated px-2 text-[0.56rem] uppercase tracking-[0.12em]">
+        <footer className="relative z-[60] flex h-9 shrink-0 items-center gap-2 border-t border-nexus-border bg-nexus-surfaceElevated px-2 text-[0.8125rem] uppercase tracking-[0.12em]">
           <div className="relative">
             <button type="button" aria-haspopup="menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(value => !value)} className={cn('flex min-h-7 items-center gap-2 border px-2 font-bold', menuOpen ? 'border-nexus-accent text-nexus-accent' : 'border-nexus-border text-nexus-text hover:border-nexus-accent')}>
               <span aria-hidden="true">▤</span> MODULES

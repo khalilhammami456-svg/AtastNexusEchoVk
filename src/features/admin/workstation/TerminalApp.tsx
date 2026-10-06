@@ -49,7 +49,7 @@ export function TerminalApp({ context }: { context: () => TerminalContext }) {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col bg-black/40 font-mono text-[0.72rem] leading-relaxed" onClick={() => inputRef.current?.focus()}>
+    <div className="flex h-full min-h-0 flex-col bg-black/40 font-mono text-[0.8125rem] leading-relaxed" onClick={() => inputRef.current?.focus()}>
       <div ref={scroller} className="min-h-0 flex-1 overflow-auto px-3 py-2" role="log" aria-live="polite" aria-label="Terminal output">
         {lines.map((line, index) => (
           <p key={index} className={cn('whitespace-pre-wrap break-words', TONE[line.tone])}>{line.text || ' '}</p>

@@ -57,7 +57,7 @@ export function PlayerNotifications() {
       <div className="page-content max-w-2xl mx-auto">
         <header className="mb-5 flex items-center gap-3 border-b border-nexus-border pb-3">
           <div className="min-w-0 flex-1">
-            <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-nexus-textSubtle">SECURE CHANNEL · BUREAU</p>
+            <p className="font-mono text-[0.8125rem] uppercase tracking-[0.18em] text-nexus-textSubtle">SECURE CHANNEL · BUREAU</p>
             <h1 className="mt-1 font-mono text-lg font-bold text-nexus-text">COMMS</h1>
           </div>
           <button
@@ -90,7 +90,7 @@ export function PlayerNotifications() {
             stock="paper"
             footer={<Stamp variant="archived">Channel listening</Stamp>}
           >
-            <div className="grid grid-cols-[100px_1fr] border-y border-nexus-borderSubtle font-mono text-[0.6rem] uppercase tracking-[0.12em]">
+            <div className="grid grid-cols-[6.5rem_1fr] border-y border-nexus-borderSubtle font-mono text-[0.8125rem] uppercase tracking-[0.12em]">
               <span className="border-r border-nexus-borderSubtle px-3 py-3 text-nexus-textSubtle">BUFFER</span>
               <span className="px-3 py-3 text-nexus-textMuted">NO INBOUND DISPATCHES IN LOCAL RECORD</span>
             </div>
@@ -106,7 +106,7 @@ export function PlayerNotifications() {
                   <div className="flex items-center gap-2 flex-wrap">
                     {!n.isRead && <StateMarker glyph="●" tone="active" label="UNREAD" />}
                     <Stamp variant={stamp.variant} impressed>{stamp.label}</Stamp>
-                    <time className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-nexus-textSubtle">
+                    <time className="font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-textSubtle">
                       {formatDateTime(n.createdAt)}
                     </time>
                   </div>
@@ -129,7 +129,7 @@ export function PlayerNotifications() {
         )}
 
         <div className="mt-6 flex items-center justify-center gap-2 text-xs text-nexus-textSubtle">
-          <span className="font-mono text-[0.52rem] uppercase tracking-[0.12em]">
+          <span className="font-mono text-[0.75rem] uppercase tracking-[0.12em]">
             DISTRIBUTION / TEAM CHANNEL ONLY / PLAYER RECORDS WITHHELD
           </span>
         </div>

@@ -29,7 +29,7 @@ export function SearchPalette({ data, loading, onClose, onOpen }: SearchPaletteP
     <div className="fixed inset-0 z-[9400] flex items-start justify-center bg-black/60 px-4 pt-[12vh]" onMouseDown={event => { if (event.target === event.currentTarget) onClose() }}>
       <div role="dialog" aria-modal="true" aria-label="Query archive" className="w-full max-w-2xl border border-nexus-accent/50 bg-nexus-surface shadow-[0_24px_60px_rgba(0,0,0,0.7)]">
         <div className="flex items-center gap-3 border-b border-nexus-border px-4 py-3">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-nexus-accent">QUERY ARCHIVE</span>
+          <span className="font-mono text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-accent">QUERY ARCHIVE</span>
           <input
             ref={inputRef}
             value={query}
@@ -47,7 +47,7 @@ export function SearchPalette({ data, loading, onClose, onOpen }: SearchPaletteP
             aria-controls="query-results"
             className="min-w-0 flex-1 !border-0 !bg-transparent !p-0 !shadow-none !ring-0 font-mono text-sm text-nexus-text placeholder:text-nexus-textSubtle focus:outline-none"
           />
-          <kbd className="border border-nexus-border px-1.5 font-mono text-[0.55rem] text-nexus-textSubtle">ESC</kbd>
+          <kbd className="border border-nexus-border px-1.5 font-mono text-[0.8125rem] text-nexus-textSubtle">ESC</kbd>
         </div>
         <div className="flex flex-wrap gap-1 border-b border-nexus-borderSubtle px-4 py-2" role="group" aria-label="Filter results">
           {QUERY_FILTERS.map(entry => (
@@ -56,7 +56,7 @@ export function SearchPalette({ data, loading, onClose, onOpen }: SearchPaletteP
               type="button"
               aria-pressed={filter === entry.id}
               onClick={() => { setFilter(entry.id); inputRef.current?.focus() }}
-              className={cn('min-h-8 border px-2 font-mono text-[0.55rem] uppercase tracking-[0.12em]', filter === entry.id ? 'border-nexus-accent text-nexus-accent' : 'border-nexus-border text-nexus-textSubtle hover:text-nexus-text')}
+              className={cn('min-h-8 border px-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em]', filter === entry.id ? 'border-nexus-accent text-nexus-accent' : 'border-nexus-border text-nexus-textSubtle hover:text-nexus-text')}
             >
               {entry.label}
             </button>
@@ -71,15 +71,15 @@ export function SearchPalette({ data, loading, onClose, onOpen }: SearchPaletteP
                 onClick={() => choose(result)}
                 className={cn('grid w-full grid-cols-[5.5rem_1fr_auto] items-baseline gap-3 px-4 py-2 text-left font-mono', index === cursor ? 'bg-nexus-surfaceElevated' : '')}
               >
-                <span className="text-[0.6rem] tracking-[0.1em] text-nexus-accent">{result.code}</span>
-                <span className="min-w-0 truncate text-[0.72rem] text-nexus-text">{result.title}</span>
-                <span className="text-[0.52rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{result.kind}</span>
-                <span className="col-start-2 col-end-4 truncate text-[0.58rem] text-nexus-textMuted">{result.detail}</span>
+                <span className="text-[0.8125rem] tracking-[0.1em] text-nexus-accent">{result.code}</span>
+                <span className="min-w-0 truncate text-[0.8125rem] text-nexus-text">{result.title}</span>
+                <span className="text-[0.75rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{result.kind}</span>
+                <span className="col-start-2 col-end-4 truncate text-[0.8125rem] text-nexus-textMuted">{result.detail}</span>
               </button>
             </li>
           ))}
         </ul>
-        <div className="border-t border-nexus-borderSubtle px-4 py-2 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
+        <div className="border-t border-nexus-borderSubtle px-4 py-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
           {loading ? 'READING ARCHIVE…' : query.trim() && results.length === 0 ? `NOTHING IN THE ARCHIVE MATCHES "${query.trim()}".` : `${results.length} RECORD${results.length === 1 ? '' : 'S'} · ↑↓ SELECT · ENTER OPEN`}
         </div>
       </div>

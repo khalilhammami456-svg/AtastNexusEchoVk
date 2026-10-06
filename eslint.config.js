@@ -16,6 +16,8 @@ export default tseslint.config(
       '.kilo/**',
       // Local dev harnesses (untracked, never part of the app or the build).
       'src/harness/**',
+      // Separate Remotion project with its own package.json and tooling.
+      'video/**',
     ],
   },
   {

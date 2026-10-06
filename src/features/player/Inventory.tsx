@@ -163,11 +163,11 @@ export function PlayerInventory() {
           </Link>
           <div className="flex-1 min-w-0">
             <h1 className="heading-3 leading-tight text-[0.95rem]">RECOVERED OBJECT REGISTER</h1>
-            <p className="font-mono text-[0.56rem] uppercase tracking-[0.12em] text-nexus-textMuted">
+            <p className="font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted">
               {filteredItems.length.toString().padStart(2, '0')} OBJECTS / {fragments.length.toString().padStart(2, '0')} FRAGMENTS
             </p>
           </div>
-          <Link to={ROUTES.PLAYER_EVIDENCE} className="min-h-10 border border-nexus-accent px-2 py-2 font-mono text-[0.5rem] uppercase text-nexus-accent">
+          <Link to={ROUTES.PLAYER_EVIDENCE} className="min-h-10 border border-nexus-accent px-2 py-2 font-mono text-[0.75rem] uppercase text-nexus-accent">
             CASE ARCHIVE
           </Link>
           <button
@@ -210,8 +210,8 @@ export function PlayerInventory() {
                   trailing={
                     <div className="flex flex-wrap items-center justify-end gap-1">
                       {frag.type && <Stamp variant="anomalous" impressed>{frag.type}</Stamp>}
-                      <Link to={`${ROUTES.PLAYER_EVIDENCE}?artifact=${encodeURIComponent(`fragment:${frag.code}`)}`} className="min-h-9 border border-nexus-accent px-2 py-2 font-mono text-[0.5rem] uppercase text-nexus-accent">EXAMINE</Link>
-                      <button type="button" onClick={() => placeItemOnTable(frag.code, 'fragment')} disabled={!!workspace.placements[`fragment:${frag.code}`]} className="min-h-9 border border-nexus-border px-2 font-mono text-[0.5rem] uppercase text-nexus-textSubtle disabled:opacity-45">
+                      <Link to={`${ROUTES.PLAYER_EVIDENCE}?artifact=${encodeURIComponent(`fragment:${frag.code}`)}`} className="min-h-9 border border-nexus-accent px-2 py-2 font-mono text-[0.75rem] uppercase text-nexus-accent">EXAMINE</Link>
+                      <button type="button" onClick={() => placeItemOnTable(frag.code, 'fragment')} disabled={!!workspace.placements[`fragment:${frag.code}`]} className="min-h-9 border border-nexus-border px-2 font-mono text-[0.75rem] uppercase text-nexus-textSubtle disabled:opacity-45">
                         {workspace.placements[`fragment:${frag.code}`] ? 'ON TABLE' : 'PLACE'}
                       </button>
                     </div>
@@ -225,7 +225,7 @@ export function PlayerInventory() {
         {/* Inventory Items */}
         <div className="register">
           {filteredItems.length === 0 ? (
-            <div className="grid min-h-28 grid-cols-[110px_1fr] items-center gap-3 border-y border-nexus-borderSubtle px-4 font-mono text-[0.6rem] uppercase tracking-[0.12em]">
+            <div className="grid min-h-28 grid-cols-[110px_1fr] items-center gap-3 border-y border-nexus-borderSubtle px-4 font-mono text-[0.8125rem] uppercase tracking-[0.12em]">
               <span className="border-r border-nexus-borderSubtle py-4 text-nexus-warning">NO RECORD</span>
               <span className="text-nexus-textMuted">{search || filter !== 'all' ? 'OBJECT QUERY RETURNED NO MATCH' : 'NO RECOVERED OBJECTS IN TEAM CUSTODY'}</span>
             </div>
@@ -241,7 +241,7 @@ export function PlayerInventory() {
                       <span className="text-xs text-nexus-textMuted">{item.description}</span>
                       <div className="flex items-center gap-2 mt-0.5">
                         <StateMarker glyph={rarityGlyph(item.rarity)} tone={RARITY_TONE[item.rarity] ?? 'inactive'} label={item.rarity} />
-                        <span className="text-[10px] font-mono text-nexus-textSubtle">{item.type}</span>
+                        <span className="text-[0.75rem] font-mono text-nexus-textSubtle">{item.type}</span>
                       </div>
                     </>
                   }
@@ -253,7 +253,7 @@ export function PlayerInventory() {
                         </span>
                       )}
                       <button
-                        className="min-h-9 border border-nexus-borderSubtle px-2 font-mono text-[0.5rem] uppercase text-nexus-textSubtle hover:text-nexus-text"
+                        className="min-h-9 border border-nexus-borderSubtle px-2 font-mono text-[0.75rem] uppercase text-nexus-textSubtle hover:text-nexus-text"
                         type="button"
                         onClick={() => placeItemOnTable(item.code)}
                         disabled={!!workspace.placements[`inventory:${item.code}`]}
@@ -263,7 +263,7 @@ export function PlayerInventory() {
                       </button>
                       <Link
                         to={`${ROUTES.PLAYER_EVIDENCE}?artifact=${encodeURIComponent(`inventory:${item.code}`)}`}
-                        className="min-h-9 border border-nexus-accent px-2 py-2 font-mono text-[0.5rem] uppercase text-nexus-accent"
+                        className="min-h-9 border border-nexus-accent px-2 py-2 font-mono text-[0.75rem] uppercase text-nexus-accent"
                       >
                         EXAMINE
                       </Link>

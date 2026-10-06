@@ -81,7 +81,7 @@ export function PlayerGame() {
     <div className="page nx-wake">
       <div className="page-content mx-auto max-w-md space-y-8 pb-6 pt-2">
         {/* Where I am: one quiet line */}
-        <p className="flex items-center justify-between gap-3 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
+        <p className="flex items-center justify-between gap-3 font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">
           <span className="min-w-0 truncate">{team.name}</span>
           <span className={cn(status === 'PAUSED' && 'text-nexus-warning', status === 'RUNNING' && 'text-nexus-accent')}>
             {caseToneLabel(status)}
@@ -143,7 +143,7 @@ export function PlayerGame() {
 
         {/* 2 — what changed (real events only) */}
         <section aria-label="New information">
-          <h2 className="mb-1 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-nexus-textSubtle">SINCE LAST CHECK</h2>
+          <h2 className="mb-1 font-mono text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-textSubtle">SINCE LAST CHECK</h2>
           {unreadCount === 0 && updatedRecords === 0 && queuedCount === 0 && otherLeads.length === 0 ? (
             <p className="border-y border-nexus-borderSubtle py-4 font-mono text-xs uppercase tracking-[0.12em] text-nexus-textMuted">
               NO NEW INFORMATION.

@@ -110,7 +110,7 @@ export function PlayerLogin() {
                   <div
                     key={i}
                     className={cn(
-                      'font-mono text-[0.68rem] tracking-[0.08em]',
+                      'font-mono text-[0.8125rem] tracking-[0.08em]',
                       line.text.includes('ACTIVE') && 'text-nexus-accent',
                       line.text.includes('ENCRYPTED') && 'text-nexus-warning',
                     )}
@@ -118,7 +118,7 @@ export function PlayerLogin() {
                     {line.text === '' ? '\u00A0' : line.text}
                   </div>
                 ))}
-                <div className="mt-2 h-3 w-3 animate-pulse rounded bg-nexus-textSubtle/30 font-mono text-[0.68rem]" />
+                <div className="mt-2 h-3 w-3 animate-pulse rounded bg-nexus-textSubtle/30 font-mono text-[0.8125rem]" />
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="nexus-handset-form space-y-5" noValidate>
@@ -152,17 +152,17 @@ export function PlayerLogin() {
                     />
                   </div>
                   {!accessCode && (
-                    <p id="accessCode-hint" className="mt-2 flex items-start gap-1.5 text-[0.62rem] text-nexus-textSubtle">
+                    <p id="accessCode-hint" className="mt-2 flex items-start gap-1.5 text-[0.8125rem] text-nexus-textSubtle">
                       <span>Enter the {LOGIN_CODE_LENGTH}-character Logic Code from the Bureau. Format: A-Z and 2-9 (no I, O, 0, 1).</span>
                     </p>
                   )}
                   {formatError && (
-                    <p id="accessCode-format" className="mt-2 flex items-start gap-1.5 text-[0.62rem] text-nexus-danger" role="alert">
+                    <p id="accessCode-format" className="mt-2 flex items-start gap-1.5 text-[0.8125rem] text-nexus-danger" role="alert">
                       <span>• {formatError}</span>
                     </p>
                   )}
                   {inputWarning && (
-                    <p id="accessCode-warning" className="mt-2 flex items-start gap-1.5 text-[0.62rem] text-nexus-danger" role="alert">
+                    <p id="accessCode-warning" className="mt-2 flex items-start gap-1.5 text-[0.8125rem] text-nexus-danger" role="alert">
                       <span>• {inputWarning}</span>
                     </p>
                   )}
@@ -170,7 +170,7 @@ export function PlayerLogin() {
 
                 {error && (
                   <div role="alert" className="flex items-start gap-2 border border-nexus-danger/40 bg-nexus-dangerBg/20 px-3 py-2.5">
-                    <span className="text-[0.68rem] font-mono text-nexus-danger">ACCESS DENIED — {error}</span>
+                    <span className="text-[0.8125rem] font-mono text-nexus-danger">ACCESS DENIED — {error}</span>
                   </div>
                 )}
 
@@ -197,10 +197,17 @@ export function PlayerLogin() {
           </div>
 
           <div className="nexus-handset-footer">
-            <span className="font-mono text-[0.52rem] uppercase tracking-[0.22em] text-nexus-textSubtle">
+            <button
+              type="button"
+              onClick={() => navigate(ROUTES.PLAYER_ACCESSIBILITY)}
+              className="min-h-11 font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textMuted underline underline-offset-4 hover:text-nexus-text"
+            >
+              Display &amp; access
+            </button>
+            <span className="font-mono text-[0.75rem] uppercase tracking-[0.22em] text-nexus-textSubtle">
               NEXUS ECHO FIELD OPERATIONS
             </span>
-            <span className="font-mono text-[0.56rem] text-nexus-textSubtle">
+            <span className="font-mono text-[0.8125rem] text-nexus-textSubtle">
               CASE 037
             </span>
           </div>

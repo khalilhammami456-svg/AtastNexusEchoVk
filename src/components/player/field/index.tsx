@@ -26,7 +26,7 @@ export function FieldLead({
 }) {
   return (
     <section className="nx-lead" aria-label="Current lead">
-      <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-nexus-accent">{eyebrow}</p>
+      <p className="font-mono text-[0.8125rem] uppercase tracking-[0.2em] text-nexus-accent">{eyebrow}</p>
       <h1 className="mt-3 font-type text-[1.65rem] font-bold leading-[1.15] text-nexus-text break-words">{title}</h1>
       {place && (
         <p className="mt-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-nexus-textMuted">
@@ -106,7 +106,7 @@ export function FieldLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      className="flex min-h-12 flex-1 items-center justify-center border border-nexus-borderSubtle px-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-nexus-textMuted active:bg-nexus-surfaceElevated focus-visible:outline-none"
+      className="flex min-h-12 flex-1 items-center justify-center border border-nexus-borderSubtle px-2 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted active:bg-nexus-surfaceElevated focus-visible:outline-none"
     >
       {label}
     </Link>

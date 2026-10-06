@@ -107,7 +107,7 @@ export function AdminLogin() {
                   <div
                     key={i}
                     className={cn(
-                      'font-mono text-[0.72rem] tracking-[0.06em]',
+                      'font-mono text-[0.8125rem] tracking-[0.06em]',
                       line.text.startsWith('NO CARRIER') && 'text-nexus-warning',
                       line.text.startsWith('AWAITING') && 'text-nexus-accent',
                     )}
@@ -115,7 +115,7 @@ export function AdminLogin() {
                     {line.text === '' ? '\u00A0' : line.text}
                   </div>
                 ))}
-                <div className="mt-2 h-3 w-3 animate-pulse rounded bg-nexus-accent/50 font-mono text-[0.72rem]" />
+                <div className="mt-2 h-3 w-3 animate-pulse rounded bg-nexus-accent/50 font-mono text-[0.8125rem]" />
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="nexus-terminal-form space-y-5" noValidate>
@@ -146,7 +146,7 @@ export function AdminLogin() {
                     />
                   </div>
                   {touched.email && !email.trim() && (
-                    <p id="email-error" role="alert" className="mt-1.5 flex items-center gap-1 text-[0.62rem] text-nexus-danger">
+                    <p id="email-error" role="alert" className="mt-1.5 flex items-center gap-1 text-[0.8125rem] text-nexus-danger">
                       <BureauIcons.Alert className="bureau-icon w-3 h-3 flex-shrink-0" aria-hidden="true" />
                       Operator ID is required
                     </p>
@@ -192,7 +192,7 @@ export function AdminLogin() {
                     </button>
                   </div>
                   {touched.password && !password.trim() && (
-                    <p id="password-error" role="alert" className="mt-1.5 flex items-center gap-1 text-[0.62rem] text-nexus-danger">
+                    <p id="password-error" role="alert" className="mt-1.5 flex items-center gap-1 text-[0.8125rem] text-nexus-danger">
                       <BureauIcons.Alert className="bureau-icon w-3 h-3 flex-shrink-0" aria-hidden="true" />
                       Access key is required
                     </p>
@@ -202,11 +202,11 @@ export function AdminLogin() {
                 {error && (
                   <div role="alert" className="flex items-start gap-2 rounded border border-nexus-danger/40 bg-nexus-dangerBg/30 px-3 py-2.5">
                     <BureauIcons.AlertTriangle className="bureau-icon w-4 h-4 flex-shrink-0 text-nexus-danger mt-0.5" aria-hidden="true" />
-                    <p className="font-mono text-[0.68rem] text-nexus-danger">{error}</p>
+                    <p className="font-mono text-[0.8125rem] text-nexus-danger">{error}</p>
                   </div>
                 )}
 
-                <p className="flex justify-between border-y border-nexus-borderSubtle py-2 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
+                <p className="flex justify-between border-y border-nexus-borderSubtle py-2 font-mono text-[0.8125rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
                   <span>ACCESS LEVEL</span><span className="text-nexus-textMuted">ADMINISTRATOR</span>
                 </p>
 
@@ -236,10 +236,10 @@ export function AdminLogin() {
           </div>
 
           <div className="nexus-terminal-footer">
-            <span className="font-mono text-[0.52rem] uppercase tracking-[0.22em] text-nexus-textSubtle">
+            <span className="font-mono text-[0.75rem] uppercase tracking-[0.22em] text-nexus-textSubtle">
               AUTHORIZED PERSONNEL ONLY
             </span>
-            <span className="font-mono text-[0.56rem] text-nexus-textSubtle">
+            <span className="font-mono text-[0.8125rem] text-nexus-textSubtle">
               TERMINAL 07 · NODE B-04
             </span>
           </div>

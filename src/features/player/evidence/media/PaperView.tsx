@@ -27,7 +27,7 @@ function PaperSurface({ variant, artifact, imageUrl, thumbUrl, imageStyle, conte
     return (
       <div className={`absolute inset-0 flex flex-col ${variant === 'FRAGMENT' ? 'border border-nexus-border bg-[#1b1c1d] p-3' : `${PAPER[variant]} ${personnel ? 'p-2' : 'p-1'}`}`}>
         {personnel && (
-          <p className="mb-1 flex justify-between border-b border-[#5f5d55] pb-1 font-mono text-[0.62rem] uppercase tracking-[0.14em]">
+          <p className="mb-1 flex justify-between border-b border-[#5f5d55] pb-1 font-mono text-[0.8125rem] uppercase tracking-[0.14em]">
             <span>{HEADING[variant]}</span><span>{artifact.code}</span>
           </p>
         )}
@@ -49,14 +49,14 @@ function PaperSurface({ variant, artifact, imageUrl, thumbUrl, imageStyle, conte
     <article className={`absolute inset-0 overflow-auto p-5 ${PAPER[variant]}`} style={imageStyle}>
       <header className="mb-5 flex items-start justify-between gap-3 border-b border-[#77746c] pb-3">
         <div>
-          <p className="font-mono text-[0.68rem] uppercase tracking-[0.15em]">{HEADING[variant]}</p>
+          <p className="font-mono text-[0.8125rem] uppercase tracking-[0.15em]">{HEADING[variant]}</p>
           <h3 className="mt-2 font-document text-lg font-semibold">{artifact.title}</h3>
         </div>
-        <span className="font-mono text-[0.68rem]">{artifact.code}</span>
+        <span className="font-mono text-[0.8125rem]">{artifact.code}</span>
       </header>
       <p className="whitespace-pre-wrap font-document text-sm leading-relaxed">{contentText || artifact.description || 'NO TEXTUAL CONTENT ATTACHED.'}</p>
       {fields.length > 0 && (
-        <dl className="mt-5 space-y-2 border-t border-[#77746c] pt-3 font-mono text-[0.68rem]">
+        <dl className="mt-5 space-y-2 border-t border-[#77746c] pt-3 font-mono text-[0.8125rem]">
           {fields.map(([label, value]) => (
             <div key={label} className="grid grid-cols-[110px_1fr] gap-2">
               <dt className="text-[#69665e]">{label}</dt><dd className="whitespace-pre-wrap break-words">{value}</dd>
@@ -83,14 +83,14 @@ export function DocumentStrip({ artifact }: MediaProps) {
   return (
     <dl aria-label="Document provenance" className="grid grid-cols-1 gap-2 border-y border-nexus-borderSubtle py-2 font-mono sm:grid-cols-2">
       <div>
-        <dt className="text-[0.64rem] uppercase tracking-[0.12em] text-nexus-textSubtle">ISSUED BY</dt>
+        <dt className="text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">ISSUED BY</dt>
         <dd className="mt-0.5 break-words text-[0.8rem] text-nexus-text">{issuer ?? 'ISSUING SOURCE NOT RECORDED'}</dd>
       </div>
       <div>
-        <dt className="text-[0.64rem] uppercase tracking-[0.12em] text-nexus-textSubtle">DATE</dt>
+        <dt className="text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">DATE</dt>
         <dd className="mt-0.5 break-words text-[0.8rem] text-nexus-text">
           {dated ?? 'NOT DATED'}
-          <span className="block text-[0.66rem] text-nexus-warning">{precision ? PRECISION_NOTE[precision] : dated ? 'DATE NOT READABLE AS WRITTEN' : 'NO DATE ON RECORD'}</span>
+          <span className="block text-[0.8125rem] text-nexus-warning">{precision ? PRECISION_NOTE[precision] : dated ? 'DATE NOT READABLE AS WRITTEN' : 'NO DATE ON RECORD'}</span>
         </dd>
       </div>
     </dl>
@@ -106,11 +106,11 @@ export function NoteStrip({ artifact, ink }: MediaProps) {
         type="button"
         onClick={ink.toggle}
         aria-pressed={ink.on}
-        className={`min-h-11 w-full border px-3 font-mono text-[0.7rem] uppercase tracking-[0.1em] ${ink.on ? 'border-nexus-warning bg-nexus-warningBg/20 text-nexus-warning' : 'border-nexus-border text-nexus-text'}`}
+        className={`min-h-11 w-full border px-3 font-mono text-[0.8125rem] uppercase tracking-[0.1em] ${ink.on ? 'border-nexus-warning bg-nexus-warningBg/20 text-nexus-warning' : 'border-nexus-border text-nexus-text'}`}
       >
         {ink.on ? 'HANDWRITING INSPECTION ON - 200% / HIGH CONTRAST' : 'HANDWRITING INSPECTION'}
       </button>
-      <p className="font-mono text-[0.68rem] uppercase tracking-[0.08em] text-nexus-textSubtle">
+      <p className="font-mono text-[0.8125rem] uppercase tracking-[0.08em] text-nexus-textSubtle">
         HAND: {hand ?? 'NOT RECORDED'} / WRITTEN: {written ?? 'NOT DATED'}
       </p>
     </div>
@@ -143,7 +143,7 @@ export function FragmentStrip({ artifact, catalog, related, onOpenRelated }: Med
           ['FOUND AT', found ?? 'UNKNOWN'],
         ] as const).map(([label, value]) => (
           <div key={label} className="min-w-0">
-            <dt className="text-[0.64rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{label}</dt>
+            <dt className="text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{label}</dt>
             <dd className={`mt-0.5 break-words text-[0.8rem] ${label === 'CONDITION' && condition !== 'NORMAL' ? 'text-nexus-warning' : 'text-nexus-text'}`}>{value}</dd>
           </div>
         ))}

@@ -89,7 +89,7 @@ function BoardCardImpl(props: BoardCardProps) {
 
       {isSelected && (
         <span
-          className="absolute -left-2 -top-2 z-[3] flex h-5 min-w-5 items-center justify-center border border-[#d3b87b] bg-[#1b1912] px-1 font-mono text-[0.55rem] font-bold text-[#d3b87b]"
+          className="absolute -left-2 -top-2 z-[3] flex h-5 min-w-5 items-center justify-center border border-[#d3b87b] bg-[#1b1912] px-1 font-mono text-[0.8125rem] font-bold text-[#d3b87b]"
           aria-label={`Selection order ${selectedIndex + 1}`}
         >
           {selectedIndex + 1}
@@ -106,13 +106,13 @@ function BoardCardImpl(props: BoardCardProps) {
           className="min-w-0 flex-1 text-left"
           aria-pressed={isSelected}
         >
-          <span className="block font-mono text-[0.5rem] uppercase tracking-[0.14em] opacity-70">
+          <span className="block font-mono text-[0.75rem] uppercase tracking-[0.14em] opacity-70">
             {MEDIUM_LABEL[medium] ?? medium} / {artifact.code}
           </span>
           <span className="mt-0.5 block break-words font-type text-[0.82rem] font-bold leading-tight">{artifact.title}</span>
         </button>
         <div className="flex items-center gap-1">
-          {hasNewInfo && <span className="font-mono text-[0.45rem] font-bold uppercase text-[#d3b87b]">NEW</span>}
+          {hasNewInfo && <span className="font-mono text-[0.75rem] font-bold uppercase text-[#d3b87b]">NEW</span>}
           <button
             type="button"
             onClick={() => onTogglePin(artifact.id)}
@@ -121,32 +121,32 @@ function BoardCardImpl(props: BoardCardProps) {
             aria-pressed={placement.pinned}
             title={placement.pinned ? 'UNPIN' : 'PIN'}
           >
-            <span className="font-mono text-[0.45rem] uppercase">{placement.pinned ? 'FIXED' : 'PIN'}</span>
+            <span className="font-mono text-[0.75rem] uppercase">{placement.pinned ? 'FIXED' : 'PIN'}</span>
           </button>
         </div>
       </div>
 
       <div className="nx-card-media relative mt-2">
         {medium === 'AUDIO' && (
-          <p className="mb-1 flex items-center justify-between border border-dashed border-current/40 px-1 font-mono text-[0.45rem] uppercase tracking-[0.12em] opacity-80">
+          <p className="mb-1 flex items-center justify-between border border-dashed border-current/40 px-1 font-mono text-[0.75rem] uppercase tracking-[0.12em] opacity-80">
             <span>TAPE SLIP</span>
             <span>{contentString(artifact.content, ['duration']) ?? '--:--'}</span>
           </p>
         )}
         {medium === 'PERSONNEL' && (
-          <p className="mb-1 border-b border-current/30 font-mono text-[0.45rem] uppercase tracking-[0.12em] opacity-80">ISSUED CARD / FILE COPY</p>
+          <p className="mb-1 border-b border-current/30 font-mono text-[0.75rem] uppercase tracking-[0.12em] opacity-80">ISSUED CARD / FILE COPY</p>
         )}
         {imageUrl || medium === 'AUDIO' ? (
           <MediumThumb artifact={artifact} variant="card" detail={detail} />
         ) : (
-          <p className="line-clamp-3 font-type text-[0.68rem] leading-relaxed opacity-80">{artifact.description || artifact.code}</p>
+          <p className="line-clamp-3 font-type text-[0.8125rem] leading-relaxed opacity-80">{artifact.description || artifact.code}</p>
         )}
         {medium === 'SURVEILLANCE' && !imageUrl && (
-          <p className="font-mono text-[0.45rem] text-[#e8e2d0]">REC {camera ?? ''} {stamp ?? ''}</p>
+          <p className="font-mono text-[0.75rem] text-[#e8e2d0]">REC {camera ?? ''} {stamp ?? ''}</p>
         )}
       </div>
 
-      <div className="mt-1.5 flex items-center justify-between gap-2 font-mono text-[0.45rem] uppercase tracking-[0.1em] opacity-75">
+      <div className="mt-1.5 flex items-center justify-between gap-2 font-mono text-[0.75rem] uppercase tracking-[0.1em] opacity-75">
         <span>COND: {condition}</span>
         <span>
           {noteCount > 0 && <span>NOTES {noteCount}</span>}
@@ -156,9 +156,9 @@ function BoardCardImpl(props: BoardCardProps) {
       </div>
 
       <div className="mt-1 flex items-center justify-between gap-1 border-t border-current/20 pt-1">
-        <button type="button" onClick={() => onOpen(artifact.id)} className="min-h-8 px-1 font-mono text-[0.48rem] uppercase">OPEN</button>
-        <button type="button" onClick={() => onRotate(artifact.id)} className="min-h-8 px-1 font-mono text-[0.48rem] uppercase" aria-label={`Rotate ${artifact.code}`}>ROTATE</button>
-        <button type="button" onClick={() => onRemove(artifact.id)} className="min-h-8 px-1 font-mono text-[0.48rem] uppercase" aria-label={`Remove ${artifact.code} from table`}>REMOVE</button>
+        <button type="button" onClick={() => onOpen(artifact.id)} className="min-h-8 px-1 font-mono text-[0.75rem] uppercase">OPEN</button>
+        <button type="button" onClick={() => onRotate(artifact.id)} className="min-h-8 px-1 font-mono text-[0.75rem] uppercase" aria-label={`Rotate ${artifact.code}`}>ROTATE</button>
+        <button type="button" onClick={() => onRemove(artifact.id)} className="min-h-8 px-1 font-mono text-[0.75rem] uppercase" aria-label={`Remove ${artifact.code} from table`}>REMOVE</button>
       </div>
     </article>
   )

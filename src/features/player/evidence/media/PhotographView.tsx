@@ -22,7 +22,7 @@ export function PhotographSurface({ artifact, imageUrl, thumbUrl, imageStyle, co
           ...imageStyle,
         }}
       />
-      <span className="pointer-events-none absolute bottom-2 left-3 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-[#4a473f]">{artifact.code}</span>
+      <span className="pointer-events-none absolute bottom-2 left-3 font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-[#4a473f]">{artifact.code}</span>
     </div>
   )
 }
@@ -34,7 +34,7 @@ export function PhotographStrip({ artifact }: MediaProps) {
   if (facts.length === 0) return null
   return (
     <details className="border border-nexus-borderSubtle bg-nexus-surfaceSubtle px-3">
-      <summary className="flex min-h-11 cursor-pointer items-center font-mono text-[0.68rem] uppercase tracking-[0.12em] text-nexus-textMuted">
+      <summary className="flex min-h-11 cursor-pointer items-center font-mono text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted">
         PRINT DATA — {contentString(artifact.content, ['captured_at', 'capturedAt']) ?? 'NO CAPTURE TIME ON RECORD'}
       </summary>
       <FactsRow facts={facts} label="Photograph data" />

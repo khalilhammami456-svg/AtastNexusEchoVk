@@ -100,7 +100,7 @@ export function EvidenceShowcaseOverlay({ record, model, siblings, onSelect, onC
       data-testid="showcase-overlay"
       className="fixed inset-0 z-[200] flex flex-col bg-[#050506] font-mono text-nexus-text"
     >
-      <header className="flex min-h-11 shrink-0 flex-wrap items-center gap-x-3 gap-y-1 border-b border-nexus-border bg-nexus-surfaceElevated px-2 py-1 text-[0.58rem] uppercase tracking-[0.12em] sm:px-3">
+      <header className="flex min-h-11 shrink-0 flex-wrap items-center gap-x-3 gap-y-1 border-b border-nexus-border bg-nexus-surfaceElevated px-2 py-1 text-[0.8125rem] uppercase tracking-[0.12em] sm:px-3">
         <button ref={closeRef} type="button" onClick={onClose} className="min-h-10 shrink-0 border border-nexus-border px-2.5 font-bold text-nexus-text hover:border-nexus-accent hover:text-nexus-accent focus-visible:border-nexus-accent">
           ← ARCHIVE<span className="ml-2 hidden text-nexus-textSubtle sm:inline">ESC</span>
         </button>
@@ -108,7 +108,7 @@ export function EvidenceShowcaseOverlay({ record, model, siblings, onSelect, onC
           <p className="truncate text-nexus-textSubtle">
             <span className="text-nexus-accent">{artifact.code}</span> · {record.type} · {record.condition}
           </p>
-          <p className="truncate text-[0.68rem] font-bold tracking-[0.06em] text-nexus-text">{artifact.title}</p>
+          <p className="truncate text-[0.8125rem] font-bold tracking-[0.06em] text-nexus-text">{artifact.title}</p>
         </div>
         <span className="hidden border border-nexus-info/60 px-1.5 py-0.5 text-nexus-textMuted md:inline">{SHOWCASE_LABEL}</span>
         <nav aria-label="Records in this medium" className="flex shrink-0 items-center gap-1">

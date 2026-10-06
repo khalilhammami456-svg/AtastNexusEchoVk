@@ -56,9 +56,9 @@ export function SurveillanceOverlay({ artifact, series }: MediaProps) {
       <div className="absolute inset-0 rounded-[14px] shadow-[inset_0_0_0_10px_#1a1c1e,inset_0_0_0_11px_#3a3d40]" />
       <div className="absolute left-4 top-4 font-mono text-[0.8rem] uppercase leading-tight tracking-[0.1em] text-[#d9e2d4] [text-shadow:0_0_4px_rgba(0,0,0,0.9)]">
         <p className="tabular-nums">{stamp ?? 'NO TIMESTAMP'}</p>
-        {series && <p className="text-[0.66rem] tracking-[0.14em]">FRAME {series.position}/{series.total}</p>}
+        {series && <p className="text-[0.8125rem] tracking-[0.14em]">FRAME {series.position}/{series.total}</p>}
       </div>
-      <div className="absolute right-4 top-4 max-w-[45%] text-right font-mono text-[0.66rem] uppercase leading-tight tracking-[0.12em] text-[#d9e2d4] [text-shadow:0_0_4px_rgba(0,0,0,0.9)]">
+      <div className="absolute right-4 top-4 max-w-[45%] text-right font-mono text-[0.8125rem] uppercase leading-tight tracking-[0.12em] text-[#d9e2d4] [text-shadow:0_0_4px_rgba(0,0,0,0.9)]">
         <p className="truncate">{device ?? 'CAMERA UNKNOWN'}</p>
         {source && <p className="truncate">{source}</p>}
       </div>
@@ -72,7 +72,7 @@ const formatClock = (seconds: number) =>
 export function SurveillanceStrip(props: MediaProps) {
   const { artifact, series, videoUrl, video, onOpenRelated } = props
   const offset = keyTimeOffset(artifact)
-  const stepper = 'flex min-h-11 flex-1 items-center justify-center border border-nexus-border px-3 font-mono text-[0.7rem] uppercase tracking-[0.08em] disabled:opacity-40'
+  const stepper = 'flex min-h-11 flex-1 items-center justify-center border border-nexus-border px-3 font-mono text-[0.8125rem] uppercase tracking-[0.08em] disabled:opacity-40'
   return (
     <section aria-label="Monitor controls" className="space-y-2 border border-nexus-border bg-nexus-surfaceSubtle p-3">
       {series ? (
@@ -81,7 +81,7 @@ export function SurveillanceStrip(props: MediaProps) {
             <button type="button" className={stepper} disabled={!series.previous || !onOpenRelated} onClick={() => series.previous && onOpenRelated?.(series.previous.id)} aria-label={series.previous ? `Previous frame, ${series.previous.code}` : 'Previous frame, none'}>
               ◀ PREV
             </button>
-            <p className="min-w-[7.5rem] text-center font-mono text-[0.68rem] uppercase tracking-[0.1em] text-nexus-text" aria-live="polite">
+            <p className="min-w-[7.5rem] text-center font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-text" aria-live="polite">
               FRAME {series.position} OF {series.total}{series.unit ? ` / ${series.unit}` : ''}
             </p>
             <button type="button" className={stepper} disabled={!series.next || !onOpenRelated} onClick={() => series.next && onOpenRelated?.(series.next.id)} aria-label={series.next ? `Next frame, ${series.next.code}` : 'Next frame, none'}>
@@ -105,31 +105,31 @@ export function SurveillanceStrip(props: MediaProps) {
               ))}
             </div>
             </div>
-            <div className="mt-1 flex justify-between font-mono text-[0.6rem] uppercase tabular-nums text-nexus-textSubtle">
+            <div className="mt-1 flex justify-between font-mono text-[0.8125rem] uppercase tabular-nums text-nexus-textSubtle">
               <span>{series.span?.first ?? series.source}</span>
               <span>{series.span?.last ?? ''}</span>
             </div>
           </div>
         </>
       ) : (
-        <p className="font-mono text-[0.68rem] uppercase tracking-[0.1em] text-nexus-textMuted">NO OTHER FRAME FROM THIS SOURCE IN THE ARCHIVE</p>
+        <p className="font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-textMuted">NO OTHER FRAME FROM THIS SOURCE IN THE ARCHIVE</p>
       )}
       {offset && (
-        <p className="font-mono text-[0.7rem] uppercase tracking-[0.08em] text-nexus-text">
+        <p className="font-mono text-[0.8125rem] uppercase tracking-[0.08em] text-nexus-text">
           {offset.label} <span className="text-nexus-textSubtle">({offset.keyTime})</span>
         </p>
       )}
       {videoUrl ? (
         <div className="flex items-center gap-3">
-          <button type="button" onClick={video.toggle} aria-pressed={video.playing} className="min-h-11 min-w-24 border border-nexus-accent px-3 font-mono text-[0.7rem] uppercase text-nexus-accent">
+          <button type="button" onClick={video.toggle} aria-pressed={video.playing} className="min-h-11 min-w-24 border border-nexus-accent px-3 font-mono text-[0.8125rem] uppercase text-nexus-accent">
             {video.playing ? 'PAUSE' : 'PLAY'}
           </button>
-          <span className="font-mono text-[0.68rem] tabular-nums text-nexus-textSubtle">
+          <span className="font-mono text-[0.8125rem] tabular-nums text-nexus-textSubtle">
             {formatClock(video.time)} / {video.duration ? formatClock(video.duration) : 'LENGTH UNKNOWN'}
           </span>
         </div>
       ) : (
-        <p role="status" className="border-l border-nexus-warning pl-3 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-nexus-warning">
+        <p role="status" className="border-l border-nexus-warning pl-3 font-mono text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-warning">
           STILL FRAME - NO VIDEO ATTACHED
         </p>
       )}

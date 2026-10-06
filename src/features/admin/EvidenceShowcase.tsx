@@ -38,7 +38,7 @@ const IMPORTANCE_TONE: Record<string, string> = {
 const pad = (value: number) => String(value).padStart(2, '0')
 
 function Chip({ children, tone }: { children: React.ReactNode; tone?: string }) {
-  return <span className={cn('inline-block border px-1.5 py-0.5 text-[0.56rem] leading-none tracking-[0.1em]', tone ?? 'border-nexus-border text-nexus-textMuted')}>{children}</span>
+  return <span className={cn('inline-block border px-1.5 py-0.5 text-[0.8125rem] leading-none tracking-[0.1em]', tone ?? 'border-nexus-border text-nexus-textMuted')}>{children}</span>
 }
 
 function RecordCard({ record, highlighted, onOpen }: { record: ShowcaseRecord; highlighted: boolean; onOpen: (code: string) => void }) {
@@ -74,7 +74,7 @@ function RecordCard({ record, highlighted, onOpen }: { record: ShowcaseRecord; h
             className="h-full w-full object-contain"
           />
         ) : (
-          <span className="flex h-full items-center justify-center text-[0.6rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
+          <span className="flex h-full items-center justify-center text-[0.8125rem] uppercase tracking-[0.14em] text-nexus-textSubtle">
             {image ? 'IMAGE UNAVAILABLE' : 'NO IMAGE ATTACHED'}
           </span>
         )}
@@ -83,8 +83,8 @@ function RecordCard({ record, highlighted, onOpen }: { record: ShowcaseRecord; h
 
       <div className="flex min-w-0 flex-1 flex-col gap-2 p-3">
         <div className="flex items-baseline justify-between gap-2">
-          <p className="text-[0.7rem] font-bold tracking-[0.1em] text-nexus-accent">{artifact.code}</p>
-          <p className="text-[0.56rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{record.type}</p>
+          <p className="text-[0.8125rem] font-bold tracking-[0.1em] text-nexus-accent">{artifact.code}</p>
+          <p className="text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">{record.type}</p>
         </div>
         <h3 className="text-[0.8rem] font-bold leading-snug tracking-[0.02em] text-nexus-text">{artifact.title}</h3>
 
@@ -94,7 +94,7 @@ function RecordCard({ record, highlighted, onOpen }: { record: ShowcaseRecord; h
           <Chip tone={IMPORTANCE_TONE[record.importance.importance]}>{record.importance.importance}</Chip>
         </div>
 
-        <dl className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-2 gap-y-1 text-[0.62rem] uppercase leading-snug">
+        <dl className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-2 gap-y-1 text-[0.8125rem] uppercase leading-snug">
           {record.facts.map(fact => (
             <div key={fact.label} className="contents">
               <dt className="text-nexus-textSubtle">{fact.label}</dt>
@@ -120,7 +120,7 @@ function RecordCard({ record, highlighted, onOpen }: { record: ShowcaseRecord; h
         <button
           type="button"
           onClick={() => onOpen(artifact.code)}
-          className="mt-auto min-h-10 w-full border border-nexus-accent/70 px-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-nexus-accent hover:bg-nexus-accentBg focus-visible:bg-nexus-accentBg"
+          className="mt-auto min-h-10 w-full border border-nexus-accent/70 px-3 text-[0.8125rem] font-bold uppercase tracking-[0.16em] text-nexus-accent hover:bg-nexus-accentBg focus-visible:bg-nexus-accentBg"
         >
           OPEN / INSPECT
         </button>
@@ -173,7 +173,7 @@ export function EvidenceShowcase() {
   if (model.total === 0) {
     return (
       <div className="mx-auto max-w-xl py-10 font-mono" data-testid="showcase-empty">
-        <p className="text-[0.56rem] uppercase tracking-[0.18em] text-nexus-textSubtle">NEXUS ECHO / EVIDENCE ARCHIVE</p>
+        <p className="text-[0.8125rem] uppercase tracking-[0.18em] text-nexus-textSubtle">NEXUS ECHO / EVIDENCE ARCHIVE</p>
         <h1 className="mt-2 text-lg font-bold tracking-[0.08em] text-nexus-text">NO EVIDENCE RECORDS LOADED</h1>
         <p className="mt-3 text-xs leading-relaxed text-nexus-textMuted">
           This module shows the generated CASE {SHOWCASE_CASE.id} simulation set. That set is compiled into development builds only,
@@ -182,7 +182,7 @@ export function EvidenceShowcase() {
         <button
           type="button"
           onClick={() => navigate(ROUTES.ADMIN_EVIDENCE_REGISTER)}
-          className="mt-4 min-h-10 border border-nexus-accent px-4 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-nexus-accent hover:bg-nexus-accentBg"
+          className="mt-4 min-h-10 border border-nexus-accent px-4 text-[0.8125rem] font-bold uppercase tracking-[0.16em] text-nexus-accent hover:bg-nexus-accentBg"
         >
           OPEN EVIDENCE REGISTER
         </button>
@@ -196,13 +196,13 @@ export function EvidenceShowcase() {
     <div className="font-mono" data-testid="showcase">
       <header className="flex flex-wrap items-end justify-between gap-3 border-b border-nexus-border pb-3">
         <div className="min-w-0">
-          <p className="text-[0.54rem] uppercase tracking-[0.18em] text-nexus-textSubtle">{SHOWCASE_CASE.institution} / CASE {SHOWCASE_CASE.id}</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.18em] text-nexus-textSubtle">{SHOWCASE_CASE.institution} / CASE {SHOWCASE_CASE.id}</p>
           <h1 className="mt-1 text-lg font-bold tracking-[0.1em] text-nexus-text sm:text-xl">NEXUS ECHO — EVIDENCE ARCHIVE</h1>
-          <p className="mt-1 text-[0.58rem] uppercase tracking-[0.12em] text-nexus-textMuted">
+          <p className="mt-1 text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted">
             {pad(model.total)} RECORDS · {pad(model.groups.length)} MEDIA · {pad(damaged)} NOT IN NORMAL CONDITION
           </p>
         </div>
-        <span className="border border-nexus-warning px-2 py-1 text-[0.6rem] font-bold uppercase tracking-[0.16em] text-nexus-warning" data-testid="simulation-label">{SHOWCASE_LABEL}</span>
+        <span className="border border-nexus-warning px-2 py-1 text-[0.8125rem] font-bold uppercase tracking-[0.16em] text-nexus-warning" data-testid="simulation-label">{SHOWCASE_LABEL}</span>
       </header>
 
       <nav aria-label="Media" className="sticky top-0 z-10 -mx-4 flex gap-1 overflow-x-auto border-b border-nexus-borderSubtle bg-nexus-bg/95 px-4 py-2 backdrop-blur-sm">
@@ -213,7 +213,7 @@ export function EvidenceShowcase() {
             onClick={() => goTo(group.type)}
             aria-current={active === group.type ? 'true' : undefined}
             className={cn(
-              'min-h-9 shrink-0 border px-2.5 text-[0.58rem] uppercase tracking-[0.12em]',
+              'min-h-9 shrink-0 border px-2.5 text-[0.8125rem] uppercase tracking-[0.12em]',
               active === group.type ? 'border-nexus-accent text-nexus-accent' : 'border-nexus-border text-nexus-textMuted hover:border-nexus-borderHover hover:text-nexus-text',
             )}
           >
@@ -223,7 +223,7 @@ export function EvidenceShowcase() {
       </nav>
 
       {linkMissing && (
-        <p role="alert" className="mt-3 border border-nexus-warning/60 bg-nexus-warningBg/20 px-3 py-2 text-[0.6rem] uppercase tracking-[0.1em] text-nexus-warning">
+        <p role="alert" className="mt-3 border border-nexus-warning/60 bg-nexus-warningBg/20 px-3 py-2 text-[0.8125rem] uppercase tracking-[0.1em] text-nexus-warning">
           NO RECORD {link.code}{link.type ? ` IN ${link.type}` : ''} — SHOWING THE ARCHIVE
         </p>
       )}
@@ -244,7 +244,7 @@ export function EvidenceShowcase() {
               <div className="mb-3 flex flex-wrap items-end justify-between gap-2 border-b border-nexus-borderSubtle pb-2">
                 <div>
                   <h2 id={`group-title-${group.type}`} className="text-sm font-bold tracking-[0.18em] text-nexus-text">{group.label}</h2>
-                  <p className="mt-0.5 text-[0.56rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
+                  <p className="mt-0.5 text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
                     {pad(group.records.length)} IN ARCHIVE · {pad(group.nonNormal)} NOT NORMAL · SHOWING {pad(shown.length)} BY IMPORTANCE
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export function EvidenceShowcase() {
                     type="button"
                     onClick={() => toggleExpanded(group.type)}
                     aria-expanded={all}
-                    className="min-h-9 border border-nexus-border px-2.5 text-[0.58rem] uppercase tracking-[0.12em] text-nexus-textMuted hover:border-nexus-accent hover:text-nexus-accent"
+                    className="min-h-9 border border-nexus-border px-2.5 text-[0.8125rem] uppercase tracking-[0.12em] text-nexus-textMuted hover:border-nexus-accent hover:text-nexus-accent"
                   >
                     {all ? `SHOW ${group.representatives.length} KEY RECORDS` : `SHOW ALL ${group.records.length}`}
                   </button>
@@ -269,7 +269,7 @@ export function EvidenceShowcase() {
         })}
       </div>
 
-      <p className="mt-8 border-t border-nexus-borderSubtle pt-3 text-[0.54rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
+      <p className="mt-8 border-t border-nexus-borderSubtle pt-3 text-[0.75rem] uppercase tracking-[0.12em] text-nexus-textSubtle">
         {SHOWCASE_LABEL} / GENERATED CASE {SHOWCASE_CASE.id} CATALOG / DEVELOPMENT BUILDS ONLY / MARKS AND NOTES STAY IN THIS SANDBOX
       </p>
 

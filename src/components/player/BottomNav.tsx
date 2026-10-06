@@ -38,21 +38,21 @@ export function BottomNav() {
             {connection.status !== 'online' ? (
               <>
                 <span className="nexus-device-signal-dot offline bg-nexus-danger" aria-label="Offline" />
-                <span className="font-mono text-[0.56rem] uppercase tracking-[0.18em] text-nexus-danger">
+                <span className="font-mono text-[0.8125rem] uppercase tracking-[0.18em] text-nexus-danger">
                   SIGNAL: {connection.status.toUpperCase()}
                 </span>
               </>
             ) : (
               <>
                 <span className="nexus-device-signal-dot online" aria-label="Online" />
-                <span className="font-mono text-[0.56rem] uppercase tracking-[0.18em] text-nexus-accent">
+                <span className="font-mono text-[0.8125rem] uppercase tracking-[0.18em] text-nexus-accent">
                   LINKED
                 </span>
               </>
             )}
           </div>
           {queuedCount > 0 && isActivePath(ROUTES.PLAYER_GAME) && (
-            <span className="font-mono text-[0.52rem] uppercase tracking-[0.18em] text-nexus-warning">
+            <span className="font-mono text-[0.75rem] uppercase tracking-[0.18em] text-nexus-warning">
               {queuedCount} PENDING
             </span>
           )}
@@ -84,12 +84,12 @@ export function BottomNav() {
                 )}>
                   <Icon className="bureau-icon w-5 h-5" />
                 </span>
-                <span className="font-mono text-[0.58rem] uppercase tracking-[0.14em] leading-none">
+                <span className="font-mono text-[0.8125rem] uppercase tracking-[0.14em] leading-none">
                   {label}
                 </span>
                 {badge > 0 && (
                   <span
-                    className="absolute right-[18%] top-1 min-w-[1.1rem] border border-nexus-warning bg-nexus-bg px-1 text-center font-mono text-[0.6rem] font-bold leading-4 text-nexus-warning"
+                    className="absolute right-[18%] top-1 min-w-[1.1rem] border border-nexus-warning bg-nexus-bg px-1 text-center font-mono text-[0.8125rem] font-bold leading-4 text-nexus-warning"
                     aria-hidden="true"
                   >
                     {badge > 9 ? '9+' : badge}

@@ -82,7 +82,7 @@ export function MediumThumb({ artifact, variant, detail = false, className }: Me
     inner = <Waveform seed={artifact.id} height={row ? 28 : 32} tone="normal" />
   } else {
     inner = (
-      <span className="flex h-full w-full items-center justify-center font-mono text-[0.6rem] text-[#6c6759]" aria-hidden="true">
+      <span className="flex h-full w-full items-center justify-center font-mono text-[0.8125rem] text-[#6c6759]" aria-hidden="true">
         {medium.slice(0, 4)}
       </span>
     )
@@ -100,7 +100,7 @@ export function MediumThumb({ artifact, variant, detail = false, className }: Me
         {medium === 'SURVEILLANCE' && (
           <>
             <span className="pointer-events-none absolute inset-0" style={{ background: 'repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px)' }} />
-            <span className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-1 bg-black/70 px-1 font-mono text-[0.42rem] leading-4 text-[#cfe0d4]">
+            <span className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-1 bg-black/70 px-1 font-mono text-[0.75rem] leading-4 text-[#cfe0d4]">
               <span className="flex items-center gap-0.5"><span className="inline-block h-1 w-1 rounded-full bg-[#c24b3f]" />{row ? 'REC' : `REC ${camera ?? ''}`}</span>
               {!row && stamp ? <span className="truncate">{stamp}</span> : null}
             </span>
@@ -110,7 +110,7 @@ export function MediumThumb({ artifact, variant, detail = false, className }: Me
           <span className="pointer-events-none absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(140,180,200,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(140,180,200,.18) 1px, transparent 1px)', backgroundSize: '12px 12px' }} />
         )}
         {medium === 'AUDIO' && src && (
-          <span className="absolute inset-x-0 top-0 bg-black/60 px-1 font-mono text-[0.42rem] leading-3 text-[#b9c4c8]">REC SLIP</span>
+          <span className="absolute inset-x-0 top-0 bg-black/60 px-1 font-mono text-[0.75rem] leading-3 text-[#b9c4c8]">REC SLIP</span>
         )}
       </span>
       {medium === 'DOCUMENT' && (
