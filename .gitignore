@@ -8,6 +8,7 @@ build/
 .env
 .env.local
 .env.*.local
+!.env.example
 
 # IDE
 .vscode/
@@ -37,5 +38,8 @@ supabase/.temp/
 
 # TypeScript
 *.tsbuildinfo
-.vercel
+
+# Local development harnesses (not part of the app or the build)
+src/harness/
+*-harness.html
 .env*

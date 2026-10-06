@@ -18,7 +18,7 @@ Players communicate verbally in real life. The application does **not** provide 
 |-------|------------|
 | Frontend | React 18, TypeScript, Vite |
 | Routing | React Router v6 |
-| Styling | Tailwind CSS v4 |
+| Styling | Tailwind CSS 3.4 |
 | Backend | Supabase (PostgreSQL, Auth, Realtime, Edge Functions) |
 | Validation | Zod |
 | Testing | Vitest, React Testing Library |
@@ -135,22 +135,17 @@ npm run test:watch   # Run tests in watch mode
 |----------|-------------|----------|
 | `VITE_SUPABASE_URL` | Supabase project URL | Yes |
 | `VITE_SUPABASE_ANON_KEY` | Supabase anonymous key | Yes |
-| `VITE_APP_NAME` | Application name | No (default: NEXUS) |
-| `VITE_APP_VERSION` | Application version | No |
-| `VITE_APP_ENV` | Environment (development/production) | No |
-| `VITE_ENABLE_DEV_TOOLS` | Enable development tools | No |
-| `VITE_ENABLE_MOCK_DATA` | Use mock data instead of API | No |
 
 ## Current Implementation Status
 
 ### ✅ Completed (Foundation)
 - Project scaffolding with Vite + React + TypeScript
-- Tailwind CSS v4 design system (clinical investigation aesthetic)
+- Tailwind CSS design system (retro forensic-horror aesthetic; see `docs/brand/`)
 - Type-safe domain model (`src/types/domain.ts`)
 - Zod validation schemas for all entities
 - React Router with player/admin route separation
 - Layout components (mobile-first player, desktop-first admin)
-- Placeholder screens for all player and admin routes
+- Player handset and Bureau workstation screens for every route
 - Supabase client configuration (browser & server)
 - Database type definitions
 - Core utility libraries (time, validation, utils)
@@ -211,7 +206,7 @@ npm run test:watch   # Run tests in watch mode
 - **Date:** 30/09/2026
 - **Location:** ISIMM Monastir
 - **Teams:** ~25 teams × 3 players = ~75 players
-- **Duration:** ~3 hours per team
+- **Duration:** the clock is set to 3 hours per team; the content is longer than that (see `docs/audits/NARRATIVE_OPEN_ITEMS.md`, "Timer")
 - **Format:** Rolling starts, 10-minute intervals
 - **Operators:** 2 Bureau/admin operators
 

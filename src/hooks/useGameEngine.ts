@@ -395,7 +395,7 @@ export function useGameEngine() {
       if (isOffline) {
         return {
           discovered: false,
-          message: 'Cannot scan while offline.',
+          message: 'NO LINK. The reader cannot reach the Bureau while the handset is offline.',
           error: 'offline',
         }
       }
@@ -407,9 +407,14 @@ export function useGameEngine() {
           nodeCode: result.nodeCode,
           nodeTitle: result.nodeTitle,
           alreadyClaimed: result.alreadyClaimed,
+          // Three different failures read as one before: a code that is not in
+          // the case file, a marker the reader knows but the case has not
+          // reached, and a link that never reached the Bureau.
           message: result.discovered
             ? undefined
-            : 'ACCESS DENIED. The system recognizes the marker, but whatever it points to remains sealed.',
+            : result.error
+              ? 'NO MATCH. This code is not in the case file. Check the characters and read it again.'
+              : 'MARKER SEALED. The system knows this marker, but whatever it points to has not been opened to your unit.',
           error: result.error,
           markerId: result.markerId,
           manualCode: result.manualCode,
@@ -419,8 +424,7 @@ export function useGameEngine() {
       } catch {
         return {
           discovered: false,
-          message:
-            'ACCESS DENIED. The system recognizes the marker, but whatever it points to remains sealed.',
+          message: 'NO LINK. The reader could not reach the Bureau. Try again.',
           error: 'scan_failed',
         }
       }

@@ -58,8 +58,10 @@ export function AdminEvidenceLab() {
       })
       .catch(cause => {
         if (active) {
-          setCatalog(buildDevelopmentCatalog())
-          setUsingDevFallback(true)
+          // Fabricated records are a development aid. In production an
+          // unavailable index must read as unavailable, never as a case file.
+          setCatalog(import.meta.env.DEV ? buildDevelopmentCatalog() : null)
+          setUsingDevFallback(import.meta.env.DEV)
           setApiError(cause instanceof Error ? cause.message : 'Evidence index unavailable')
         }
       })

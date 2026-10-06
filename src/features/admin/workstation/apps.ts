@@ -66,10 +66,15 @@ export const APPS: Record<AppId, AppDefinition> = {
   TERMINAL: { id: 'TERMINAL', module: 'M-11', title: 'NEXUS://', purpose: 'Command line to the same data', path: null, size: { w: 720, h: 460 }, multiple: false, glyph: 'prompt' },
 }
 
-export const APP_ORDER: AppId[] = [
+/**
+ * The desktop's modules, in order. M-12 shows the generated simulation case,
+ * which exists only in development builds; offering it in production would
+ * open an empty window.
+ */
+export const APP_ORDER: AppId[] = ([
   'COMMAND', 'FIELD_UNITS', 'LOCATIONS', 'OPERATIONS', 'RECORD', 'EVIDENCE',
   'ARCHIVE', 'SURVEILLANCE', 'ACCESS_LOG', 'SIMULATOR', 'QA_MONITOR', 'TERMINAL',
-]
+] as AppId[]).filter(id => id !== 'ARCHIVE' || import.meta.env.DEV)
 
 /** Which app owns an admin URL (team detail belongs to FIELD_UNITS). */
 export function appForPath(pathname: string): AppId | null {

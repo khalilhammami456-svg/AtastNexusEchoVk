@@ -156,6 +156,8 @@ export function PlayerQR() {
   useEffect(() => {
     if (!lastResult) return
     play(lastResult.discovered ? 'scan-lock' : 'refuse')
+    // A code that read is done with; one that did not stays so it can be corrected.
+    if (lastResult.discovered) setManualCode('')
   }, [lastResult, play])
 
   const decodeFrame = useCallback(async () => {
@@ -501,7 +503,7 @@ export function PlayerQR() {
             <div className="flex items-start gap-3">
               <div className="flex-1 min-w-0">
                 <div className="mb-2 flex items-center justify-between gap-2">
-                  <p className="font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">FIELD MARKER ACQUIRED</p>
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-nexus-textSubtle">{lastResult.discovered ? 'MARKER READ' : lastResult.error ? 'MARKER NOT RECOGNISED' : 'MARKER SEALED'}</p>
                   <Stamp variant={lastResult.discovered ? 'verified' : 'restricted'} impressed>
                     {isResolving ? 'VERIFYING' : lastResult.alreadyClaimed ? 'ALREADY FILED' : lastResult.discovered ? 'IDENTIFIED' : 'UNRESOLVED'}
                   </Stamp>
@@ -554,7 +556,7 @@ export function PlayerQR() {
                 to={ROUTES.PLAYER_GAME}
                 className="btn-primary w-full mt-4 touch-target-comfortable"
               >
-                <span>[ RETURN TO ACTIVE NODE ]</span>
+                <span>[ RETURN TO CASE ]</span>
               </Link>
             )}
             {lastResult.discovered && !lastResult.nodeCode && (
@@ -599,7 +601,6 @@ export function PlayerQR() {
                  const code = manualCode.trim()
                  if (!code) return
                  void submitCode(code)
-                 setManualCode('')
                }}
              >
               <input
@@ -618,7 +619,7 @@ export function PlayerQR() {
                 disabled={!manualCode.trim() || isResolving || isOffline}
                 className="btn-primary touch-target-comfortable flex-shrink-0"
               >
-                Verify Code
+                READ CODE
               </button>
             </form>
           )}
@@ -631,7 +632,7 @@ export function PlayerQR() {
             <div>
               <h4 className="mb-1 font-mono text-xs font-bold uppercase tracking-[0.14em] text-nexus-info">FIELD MARKER PROCEDURE</h4>
               <p className="text-xs leading-relaxed text-nexus-textMuted">
-                Markers are fixed at campus locations. Manual codes use the same verification channel. In simulation, use <code className="font-mono">QR-NODE-02</code> or the manual code format <code className="font-mono">037-A-4821</code>.
+                Markers are fixed at campus locations. Manual codes go through the same reader.{isQASimulation && <> In simulation, use <code className="font-mono">QR-NODE-02</code> or the manual code format <code className="font-mono">037-A-4821</code>.</>}
               </p>
             </div>
           </div>

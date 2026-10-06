@@ -1,6 +1,6 @@
 # NEXUS ECHO — Design system
 
-Brand rationale: `NEXUS_ECHO_BRAND_BOOK.md`. Icons: `NEXUS_ECHO_ICON_GUIDELINES.md`.
+Brand rationale: `docs/brand/NEXUS_ECHO_BRAND_BOOK.md`. Icons: `docs/brand/NEXUS_ECHO_ICON_GUIDELINES.md`.
 Tokens: `src/styles/tokens.css` (non-colour), `globals.css :root` + Tailwind
 `nexus.*` (colour). New code uses tokens; a literal value is a bug.
 

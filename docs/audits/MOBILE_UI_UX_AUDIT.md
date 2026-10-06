@@ -33,7 +33,7 @@ Build, type-check and all 649 tests pass.
 - Two research subagents ran web searches (branding references; UI/UX
   references). Their access to full pages was blocked, so findings come from
   search-result summaries and are listed with URLs in
-  `NEXUS_ECHO_BRAND_MOODBOARD.md`. One earlier research subagent has not
+  `docs/brand/NEXUS_ECHO_BRAND_MOODBOARD.md`. One earlier research subagent has not
   reported back.
 - **Not found:** a UI case study for *The Dark Arrival: Shadows of the Past*.
   Its principle is not cited as sourced. *The Operator* is by Bureau 81.

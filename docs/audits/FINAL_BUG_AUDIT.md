@@ -5,7 +5,7 @@ Method: the full migration history was replayed for the first time on a clean
 PostgreSQL 16 with a Supabase stub (`scripts/db/supabase-stub.sql`), role
 behaviour was simulated with `SET ROLE` + JWT claims, and each finding got a
 regression test that was shown to fail without its fix. See
-`SYSTEM_ARCHITECTURE_AUDIT.md` for the system map and the limits of what ran.
+`docs/architecture/SYSTEM_ARCHITECTURE_AUDIT.md` for the system map and the limits of what ran.
 
 ## Totals
 
@@ -79,7 +79,7 @@ Fixed and tested:
 - Performance: main chunk 628.8 kB to 76.5 kB via route-level lazy loading and named vendor chunks; warning gone.
 - Accessibility: form errors linked with `aria-describedby`/`role=alert` on both logins, QR and Node.
 - Evidence ecosystem: series/chronology, importance and facts derivations, archive chronology order,
-  admin M-06 importance column, `EVIDENCE_ECOSYSTEM_AUDIT.md` (content lock still holds for 66 records).
+  admin M-06 importance column, `docs/audits/EVIDENCE_ECOSYSTEM_AUDIT.md` (content lock still holds for 66 records).
 
 ## Remaining issues (not fixed)
 

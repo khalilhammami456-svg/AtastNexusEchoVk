@@ -62,8 +62,6 @@ Fill in:
 ### 2.2 Production Feature Flags
 Set these for production:
 ```
-VITE_APP_ENV=production
-VITE_ENABLE_DEV_TOOLS=false
 ```
 
 ## 3. Build & Deploy Frontend
@@ -122,7 +120,7 @@ VALUES (
 - [ ] Service role key is NOT in client bundle (`grep -r SERVICE_ROLE_KEY src/`)
 - [ ] No hardcoded secrets in `.env.local`
 - [ ] All player-facing edge functions forward JWT via Authorization header
-- [ ] `VITE_ENABLE_DEV_TOOLS=false` in production
+- [ ] Only `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set; the app reads nothing else
 - [ ] SSL/TLS enforced on all connections
 - [ ] CORS configured for your domain (update `corsHeaders` in functions if needed)
 

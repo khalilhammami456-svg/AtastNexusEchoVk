@@ -22,7 +22,7 @@
  *   connected cyan node, bottom right
  *
  * Labels accompany every glyph that is not self-evident; see
- * NEXUS_ECHO_ICON_GUIDELINES.md.
+ * docs/brand/NEXUS_ECHO_ICON_GUIDELINES.md.
  */
 import type { ReactNode, SVGProps } from 'react'
 import { cn } from '@/lib/utils'

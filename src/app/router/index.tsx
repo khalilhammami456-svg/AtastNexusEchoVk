@@ -7,6 +7,7 @@ import { lazy } from 'react'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import { Layout } from '@/components/layout/Layout'
+import { NoSuchRecord } from '@/components/layout/NoSuchRecord'
 import { RouteError } from '@/components/layout/RouteError'
 
 // Route guards (tiny; kept in the entry chunk so the guard logic never lazy-loads)
@@ -179,6 +180,9 @@ export const router = createBrowserRouter([
 
       // Redirect root to player login
       { index: true, Component: () => <Navigate to="/player/login" replace /> },
+
+      // Anything else is an address that is not in the case file.
+      { path: '*', Component: NoSuchRecord },
     ],
   },
 ])

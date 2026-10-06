@@ -44,7 +44,7 @@ Server-authoritative by design: answers live in `puzzle_nodes.answer_metadata`; 
 
 ## Where the design and the database disagreed (what the audit found)
 
-The security model above is sound on paper and was **not enforced at the database layer**: the table API and the RPC API are exposed by Supabase to anyone holding the public anon key, and the migrations left both open. Details in `FINAL_BUG_AUDIT.md`; the fixes are migrations `2026100301`–`2026100308`, with a replayable test suite (`scripts/db/verify-migrations.sh`).
+The security model above is sound on paper and was **not enforced at the database layer**: the table API and the RPC API are exposed by Supabase to anyone holding the public anon key, and the migrations left both open. Details in `docs/audits/FINAL_BUG_AUDIT.md`; the fixes are migrations `2026100301`–`2026100308`, with a replayable test suite (`scripts/db/verify-migrations.sh`).
 
 ## What could and could not be run here
 

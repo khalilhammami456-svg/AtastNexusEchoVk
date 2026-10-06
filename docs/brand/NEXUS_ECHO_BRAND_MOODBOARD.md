@@ -52,4 +52,4 @@ borrowed; no visuals are copied.
 [19] tetralogical.com/blog/2022/12/20/foundations-target-size/ ·
 [20] m2.material.io/design/iconography/system-icons.html
 
-Earlier rounds (`DESIGN_RESEARCH.md`) cover phone-investigation games.
+Earlier rounds (`docs/brand/DESIGN_RESEARCH.md`) cover phone-investigation games.

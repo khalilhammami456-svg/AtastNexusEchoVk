@@ -83,7 +83,7 @@ Limits, stated plainly:
 - There are no pixel-region clues (something small inside a photograph found by zooming). Adding one means changing the picture's content, which this pass was forbidden to do. The model is ready for it (`DiscoveryMethod` can grow a `ZOOM` entry with a region).
 - Frame stepping needs video; the case has stills only. Inspection gained view-only brightness / contrast / sharpen instead.
 
-`EVIDENCE_ASSET_REGISTRY.md` + `docs/evidence/asset-registry.json` (generated; kept out of `public/` because it lists the clues) record each asset, its renderer treatment, a content-lock hash of its canonical facts, and its clues. `npm run evidence:lock` fails if any canonical fact drifts.
+`docs/evidence/EVIDENCE_ASSET_REGISTRY.md` + `docs/evidence/asset-registry.json` (generated; kept out of `public/` because it lists the clues) record each asset, its renderer treatment, a content-lock hash of its canonical facts, and its clues. `npm run evidence:lock` fails if any canonical fact drifts.
 
 ## Evidence render fix (presentation only)
 

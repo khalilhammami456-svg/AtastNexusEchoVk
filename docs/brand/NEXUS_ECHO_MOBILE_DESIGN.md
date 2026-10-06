@@ -1,6 +1,6 @@
 # NEXUS ECHO — Mobile Field Device: design
 
-Companion to `MOBILE_GAME_AUDIT.md` (what exists) and `GAME_SCOPE_AUDIT.md`
+Companion to `docs/audits/MOBILE_GAME_AUDIT.md` (what exists) and `docs/audits/GAME_SCOPE_AUDIT.md`
 (what belongs). Everything here is implemented unless marked **not built**.
 
 ## Core mobile loop
@@ -123,7 +123,7 @@ inspection. Search is a linear scan over at most a few hundred records, memoised
 
 ## Research
 
-See `DESIGN_RESEARCH.md` (earlier rounds). Principles applied here: the phone is
+See `docs/brand/DESIGN_RESEARCH.md` (earlier rounds). Principles applied here: the phone is
 the game space (Simulacra), search/cross-reference as the puzzle (Her Story,
 Telling Lies), clues across media (The Sign), one case many surfaces (I Am
 Innocent), short paced messages and not flooding the player (Simulacra's own

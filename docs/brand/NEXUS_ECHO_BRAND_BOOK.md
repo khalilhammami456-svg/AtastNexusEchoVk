@@ -111,7 +111,7 @@ cards.
 ## 08 Photography, surveillance, documents
 
 Documentary, cold, imperfect, period-correct (see the renderer notes in
-`ARCHITECTURE_NOTES.md`); not cinematic. CCTV: camera ID and timestamp in the
+`docs/architecture/ARCHITECTURE_NOTES.md`); not cinematic. CCTV: camera ID and timestamp in the
 corners, REC marker. Documents: header with case/ID, classification, footer;
 paper stock. These systems existed from the evidence work and now share the
 type and colour above.

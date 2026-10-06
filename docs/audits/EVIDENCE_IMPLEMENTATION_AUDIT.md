@@ -2,7 +2,7 @@
 
 ## The specification that was audited
 
-The brief asked for the existing `EVIDENCE_ECOSYSTEM.md`. **No file with that name exists in the repository.** The only ecosystem document is `EVIDENCE_ECOSYSTEM_AUDIT.md`, written in the previous round from the real library, and the earlier evidence brief it answers. That audit was used as the specification. Design principles come from `EVIDENCE_REFERENCE_NOTES.md`, which is weaker than asked: every network fetch was blocked, so nothing there is SOURCED, only search-snippet summaries or unverified memory (the file says so).
+The brief asked for the existing `EVIDENCE_ECOSYSTEM.md`. **No file with that name exists in the repository.** The only ecosystem document is `docs/audits/EVIDENCE_ECOSYSTEM_AUDIT.md`, written in the previous round from the real library, and the earlier evidence brief it answers. That audit was used as the specification. Design principles come from `docs/evidence/EVIDENCE_REFERENCE_NOTES.md`, which is weaker than asked: every network fetch was blocked, so nothing there is SOURCED, only search-snippet summaries or unverified memory (the file says so).
 
 ## Authority rule applied
 
@@ -54,7 +54,7 @@ The game is the authority. The canonical case NX-037 has 66 records in **8 media
 - Sticky "ADD TO BOARD" bar floated 92 px above the bottom inside the admin overlay (offset meant for the player nav) → anchored at the bottom there.
 - Workstation system bar overlapped its text on a phone → title/labels collapse below `md`.
 - Archive did not pass its catalog to the inspector, so frame stepping would have shown nothing in production → wired.
-- Handwritten notes rendered in a fallback sans (Segoe Print etc. absent on Linux) → see the realism section of EVIDENCE_SHOWCASE.md.
+- Handwritten notes rendered in a fallback sans (Segoe Print etc. absent on Linux) → see the realism section of docs/evidence/EVIDENCE_SHOWCASE.md.
 
 ## Still weak (honest)
 

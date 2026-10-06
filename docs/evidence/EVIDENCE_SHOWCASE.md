@@ -6,7 +6,7 @@ Every image below is a real capture of the running application (Chromium via Pla
 
 ![contact sheet](docs/evidence-screenshots/evidence-showcase-contact-sheet.png)
 
-Only the 8 media in the NX-037 canon appear. Emails, letters, posters, receipts, lab reports, video tapes and similar types were not built, because the story contains no such records (see `EVIDENCE_IMPLEMENTATION_AUDIT.md`).
+Only the 8 media in the NX-037 canon appear. Emails, letters, posters, receipts, lab reports, video tapes and similar types were not built, because the story contains no such records (see `docs/audits/EVIDENCE_IMPLEMENTATION_AUDIT.md`).
 
 ## 01 · PHOTOGRAPH
 

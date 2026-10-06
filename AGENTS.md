@@ -3,8 +3,10 @@
 ## Commands
 
 - **Typecheck**: `npx tsc --noEmit`
-- **Tests**: `npx vitest run` (478 tests, 27 test files)
+- **Tests**: `npx vitest run` (run it for the current count)
 - **Lint**: `npm run lint`
+- **Database**: `PGHOST=localhost PGUSER=postgres scripts/db/verify-migrations.sh` replays every migration on a throwaway Postgres and runs `supabase/tests/*.sql`
+- **Audio**: `npm run audio:check` (recordings must sit at their loudness target)
 - **Dev**: `npm run dev`
 
 ## Project Structure

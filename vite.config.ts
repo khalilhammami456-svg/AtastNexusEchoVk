@@ -22,7 +22,9 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    // Hidden: maps are generated (for error tracking) but not referenced from
+    // the bundles, so the source is not served to every visitor.
+    sourcemap: 'hidden',
     rollupOptions: {
       output: {
         // Only stable, always-needed vendor code is pinned to a named chunk.
@@ -33,7 +35,6 @@ export default defineConfig({
           const pkg = (name: string) => id.includes(`/node_modules/${name}/`)
           if (pkg('react') || pkg('react-dom') || pkg('scheduler') || pkg('react-router') || pkg('react-router-dom') || pkg('@remix-run/router')) return 'vendor'
           if (id.includes('/node_modules/@supabase/')) return 'supabase'
-          if (pkg('gsap')) return 'gsap'
           if (pkg('zod') || pkg('clsx') || pkg('tailwind-merge')) return 'utils'
           return undefined
         },

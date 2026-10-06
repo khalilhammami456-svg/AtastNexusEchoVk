@@ -19,7 +19,7 @@ import type { CaseArtifact } from '../../src/features/player/evidence/types'
 
 const ROOT = join(__dirname, '..', '..')
 const JSON_PATH = join(ROOT, 'docs', 'evidence', 'asset-registry.json')
-const MD_PATH = join(ROOT, 'EVIDENCE_ASSET_REGISTRY.md')
+const MD_PATH = join(ROOT, 'docs', 'evidence', 'EVIDENCE_ASSET_REGISTRY.md')
 
 /** What the renderer does for each medium. Mirrors scripts/evidence-gen/lib. */
 const MEDIUM_TREATMENT: Record<string, string> = {
@@ -33,7 +33,7 @@ const MEDIUM_TREATMENT: Record<string, string> = {
   AUDIO: 'Recording log card with waveform',
 }
 
-/** Reviewed by eye after the renderer fix (see ARCHITECTURE_NOTES.md). */
+/** Reviewed by eye after the renderer fix (see docs/architecture/ARCHITECTURE_NOTES.md). */
 const QA_NOTES: Record<string, string> = {
   'NX-037-B-05': 'Bright lab, slightly high key. Accepted.',
   'NX-037-B-07': 'Blown out by design: the case calls it the rejected frame.',
