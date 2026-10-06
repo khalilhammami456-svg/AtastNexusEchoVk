@@ -14,6 +14,7 @@
  * Needs playwright-core and a Chromium (see scripts/screenshots/capture.mjs for
  * where it looks). Nothing is installed by this script.
  */
+/* global AudioContext */
 import { createRequire } from 'node:module'
 import fs from 'node:fs'
 
