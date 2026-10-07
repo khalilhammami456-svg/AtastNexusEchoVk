@@ -29,9 +29,10 @@ export const HINT_PENALTIES = {
   hint1: 120,
   hint2: 300,
   hint3: 600,
+  hint4: 900,
 } as const
 
-export const MAX_HINTS_PER_NODE = 3 as const
+export const MAX_HINTS_PER_NODE = 4 as const
 
 export const SUBMISSION_RATE_LIMIT = 5 as const
 

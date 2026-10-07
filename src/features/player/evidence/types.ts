@@ -15,6 +15,10 @@ export type ArtifactType =
   | 'NOTE'
   | 'AUDIO'
 
+export const ARTIFACT_TYPES = [
+  'PHOTOGRAPH', 'SURVEILLANCE', 'DOCUMENT', 'FRAGMENT', 'MAP', 'PERSONNEL', 'NOTE', 'AUDIO',
+] as const
+
 /** What survived. Condition is a property of the object, not of the player. */
 export type ArtifactCondition =
   | 'NORMAL'
@@ -118,6 +122,9 @@ const TYPE_ALIASES: Array<[RegExp, ArtifactType]> = [
  * for the normalised medium instead of pattern-matching the raw string.
  */
 export function artifactType(artifact: CaseArtifact): ArtifactType {
+  // A record that says what it is outranks a guess from its type and code.
+  const declared = contentString(artifact.content, ['artifact_type'])?.toUpperCase()
+  if (declared && (ARTIFACT_TYPES as readonly string[]).includes(declared)) return declared as ArtifactType
   const raw = `${artifact.type} ${artifact.code}`
   for (const [pattern, type] of TYPE_ALIASES) {
     if (pattern.test(raw)) return type

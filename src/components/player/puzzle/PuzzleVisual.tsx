@@ -31,6 +31,7 @@ import {
   readString,
   readAudioClips,
   readStringArray,
+  readExhibits,
   type InteractiveData,
 } from './payload'
 import {
@@ -696,6 +697,25 @@ if (import.meta.env.DEV) {
  * the declared type: a node that says "timeline-investigation" but ships a
  * `sequence` should still get the sequence board, not an empty ledger.
  */
+function ExhibitStrip({ data }: { data: InteractiveData }) {
+  const exhibits = readExhibits(data)
+  if (exhibits.length === 0) return null
+  return (
+    <div className="space-y-3">
+      {exhibits.map(exhibit => (
+        <figure key={exhibit.src} className="space-y-1.5">
+          <a href={exhibit.src} target="_blank" rel="noreferrer" className="block border border-nexus-border bg-nexus-bg">
+            <img src={exhibit.src} alt={exhibit.alt} loading="lazy" className="w-full h-auto block" />
+          </a>
+          {exhibit.caption && (
+            <figcaption className="text-xs font-mono uppercase tracking-wider text-nexus-textSubtle">{exhibit.caption}</figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  )
+}
+
 export function PuzzleVisual({ type, dataPayload, interactiveData }: PuzzleVisualProps) {
   const declared = (type ?? '').toLowerCase()
   const hasSequence = readStringArray(interactiveData, 'sequence').length > 0
@@ -705,5 +725,10 @@ export function PuzzleVisual({ type, dataPayload, interactiveData }: PuzzleVisua
     RENDERERS[declared] ??
     (readStringArray(interactiveData, 'symbols').length > 0 ? PuzzleBoardVisual : GenericVisual)
 
-  return renderer({ type, dataPayload, interactiveData })
+  return (
+    <div className="space-y-4">
+      <ExhibitStrip data={interactiveData} />
+      {renderer({ type, dataPayload, interactiveData })}
+    </div>
+  )
 }

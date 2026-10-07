@@ -45,6 +45,26 @@ export function readEntries(data: InteractiveData, key = 'entries'): DataEntry[]
     }))
 }
 
+export interface InlineExhibit {
+  src: string
+  caption: string
+  alt: string
+}
+
+/** Images this seat is shown inline, e.g. a still from a camera. Same-origin paths only. */
+export function readExhibits(data: InteractiveData, key = 'exhibits'): InlineExhibit[] {
+  const value = data?.[key]
+  if (!Array.isArray(value)) return []
+  return value
+    .filter((entry): entry is Record<string, unknown> => typeof entry === 'object' && entry !== null)
+    .map(entry => ({
+      src: typeof entry.src === 'string' ? entry.src : '',
+      caption: typeof entry.caption === 'string' ? entry.caption : '',
+      alt: typeof entry.alt === 'string' ? entry.alt : 'Exhibit image',
+    }))
+    .filter(entry => entry.src.startsWith('/') && !entry.src.startsWith('//'))
+}
+
 export interface GraphNode {
   label: string
   pos: number

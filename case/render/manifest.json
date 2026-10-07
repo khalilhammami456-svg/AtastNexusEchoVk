@@ -1,0 +1,292 @@
+{
+ "EVID-P01": {
+  "hash": "cbe4fd4a877f5c19410afe94271cacc65bcb8c8d",
+  "image": "/evidence/case/ab2661c13df05b.jpg",
+  "thumb": "/evidence/case/ab2661c13df05b-t.jpg"
+ },
+ "EVID-P02": {
+  "hash": "eb40deb5cc7348edfada008ce950ef549be287d8",
+  "image": "/evidence/case/28c81ba94820c0.jpg",
+  "thumb": "/evidence/case/28c81ba94820c0-t.jpg"
+ },
+ "EVID-P02-B": {
+  "hash": "551972c6980563afd8a2977b36daa927d26cb49e",
+  "image": "/evidence/case/f677ca8959ed2e.jpg",
+  "thumb": "/evidence/case/f677ca8959ed2e-t.jpg"
+ },
+ "EVID-P03": {
+  "hash": "d7980a6a16f1a5068d5b299a0e2bf8e1fafeb2f5",
+  "image": "/evidence/case/5f63c8920219c8.jpg",
+  "thumb": "/evidence/case/5f63c8920219c8-t.jpg"
+ },
+ "EVID-P04": {
+  "hash": "5db338df9a4805b047b16067abeea5b2636bce8e",
+  "image": "/evidence/case/da53fef89f6e51.jpg",
+  "thumb": "/evidence/case/da53fef89f6e51-t.jpg"
+ },
+ "EVID-P05": {
+  "hash": "28ec56384edf80eed0ca26a1fc4b6726a8052c8c",
+  "image": "/evidence/case/953c6dfe0497ce.jpg",
+  "thumb": "/evidence/case/953c6dfe0497ce-t.jpg"
+ },
+ "EVID-M01": {
+  "hash": "126621a2fdb4effc0445840ac3b5b729b76fe17e",
+  "image": "/evidence/case/58ddf0c21dfd8a.jpg",
+  "thumb": "/evidence/case/58ddf0c21dfd8a-t.jpg"
+ },
+ "EVID-M01-B": {
+  "hash": "4b935ec5e80eab34905867cc1799ff4959499f0e",
+  "image": "/evidence/case/1edae427c1f829.jpg",
+  "thumb": "/evidence/case/1edae427c1f829-t.jpg"
+ },
+ "EVID-P06": {
+  "hash": "0a3d42049a5f47e8c0b22913dca091609d27cd60",
+  "image": "/evidence/case/62a31a2c02f57a.jpg",
+  "thumb": "/evidence/case/62a31a2c02f57a-t.jpg"
+ },
+ "EVID-P07": {
+  "hash": "619d70a17ebde8073bf6947173367a7fb4e8e839",
+  "image": "/evidence/case/9a1e042c14a481.jpg",
+  "thumb": "/evidence/case/9a1e042c14a481-t.jpg"
+ },
+ "EVID-P08": {
+  "hash": "1213b51f4750185f9eedf7f9674370e5b74ce5a6",
+  "image": "/evidence/case/eb7a0e9f2d9b68.jpg",
+  "thumb": "/evidence/case/eb7a0e9f2d9b68-t.jpg"
+ },
+ "EVID-P09": {
+  "hash": "28ee1fa192cb4d9dc0fe4df435993047dacb77dc",
+  "image": "/evidence/case/0c0fe4eaa6e356.jpg",
+  "thumb": "/evidence/case/0c0fe4eaa6e356-t.jpg"
+ },
+ "EVID-P10": {
+  "hash": "0af75885f82edc17fb64db85fffc6dc8f5e1e0e8",
+  "image": "/evidence/case/0d5c0c02b7551b.jpg",
+  "thumb": "/evidence/case/0d5c0c02b7551b-t.jpg"
+ },
+ "EVID-P11": {
+  "hash": "9f411a378633a8a93611354f485205f20e67ded9",
+  "image": "/evidence/case/116d68d231af83.jpg",
+  "thumb": "/evidence/case/116d68d231af83-t.jpg"
+ },
+ "EVID-P12": {
+  "hash": "1b8aea88d5b2368bccec1fa97c7c4db070338847",
+  "image": "/evidence/case/991772f4feb981.jpg",
+  "thumb": "/evidence/case/991772f4feb981-t.jpg"
+ },
+ "EVID-P12-B": {
+  "hash": "91c098c5d5596261aa828521981a6c6ad8e32585",
+  "image": "/evidence/case/ee044a4ca4dc79.jpg",
+  "thumb": "/evidence/case/ee044a4ca4dc79-t.jpg"
+ },
+ "EVID-P13": {
+  "hash": "3866050ae984d906bb45f66307bb4d624f5aba86",
+  "image": "/evidence/case/42375aa4727652.jpg",
+  "thumb": "/evidence/case/42375aa4727652-t.jpg"
+ },
+ "EVID-M02": {
+  "hash": "e754dae4e8ffe7e6edc68c343de84b092116a42c",
+  "image": "/evidence/case/e0ce711ad196ea.jpg",
+  "thumb": "/evidence/case/e0ce711ad196ea-t.jpg"
+ },
+ "EVID-P06B": {
+  "hash": "bc6dd66b10c4a65f099068275a66b36727ff147e",
+  "image": "/evidence/case/c5092952b76318.jpg",
+  "thumb": "/evidence/case/c5092952b76318-t.jpg"
+ },
+ "EVID-P06B-B": {
+  "hash": "640ae4b01f34f5c2348bf2663943fe064fe3a73f",
+  "image": "/evidence/case/6df1b8592b6a18.jpg",
+  "thumb": "/evidence/case/6df1b8592b6a18-t.jpg"
+ },
+ "EVID-P07B": {
+  "hash": "8e2c387843d6210c8665103f226692d1c4039736",
+  "image": "/evidence/case/f4b0e11cf95137.jpg",
+  "thumb": "/evidence/case/f4b0e11cf95137-t.jpg"
+ },
+ "EVID-P14": {
+  "hash": "bea0a0fc4cfb5360fbee6ed0fa065dcce1a2cf9f",
+  "image": "/evidence/case/9b9036c8fdf41d.jpg",
+  "thumb": "/evidence/case/9b9036c8fdf41d-t.jpg"
+ },
+ "EVID-P15": {
+  "hash": "e8c7c8fc22584078a255b01e855f2e9a24c31b4c",
+  "image": "/evidence/case/c548337e7dba69.jpg",
+  "thumb": "/evidence/case/c548337e7dba69-t.jpg"
+ },
+ "EVID-P16": {
+  "hash": "48d72acab5183fca0931c98e0ea1c3bdf486fee9",
+  "image": "/evidence/case/d82283bee7effb.jpg",
+  "thumb": "/evidence/case/d82283bee7effb-t.jpg"
+ },
+ "EVID-P16-B": {
+  "hash": "e562c4013bf128a55805a2f6634c4828678721f0",
+  "image": "/evidence/case/ae84d522841bc6.jpg",
+  "thumb": "/evidence/case/ae84d522841bc6-t.jpg"
+ },
+ "EVID-P17": {
+  "hash": "667217173a14ddf5f0c160b6ed6bee05b026938e",
+  "audio": "/audio/case/0ac79aea2afb38.mp3",
+  "seconds": 16
+ },
+ "EVID-P17-B": {
+  "hash": "34e07c201954d19c8318c839e2eb71568faaff6d",
+  "image": "/evidence/case/e8f87c80295381.jpg",
+  "thumb": "/evidence/case/e8f87c80295381-t.jpg"
+ },
+ "EVID-P17B": {
+  "hash": "bb6c830f49c9ab83e3d0d9245f1ff44c5e32068f",
+  "image": "/evidence/case/9e1c7f077eaf64.jpg",
+  "thumb": "/evidence/case/9e1c7f077eaf64-t.jpg"
+ },
+ "EVID-P18": {
+  "hash": "fd70d7cd6b2def6127f759096f2258b086231603",
+  "image": "/evidence/case/05727aa21c038d.jpg",
+  "thumb": "/evidence/case/05727aa21c038d-t.jpg"
+ },
+ "EVID-P19": {
+  "hash": "b976570b1555f6a266af8baaf53142e8232ed929",
+  "image": "/evidence/case/e363484f10f426.jpg",
+  "thumb": "/evidence/case/e363484f10f426-t.jpg"
+ },
+ "EVID-P20": {
+  "hash": "99b946d5f3eeca7464a9cf95795f06430744f51b",
+  "image": "/evidence/case/19704603b98549.jpg",
+  "thumb": "/evidence/case/19704603b98549-t.jpg"
+ },
+ "EVID-P21": {
+  "hash": "379f4434f8e29f6ba9df718c5edf624abaed18c1",
+  "image": "/evidence/case/18afe0646c2f08.jpg",
+  "thumb": "/evidence/case/18afe0646c2f08-t.jpg"
+ },
+ "EVID-P21-B": {
+  "hash": "c64c52a16ff01ac708ac0513a8ac2d3251126608",
+  "image": "/evidence/case/518e218befb5e5.jpg",
+  "thumb": "/evidence/case/518e218befb5e5-t.jpg"
+ },
+ "EVID-P21-C": {
+  "hash": "072ddc67f4dcbca8a8153148148328afea6fda36",
+  "image": "/evidence/case/3344187feb9820.jpg",
+  "thumb": "/evidence/case/3344187feb9820-t.jpg"
+ },
+ "EVID-M03": {
+  "hash": "26da961ba978943cbd6ce1b5a998f6c8bfdb081e",
+  "image": "/evidence/case/c94bb28fdd17c1.jpg",
+  "thumb": "/evidence/case/c94bb28fdd17c1-t.jpg"
+ },
+ "EVID-P22": {
+  "hash": "f676a3ebd365a60b9e7580bf28893cdbc8cfb5fd",
+  "image": "/evidence/case/1996cda8a26ee5.jpg",
+  "thumb": "/evidence/case/1996cda8a26ee5-t.jpg"
+ },
+ "EVID-P23": {
+  "hash": "7635c7160910b4f80313fd849232801dd09aaea3",
+  "image": "/evidence/case/133e4f952a10bb.jpg",
+  "thumb": "/evidence/case/133e4f952a10bb-t.jpg"
+ },
+ "EVID-P23B": {
+  "hash": "a38684c3ada9af54edfd41f75fe07d2d3138d8f1",
+  "image": "/evidence/case/5c79035652cb5e.jpg",
+  "thumb": "/evidence/case/5c79035652cb5e-t.jpg"
+ },
+ "EVID-P23B-B": {
+  "hash": "a3d7de53198ce4c28486771057e9c9d51019169f",
+  "image": "/evidence/case/25476f2a4d7017.jpg",
+  "thumb": "/evidence/case/25476f2a4d7017-t.jpg"
+ },
+ "EVID-P24": {
+  "hash": "16c4973c4d436b84cdc5e4157f237f52ca65ae56",
+  "image": "/evidence/case/7e0cff02dbe34e.jpg",
+  "thumb": "/evidence/case/7e0cff02dbe34e-t.jpg"
+ },
+ "EVID-P24B": {
+  "hash": "517095271644f88a18db1cc3211758ecfac9e686",
+  "image": "/evidence/case/1c439e04d2c572.jpg",
+  "thumb": "/evidence/case/1c439e04d2c572-t.jpg"
+ },
+ "EVID-P25": {
+  "hash": "3c14ab038a941f78fa88ec8856ca1b33193e3499",
+  "image": "/evidence/case/51cb3eeb9f911f.jpg",
+  "thumb": "/evidence/case/51cb3eeb9f911f-t.jpg"
+ },
+ "EVID-P26": {
+  "hash": "313c534c4708d29e977cf5cdf2349981d076987f",
+  "image": "/evidence/case/bfa11d515ad604.jpg",
+  "thumb": "/evidence/case/bfa11d515ad604-t.jpg"
+ },
+ "EVID-P27": {
+  "hash": "69c9fb62773163b140bdc9db09db798bb0d9fbfe",
+  "image": "/evidence/case/30e3723141bd04.jpg",
+  "thumb": "/evidence/case/30e3723141bd04-t.jpg"
+ },
+ "EVID-P27B": {
+  "hash": "90cd07ebad8358ba5c8a5976e547acbec9efaf42",
+  "image": "/evidence/case/a0e250209fc746.jpg",
+  "thumb": "/evidence/case/a0e250209fc746-t.jpg"
+ },
+ "EVID-P28": {
+  "hash": "b0bada3cde7ec4beae2d885cebd9736de923e66b",
+  "audio": "/audio/case/c40d245e3f862d.mp3",
+  "seconds": 54
+ },
+ "EVID-P28-B": {
+  "hash": "e10b4c452c8d716225181a17d98487b88da47921",
+  "image": "/evidence/case/c96d94cb513438.jpg",
+  "thumb": "/evidence/case/c96d94cb513438-t.jpg"
+ },
+ "EVID-P29": {
+  "hash": "0e3433ac07af1586fb50567e083fb0b992c67b79",
+  "image": "/evidence/case/dc9ae86b5cbe41.jpg",
+  "thumb": "/evidence/case/dc9ae86b5cbe41-t.jpg"
+ },
+ "EVID-M04": {
+  "hash": "b9c25d9916867fc628d56b8581869952a4d93e40",
+  "image": "/evidence/case/3dc9651c52a477.jpg",
+  "thumb": "/evidence/case/3dc9651c52a477-t.jpg"
+ },
+ "EVID-P30": {
+  "hash": "63688b75088491a62f7001847adade0a64eb937e",
+  "audio": "/audio/case/44f20058a2d4a8.mp3",
+  "seconds": 36
+ },
+ "EVID-P31": {
+  "hash": "7d0fca76f43fdb3a8e87db297bf01aa879503594",
+  "image": "/evidence/case/bb4467d01a8763.jpg",
+  "thumb": "/evidence/case/bb4467d01a8763-t.jpg"
+ },
+ "EVID-P32": {
+  "hash": "2b9175a89ffe308f3bc4829859c4fbdb827e436f",
+  "image": "/evidence/case/4d3b648c55cf8f.jpg",
+  "thumb": "/evidence/case/4d3b648c55cf8f-t.jpg"
+ },
+ "EVID-P33": {
+  "hash": "e3fb163d9555331ce5d34ead8099ea9d1d13a3b2",
+  "image": "/evidence/case/ce2d1dc74fc880.jpg",
+  "thumb": "/evidence/case/ce2d1dc74fc880-t.jpg"
+ },
+ "EVID-P34": {
+  "hash": "b50074ef7dda5353926d43de37c96e80ee4937eb",
+  "image": "/evidence/case/1f5cbbfb1b6db4.jpg",
+  "thumb": "/evidence/case/1f5cbbfb1b6db4-t.jpg"
+ },
+ "EVID-P35": {
+  "hash": "6c10db5cc6e87a2b837e39661ccf2de9a40744fe",
+  "image": "/evidence/case/d588f471a2c9f3.jpg",
+  "thumb": "/evidence/case/d588f471a2c9f3-t.jpg"
+ },
+ "EVID-P36": {
+  "hash": "d34623fa9892c752bd00f4a90cee9a3de4e612d6",
+  "image": "/evidence/case/8d49d6283183af.jpg",
+  "thumb": "/evidence/case/8d49d6283183af-t.jpg"
+ },
+ "EVID-P36-B": {
+  "hash": "c17329f3bb5a02d48730058315dd486c38cdb179",
+  "image": "/evidence/case/a854fd4e47cab1.jpg",
+  "thumb": "/evidence/case/a854fd4e47cab1-t.jpg"
+ },
+ "EVID-P37": {
+  "hash": "44c244e1b76d8ebdd2028d46f68b3996353a39ff",
+  "image": "/evidence/case/da50b1fbe9a10e.jpg",
+  "thumb": "/evidence/case/da50b1fbe9a10e-t.jpg"
+ }
+}

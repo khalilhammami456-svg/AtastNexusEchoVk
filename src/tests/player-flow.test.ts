@@ -29,13 +29,14 @@ describe('Hint Penalty System', () => {
     expect(HINT_PENALTIES.hint3).toBe(600)
   })
 
-  it('max hints per node is 3', () => {
-    expect(MAX_HINTS_PER_NODE).toBe(3)
+  it('max hints per node is 4', () => {
+    expect(MAX_HINTS_PER_NODE).toBe(4)
   })
 
   it('hint penalties escalate monotonically', () => {
     expect(HINT_PENALTIES.hint1).toBeLessThan(HINT_PENALTIES.hint2)
     expect(HINT_PENALTIES.hint2).toBeLessThan(HINT_PENALTIES.hint3)
+    expect(HINT_PENALTIES.hint3).toBeLessThan(HINT_PENALTIES.hint4)
   })
 })
 

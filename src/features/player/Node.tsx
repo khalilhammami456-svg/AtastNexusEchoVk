@@ -317,8 +317,8 @@ export function PlayerNode() {
 
   const isLocked = !node.unlocked
   const hintLevel = hintIndexRef.current
-  const hintPenaltyMap = { 0: HINT_PENALTIES.hint1, 1: HINT_PENALTIES.hint2, 2: HINT_PENALTIES.hint3 }
-  const nextHintCost = hintLevel < 3 ? Math.floor(hintPenaltyMap[hintLevel as 0 | 1 | 2] / 60) : 0
+  const hintPenaltyMap = { 0: HINT_PENALTIES.hint1, 1: HINT_PENALTIES.hint2, 2: HINT_PENALTIES.hint3, 3: HINT_PENALTIES.hint4 }
+  const nextHintCost = hintLevel < 4 ? Math.floor(hintPenaltyMap[hintLevel as 0 | 1 | 2 | 3] / 60) : 0
 
   const nodeStatusTone: StatusTone =
     node.status === 'SOLVED' ? 'active' : node.unlocked ? 'warning' : 'inactive'
@@ -582,7 +582,7 @@ export function PlayerNode() {
             )}
 
             {/* Hint Section */}
-            {!isSolved && hintLevel < 3 && (
+            {!isSolved && hintLevel < 4 && (
               <div className="border-t border-nexus-borderSubtle pt-2">
                 <button
                   onClick={() => setShowHintPanel(true)}
@@ -590,7 +590,7 @@ export function PlayerNode() {
                   type="button"
                 >
                   <BureauIcons.Help className="bureau-icon w-4 h-4" />
-                  <span>Ask the desk · note {hintLevel + 1} of 3</span>
+                  <span>Ask the desk · note {hintLevel + 1} of 4</span>
                   <span className="ml-auto text-xs text-nexus-textSubtle">
                     +{nextHintCost} min
                   </span>
@@ -598,7 +598,7 @@ export function PlayerNode() {
                 {showHintPanel && (
                   <div className="mt-3 p-4 border-nexus-warning/30 bg-nexus-warningBg/20">
                     <p className="text-sm text-nexus-textMuted mb-3">
-                      The desk will answer. {Math.floor(hintPenaltyMap[hintLevel as 0 | 1 | 2] / 60)} minutes
+                      The desk will answer. {Math.floor(hintPenaltyMap[hintLevel as 0 | 1 | 2 | 3] / 60)} minutes
                       are added to your clock.
                     </p>
                     <div className="flex gap-2">

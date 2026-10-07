@@ -46,7 +46,7 @@ describe('QR Location Registry', () => {
     expect(loc).toBeDefined()
     expect(loc.locationId).toBe('LOC-001')
     expect(loc.scanNodeId).toBe('P01')
-    expect(loc.nodeName).toBe('The Facade')
+    expect(loc.nodeName).toBe('The Mark')
   })
 
   it('maps P37 (final boss) to the last puzzle location', () => {

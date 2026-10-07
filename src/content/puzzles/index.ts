@@ -35,7 +35,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P01',
     code: 'P01',
-    name: 'The Facade',
+    name: 'The Mark',
     stage: 1,
     type: 'OBSERVATION',
     difficulty: 2,
@@ -48,7 +48,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P02',
     code: 'P02',
-    name: 'The Clock',
+    name: 'The Held Moment',
     stage: 1,
     type: 'SPATIAL',
     difficulty: 2,
@@ -61,7 +61,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P03',
     code: 'P03',
-    name: 'The Facade Pin',
+    name: 'Bay 3425',
     stage: 1,
     type: 'CIPHER',
     difficulty: 2,
@@ -74,7 +74,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P04',
     code: 'P04',
-    name: 'The Poster Dates',
+    name: 'Four Sessions',
     stage: 1,
     type: 'PATTERN',
     difficulty: 3,
@@ -87,7 +87,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P05',
     code: 'P05',
-    name: 'The Third Figure',
+    name: 'The Empty Frame',
     stage: 1,
     type: 'DEDUCTION',
     difficulty: 3,
@@ -100,7 +100,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P06',
     code: 'P06',
-    name: 'The Pivot',
+    name: 'Entry #06',
     stage: 2,
     type: 'MEMORY',
     difficulty: 2,
@@ -113,7 +113,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P07',
     code: 'P07',
-    name: 'The Binary',
+    name: 'The Rack',
     stage: 2,
     type: 'BINARY',
     difficulty: 3,
@@ -126,7 +126,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P08',
     code: 'P08',
-    name: 'The Vector',
+    name: 'Two Ways',
     stage: 2,
     type: 'PATTERN',
     difficulty: 3,
@@ -139,7 +139,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P09',
     code: 'P09',
-    name: 'The Chronology',
+    name: 'The Master Clock',
     stage: 2,
     type: 'LOGIC',
     difficulty: 3,
@@ -152,7 +152,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P10',
     code: 'P10',
-    name: 'The Blue Door',
+    name: 'The Blue Line',
     stage: 2,
     type: 'EXTRACTION',
     difficulty: 3,
@@ -165,7 +165,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P11',
     code: 'P11',
-    name: 'The Symbol',
+    name: 'The Archway',
     stage: 2,
     type: 'VISUAL',
     difficulty: 3,
@@ -191,7 +191,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P13',
     code: 'P13',
-    name: 'The Laboratory',
+    name: 'The Whiteboard',
     stage: 2,
     type: 'OBSERVATION',
     difficulty: 4,
@@ -199,12 +199,12 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
     location: '[SCIENCE BUILDING] — Research Lab',
     points: 60,
     prerequisiteNodes: ["P12"],
-    nextNodes: ["M02"],
+    nextNodes: ["P06b"],
   },
   {
     id: 'P06b',
     code: 'P06b',
-    name: 'Time Remaining',
+    name: 'The Dark Clock',
     stage: 2,
     type: 'MEMORY',
     difficulty: 1,
@@ -217,7 +217,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P07b',
     code: 'P07b',
-    name: 'The Network',
+    name: 'The Three Copies',
     stage: 2,
     type: 'GRAPH',
     difficulty: 4,
@@ -230,7 +230,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P14',
     code: 'P14',
-    name: 'The Memory Bank',
+    name: 'The Index',
     stage: 3,
     type: 'MEMORY',
     difficulty: 3,
@@ -243,7 +243,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P15',
     code: 'P15',
-    name: 'The Cipher Wheel',
+    name: 'The Withdrawal',
     stage: 3,
     type: 'CIPHER',
     difficulty: 3,
@@ -256,7 +256,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P16',
     code: 'P16',
-    name: 'The Auditorium',
+    name: 'The Seat',
     stage: 3,
     type: 'OBSERVATION',
     difficulty: 3,
@@ -269,7 +269,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P17',
     code: 'P17',
-    name: 'The Audio Log',
+    name: 'The Stop Tone',
     stage: 3,
     type: 'AUDIO',
     difficulty: 4,
@@ -282,7 +282,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P17b',
     code: 'P17b',
-    name: 'The Echo Fold',
+    name: 'The Etched Strip',
     stage: 3,
     type: 'CIPHER',
     difficulty: 4,
@@ -295,7 +295,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P18',
     code: 'P18',
-    name: 'The Pattern Lock',
+    name: 'Item Four',
     stage: 3,
     type: 'PATTERN',
     difficulty: 3,
@@ -308,7 +308,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P19',
     code: 'P19',
-    name: 'The Archive',
+    name: 'Where It Went',
     stage: 3,
     type: 'DEDUCTION',
     difficulty: 4,
@@ -321,7 +321,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P20',
     code: 'P20',
-    name: 'The Symbol Sequence',
+    name: 'The Seven Checks',
     stage: 3,
     type: 'PATTERN',
     difficulty: 5,
@@ -334,7 +334,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P21',
     code: 'P21',
-    name: 'The Final Clue',
+    name: 'The Disposal Run',
     stage: 3,
     type: 'NARRATIVE_INVESTIGATION',
     difficulty: 5,
@@ -347,7 +347,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'M01',
     code: 'M01',
-    name: 'The First Lock',
+    name: 'Seal Register',
     stage: 1,
     type: 'META',
     difficulty: 4,
@@ -360,20 +360,20 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'M02',
     code: 'M02',
-    name: 'The Network Meta',
+    name: 'How She Came Back',
     stage: 2,
     type: 'META',
     difficulty: 4,
     time: '15m',
     location: '[SCIENCE BUILDING] — Memory Lab',
     points: 100,
-    prerequisiteNodes: ["P13"],
+    prerequisiteNodes: ["P07b"],
     nextNodes: ["P14"],
   },
   {
     id: 'M03',
     code: 'M03',
-    name: 'The Symbol Meta',
+    name: 'The Cited Authority',
     stage: 3,
     type: 'META',
     difficulty: 5,
@@ -386,7 +386,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'M04',
     code: 'M04',
-    name: 'The Hidden Layer',
+    name: 'What the Alarm Was',
     stage: 4,
     type: 'META',
     difficulty: 5,
@@ -399,7 +399,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P22',
     code: 'P22',
-    name: 'The Hidden Layer',
+    name: 'The Eighth Column',
     stage: 4,
     type: 'LOGIC',
     difficulty: 4.5,
@@ -412,7 +412,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P23',
     code: 'P23',
-    name: 'The Reinterpretation',
+    name: 'Seen Again',
     stage: 4,
     type: 'DEDUCTION',
     difficulty: 4.5,
@@ -425,7 +425,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P23b',
     code: 'P23b',
-    name: 'The Path Lock',
+    name: 'The Long Way',
     stage: 4,
     type: 'LOGIC',
     difficulty: 4,
@@ -438,7 +438,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P24',
     code: 'P24',
-    name: 'The Cross-Reference',
+    name: 'The Silent System',
     stage: 4,
     type: 'CROSS_REFERENCE',
     difficulty: 4.5,
@@ -451,7 +451,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P24b',
     code: 'P24b',
-    name: 'The Audio Contradiction',
+    name: 'The Impossible Witness',
     stage: 4,
     type: 'NARRATIVE_INVESTIGATION',
     difficulty: 4,
@@ -464,7 +464,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P25',
     code: 'P25',
-    name: 'The Overload',
+    name: 'The Ticket',
     stage: 4,
     type: 'EXTRACTION',
     difficulty: 4.5,
@@ -477,7 +477,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P26',
     code: 'P26',
-    name: 'The Mirror II',
+    name: 'Three Papers',
     stage: 4,
     type: 'THREE_PHONE',
     difficulty: 4.5,
@@ -490,7 +490,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P27',
     code: 'P27',
-    name: 'The Dependency',
+    name: 'What They Did Not Know',
     stage: 4,
     type: 'LOGIC',
     difficulty: 4.5,
@@ -503,7 +503,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P27b',
     code: 'P27b',
-    name: 'The Code That Lies',
+    name: 'The Altered Line',
     stage: 4,
     type: 'LOGIC',
     difficulty: 4,
@@ -516,7 +516,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P28',
     code: 'P28',
-    name: 'The Fragment',
+    name: 'Five O’Clock',
     stage: 4,
     type: 'EXTRACTION',
     difficulty: 4.5,
@@ -529,7 +529,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P29',
     code: 'P29',
-    name: 'The Revelation',
+    name: 'What NEXUS Is',
     stage: 4,
     type: 'NARRATIVE_INVESTIGATION',
     difficulty: 4,
@@ -542,7 +542,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P30',
     code: 'P30',
-    name: 'The Transmitter Spire',
+    name: 'The Voicemail',
     stage: 5,
     type: 'MEMORY',
     difficulty: 4,
@@ -555,7 +555,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P31',
     code: 'P31',
-    name: 'The Memory Array',
+    name: 'What She Held',
     stage: 5,
     type: 'MEMORY',
     difficulty: 4,
@@ -568,7 +568,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P32',
     code: 'P32',
-    name: 'The Three Phones II',
+    name: 'The Survivor',
     stage: 5,
     type: 'THREE_PHONE',
     difficulty: 4,
@@ -581,7 +581,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P33',
     code: 'P33',
-    name: 'The GM Key Protocol',
+    name: 'The Bulletin',
     stage: 5,
     type: 'DEDUCTION',
     difficulty: 4.5,
@@ -594,7 +594,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P34',
     code: 'P34',
-    name: 'The Final Sequence',
+    name: 'The Night',
     stage: 5,
     type: 'PATTERN',
     difficulty: 4.5,
@@ -607,7 +607,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P35',
     code: 'P35',
-    name: 'The Final Choice',
+    name: 'The Fifth Check',
     stage: 5,
     type: 'NARRATIVE_INVESTIGATION',
     difficulty: 4.5,
@@ -620,7 +620,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P36',
     code: 'P36',
-    name: 'The GM Intervention',
+    name: 'What She Asked',
     stage: 5,
     type: 'META',
     difficulty: 5,
@@ -633,7 +633,7 @@ export const ALL_PUZZLES: NodeIndexEntry[] = [
   {
     id: 'P37',
     code: 'P37',
-    name: 'The Final Boss',
+    name: 'The Word',
     stage: 5,
     type: 'FINAL_BOSS',
     difficulty: 5,

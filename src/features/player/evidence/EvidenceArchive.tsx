@@ -73,6 +73,15 @@ function normalizeApiArtifact(
   artifact: { code: string; title: string; description: string; type: string; content?: Record<string, unknown> | null },
 ): CaseArtifact {
   const content = artifact.content ?? {}
+  const declared = Array.isArray(content.relationships) ? content.relationships : []
+  const relationships = declared
+    .filter((entry): entry is Record<string, unknown> => typeof entry === 'object' && entry !== null)
+    .map(entry => ({
+      to: typeof entry.to === 'string' ? entry.to : '',
+      kind: typeof entry.kind === 'string' ? entry.kind : 'RELATED',
+      note: typeof entry.note === 'string' ? entry.note : '',
+    }))
+    .filter(entry => entry.to)
   return {
     id: `evidence:${artifact.code}`,
     code: artifact.code,
@@ -81,8 +90,10 @@ function normalizeApiArtifact(
     type: artifact.type,
     source: 'EVIDENCE',
     content,
-    location: contentString(content, ['location', 'location_name', 'building']),
+    location: contentString(content, ['location', 'location_name', 'building', 'source']),
     acquiredAt: contentString(content, ['acquired_at', 'acquiredAt', 'timestamp', 'captured_at']),
+    thumbUrl: contentString(content, ['thumb_url', 'thumbUrl']),
+    relationships: relationships.length ? relationships : undefined,
   }
 }
 

@@ -128,7 +128,7 @@ describe('Hint Penalties', () => {
     // A fourth hint on P17/P20 used to state the answer outright and was
     // charged nothing. request_hint() now refuses past the cap and takes the
     // penalty from game_config rather than hard-coded literals.
-    expect(MAX_HINTS_PER_NODE).toBe(3)
+    expect(MAX_HINTS_PER_NODE).toBe(4)
   })
 })
 
